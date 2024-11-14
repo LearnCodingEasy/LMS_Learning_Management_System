@@ -156,10 +156,10 @@
 <hr>
 <h2 id="vite-press" tabindex="-1"><a class="header-anchor" href="#vite-press"><span>Vite Press</span></a></h2>
 <h6 id="🖥️-create-vuepress" tabindex="-1"><a class="header-anchor" href="#🖥️-create-vuepress"><span>🖥️ Create Vuepress</span></a></h6>
-<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm init vuepress messenger_vuepress</span>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm init vuepress lms_vuepress</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h6 id="🖥️-command-path" tabindex="-1"><a class="header-anchor" href="#🖥️-command-path"><span>🖥️ Command Path</span></a></h6>
-<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">cd messenger_vuepress</span>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">cd lms_vuepress</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h6 id="🖥️-install-sass" tabindex="-1"><a class="header-anchor" href="#🖥️-install-sass"><span>🖥️ Install Sass</span></a></h6>
 <div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm install -D sass-embedded</span>
@@ -230,6 +230,14 @@
 <hr>
 <hr>
 <hr>
-</div></template>
+<h2 id="django" tabindex="-1"><a class="header-anchor" href="#django"><span>Django</span></a></h2>
+<h3 id="🖥️-virtual-environment" tabindex="-1"><a class="header-anchor" href="#🖥️-virtual-environment"><span>🖥️ Virtual Environment</span></a></h3>
+<h6 id="🖥️-create-virtual-environment-🐍" tabindex="-1"><a class="header-anchor" href="#🖥️-create-virtual-environment-🐍"><span>🖥️ Create Virtual Environment 🐍</span></a></h6>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">python -m venv lms_virtual_environment</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h6 id="🚀-activate-virtual-environment-🔋" tabindex="-1"><a class="header-anchor" href="#🚀-activate-virtual-environment-🔋"><span>🚀 Activate Virtual Environment 🔋</span></a></h6>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">lms_virtual_environment\Scripts\activate</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></div></template>
 
 

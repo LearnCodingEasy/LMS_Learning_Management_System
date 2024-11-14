@@ -312,13 +312,13 @@ Copyright (c) 2024 Hossam Rashad
 ###### 🖥️ Create Vuepress
 
 ```cmd
-npm init vuepress messenger_vuepress
+npm init vuepress lms_vuepress
 ```
 
 ###### 🖥️ Command Path
 
 ```cmd
-cd messenger_vuepress
+cd lms_vuepress
 ```
 
 ###### 🖥️ Install Sass
@@ -458,3 +458,19 @@ npm run docs:dev
 ---
 
 ---
+
+## Django
+
+### 🖥️ Virtual Environment
+
+###### 🖥️ Create Virtual Environment 🐍
+
+```cmd
+python -m venv lms_virtual_environment
+```
+
+###### 🚀 Activate Virtual Environment 🔋
+
+```cmd
+lms_virtual_environment\Scripts\activate
+```
