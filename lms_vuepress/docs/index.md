@@ -1579,7 +1579,7 @@ npm create vue@latest
 ###### 🚀 Choose Vite [ Project name & Select a framework] 🛠️
 
 ```cmd
-√ Project name: ... messenger_vue
+√ Project name: ... lms_vue
 √ Add TypeScript? ... [No] / Yes
 √ Add JSX Support? ... [No] / Yes
 √ Add Vue Router for Single Page Application development? ... No / [Yes]
@@ -1590,10 +1590,10 @@ npm create vue@latest
 √ Add Prettier for code formatting? ... No / [Yes]
 √ Add Vue DevTools 7 extension for debugging? (experimental) ... [No] / Yes
 
-Scaffolding project in E:\Projects\messenger\messenger_vue...
+Scaffolding project in E:\Projects\lms\lms_vue...
 
 Done. Now run:
-  cd messenger_vue
+  cd lms_vue
   npm install
   npm run format
   npm run build
@@ -1601,7 +1601,7 @@ Done. Now run:
 ```
 
 ```cmd
-cd messenger_vue
+cd lms_vue
 ```
 
 ```cmd
@@ -1703,7 +1703,7 @@ npm i swiper
 - 📝 File [ tailwind.config.js ]
 
 ```js
-// Page [ messenger/messenger_vue/tailwind.config.js ]
+// Page [ lms/lms_vue/tailwind.config.js ]
 export default defineConfig({
   // ...
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"]
@@ -1728,7 +1728,7 @@ primeTheme.js
 ```
 
 ```js
-// Page [ messenger/messenger_vue/src/stores/primeTheme.js ]
+// Page [ lms/lms_vue/src/stores/primeTheme.js ]
 
 import { reactive } from "vue";
 export default {
@@ -2120,7 +2120,7 @@ app.use(router, axios);
 ```
 
 ```js
-// Page [ messenger/messenger_vue/src/main.js ]
+// Page [ lms/lms_vue/src/main.js ]
 
 // Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -2194,49 +2194,49 @@ export default defineConfig({
         theme_color: "#ffffff",
         icons: [
           {
-            src: "./images/icons/messenger_icon_72x72.png",
+            src: "./images/icons/lms_icon_72x72.png",
             type: "image/png",
             sizes: "72x72",
             purpose: "any maskable"
           },
           {
-            src: "./images/icons/messenger_icon_96x96.png",
+            src: "./images/icons/lms_icon_96x96.png",
             type: "image/png",
             sizes: "96x96",
             purpose: "any maskable"
           },
           {
-            src: "./images/icons/messenger_icon_128x128.png",
+            src: "./images/icons/lms_icon_128x128.png",
             type: "image/png",
             sizes: "128x128",
             purpose: "any maskable"
           },
           {
-            src: "./images/icons/messenger_icon_144x144.png",
+            src: "./images/icons/lms_icon_144x144.png",
             type: "image/png",
             sizes: "144x144",
             purpose: "any maskable"
           },
           {
-            src: "./images/icons/messenger_icon_152x152.png",
+            src: "./images/icons/lms_icon_152x152.png",
             type: "image/png",
             sizes: "152x152",
             purpose: "any maskable"
           },
           {
-            src: "./images/icons/messenger_icon_192x192.png",
+            src: "./images/icons/lms_icon_192x192.png",
             type: "image/png",
             sizes: "192x192",
             purpose: "any maskable"
           },
           {
-            src: "./images/icons/messenger_icon_384x384.png",
+            src: "./images/icons/lms_icon_384x384.png",
             type: "image/png",
             sizes: "384x384",
             purpose: "any maskable"
           },
           {
-            src: "./images/icons/messenger_icon_512x512.png",
+            src: "./images/icons/lms_icon_512x512.png",
             type: "image/png",
             sizes: "512x512",
             purpose: "any maskable"
@@ -2282,30 +2282,30 @@ screenshots
 ├── public/
 │ ├── images/
 │ | ├── icons/
-│ │ | ├── 🖼️ messenger_icon_72x72.png
-│ │ | ├── 🖼️ messenger_icon_96x96.png
-│ │ | ├── 🖼️ messenger_icon_128x128.png
-│ │ | ├── 🖼️ messenger_icon_144x144.png
-│ │ | ├── 🖼️ messenger_icon_152x152.png
-│ │ | ├── 🖼️ messenger_icon_192x192.png
-│ │ | ├── 🖼️ messenger_icon_256x256.png
-│ │ | ├── 🖼️ messenger_icon_384x384.png
-│ │ | ├── 🖼️ messenger_icon_512x512.png
+│ │ | ├── 🖼️ lms_icon_72x72.png
+│ │ | ├── 🖼️ lms_icon_96x96.png
+│ │ | ├── 🖼️ lms_icon_128x128.png
+│ │ | ├── 🖼️ lms_icon_144x144.png
+│ │ | ├── 🖼️ lms_icon_152x152.png
+│ │ | ├── 🖼️ lms_icon_192x192.png
+│ │ | ├── 🖼️ lms_icon_256x256.png
+│ │ | ├── 🖼️ lms_icon_384x384.png
+│ │ | ├── 🖼️ lms_icon_512x512.png
 │ | ├── screenshots/
 │ │ | ├── 🖼️ screenshots.png
 
 ```
 
 ```
-messenger_icon_72x72
-messenger_icon_96x96
-messenger_icon_128x128
-messenger_icon_144x144
-messenger_icon_152x152
-messenger_icon_192x192
-messenger_icon_256x256
-messenger_icon_384x384
-messenger_icon_512x512
+lms_icon_72x72
+lms_icon_96x96
+lms_icon_128x128
+lms_icon_144x144
+lms_icon_152x152
+lms_icon_192x192
+lms_icon_256x256
+lms_icon_384x384
+lms_icon_512x512
 screenshots_640x480
 ```
 
@@ -2325,13 +2325,11 @@ https://www.iloveimg.com/resize-image
 - 📝 Create Page [ user.js ] Inside Stores
 
 ```
-
 user.js
-
 ```
 
 ```js
-// Page [ messenger/messenger_vue/src/stores/user.js ]
+// Page [ lms/lms_vue/src/stores/user.js ]
 import { defineStore } from "pinia";
 import axios from "axios";
 export const useUserStore = defineStore({
@@ -2476,7 +2474,7 @@ export const useUserStore = defineStore({
 ### 📝 Page [ index.html ]
 
 ```
-cheang App Name [ messenger | ]
+cheang App Name [ lms | ]
 ```
 
 ### 🌊 Run Vue
@@ -2484,7 +2482,7 @@ cheang App Name [ messenger | ]
 ###### Run Vue
 
 ```cmd
-cd messenger_vue
+cd lms_vue
 ```
 
 ```cmd

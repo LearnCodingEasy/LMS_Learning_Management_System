@@ -1178,7 +1178,7 @@
 <div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm create vue@latest</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h6 id="🚀-choose-vite-project-name-select-a-framework-🛠️" tabindex="-1"><a class="header-anchor" href="#🚀-choose-vite-project-name-select-a-framework-🛠️"><span>🚀 Choose Vite [ Project name &amp; Select a framework] 🛠️</span></a></h6>
-<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">√ Project name: ... messenger_vue</span>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">√ Project name: ... lms_vue</span>
 <span class="line">√ Add TypeScript? ... [No] / Yes</span>
 <span class="line">√ Add JSX Support? ... [No] / Yes</span>
 <span class="line">√ Add Vue Router for Single Page Application development? ... No / [Yes]</span>
@@ -1189,16 +1189,16 @@
 <span class="line">√ Add Prettier for code formatting? ... No / [Yes]</span>
 <span class="line">√ Add Vue DevTools 7 extension for debugging? (experimental) ... [No] / Yes</span>
 <span class="line"></span>
-<span class="line">Scaffolding project in E:\Projects\messenger\messenger_vue...</span>
+<span class="line">Scaffolding project in E:\Projects\lms\lms_vue...</span>
 <span class="line"></span>
 <span class="line">Done. Now run:</span>
-<span class="line">  cd messenger_vue</span>
+<span class="line">  cd lms_vue</span>
 <span class="line">  npm install</span>
 <span class="line">  npm run format</span>
 <span class="line">  npm run build</span>
 <span class="line">  npm run dev</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">cd messenger_vue</span>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">cd lms_vue</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm install</span>
 <span class="line"></span></code></pre>
@@ -1273,7 +1273,7 @@
 <p>📝 File [ tailwind.config.js ]</p>
 </li>
 </ul>
-<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token comment">// Page [ messenger/messenger_vue/tailwind.config.js ]</span></span>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token comment">// Page [ lms/lms_vue/tailwind.config.js ]</span></span>
 <span class="line"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span>
 <span class="line">  <span class="token comment">// ...</span></span>
 <span class="line">  <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./index.html"</span><span class="token punctuation">,</span> <span class="token string">"./src/**/*.{vue,js,ts,jsx,tsx}"</span><span class="token punctuation">]</span></span>
@@ -1293,7 +1293,7 @@
 </ul>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">primeTheme.js</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token comment">// Page [ messenger/messenger_vue/src/stores/primeTheme.js ]</span></span>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token comment">// Page [ lms/lms_vue/src/stores/primeTheme.js ]</span></span>
 <span class="line"></span>
 <span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> reactive <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"vue"</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span></span>
@@ -1659,7 +1659,7 @@
 <span class="line">  <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css<span class="token punctuation">"</span></span></span>
 <span class="line"><span class="token punctuation">/></span></span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token comment">// Page [ messenger/messenger_vue/src/main.js ]</span></span>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token comment">// Page [ lms/lms_vue/src/main.js ]</span></span>
 <span class="line"></span>
 <span class="line"><span class="token comment">// Font Awesome</span></span>
 <span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> FontAwesomeIcon <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@fortawesome/vue-fontawesome"</span><span class="token punctuation">;</span></span>
@@ -1731,49 +1731,49 @@
 <span class="line">        <span class="token literal-property property">theme_color</span><span class="token operator">:</span> <span class="token string">"#ffffff"</span><span class="token punctuation">,</span></span>
 <span class="line">        <span class="token literal-property property">icons</span><span class="token operator">:</span> <span class="token punctuation">[</span></span>
 <span class="line">          <span class="token punctuation">{</span></span>
-<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/messenger_icon_72x72.png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/lms_icon_72x72.png"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">sizes</span><span class="token operator">:</span> <span class="token string">"72x72"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">purpose</span><span class="token operator">:</span> <span class="token string">"any maskable"</span></span>
 <span class="line">          <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
 <span class="line">          <span class="token punctuation">{</span></span>
-<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/messenger_icon_96x96.png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/lms_icon_96x96.png"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">sizes</span><span class="token operator">:</span> <span class="token string">"96x96"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">purpose</span><span class="token operator">:</span> <span class="token string">"any maskable"</span></span>
 <span class="line">          <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
 <span class="line">          <span class="token punctuation">{</span></span>
-<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/messenger_icon_128x128.png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/lms_icon_128x128.png"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">sizes</span><span class="token operator">:</span> <span class="token string">"128x128"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">purpose</span><span class="token operator">:</span> <span class="token string">"any maskable"</span></span>
 <span class="line">          <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
 <span class="line">          <span class="token punctuation">{</span></span>
-<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/messenger_icon_144x144.png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/lms_icon_144x144.png"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">sizes</span><span class="token operator">:</span> <span class="token string">"144x144"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">purpose</span><span class="token operator">:</span> <span class="token string">"any maskable"</span></span>
 <span class="line">          <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
 <span class="line">          <span class="token punctuation">{</span></span>
-<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/messenger_icon_152x152.png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/lms_icon_152x152.png"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">sizes</span><span class="token operator">:</span> <span class="token string">"152x152"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">purpose</span><span class="token operator">:</span> <span class="token string">"any maskable"</span></span>
 <span class="line">          <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
 <span class="line">          <span class="token punctuation">{</span></span>
-<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/messenger_icon_192x192.png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/lms_icon_192x192.png"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">sizes</span><span class="token operator">:</span> <span class="token string">"192x192"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">purpose</span><span class="token operator">:</span> <span class="token string">"any maskable"</span></span>
 <span class="line">          <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
 <span class="line">          <span class="token punctuation">{</span></span>
-<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/messenger_icon_384x384.png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/lms_icon_384x384.png"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">sizes</span><span class="token operator">:</span> <span class="token string">"384x384"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">purpose</span><span class="token operator">:</span> <span class="token string">"any maskable"</span></span>
 <span class="line">          <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
 <span class="line">          <span class="token punctuation">{</span></span>
-<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/messenger_icon_512x512.png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/lms_icon_512x512.png"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">sizes</span><span class="token operator">:</span> <span class="token string">"512x512"</span><span class="token punctuation">,</span></span>
 <span class="line">            <span class="token literal-property property">purpose</span><span class="token operator">:</span> <span class="token string">"any maskable"</span></span>
@@ -1812,28 +1812,28 @@
 <span class="line">├── public/</span>
 <span class="line">│ ├── images/</span>
 <span class="line">│ | ├── icons/</span>
-<span class="line">│ │ | ├── 🖼️ messenger_icon_72x72.png</span>
-<span class="line">│ │ | ├── 🖼️ messenger_icon_96x96.png</span>
-<span class="line">│ │ | ├── 🖼️ messenger_icon_128x128.png</span>
-<span class="line">│ │ | ├── 🖼️ messenger_icon_144x144.png</span>
-<span class="line">│ │ | ├── 🖼️ messenger_icon_152x152.png</span>
-<span class="line">│ │ | ├── 🖼️ messenger_icon_192x192.png</span>
-<span class="line">│ │ | ├── 🖼️ messenger_icon_256x256.png</span>
-<span class="line">│ │ | ├── 🖼️ messenger_icon_384x384.png</span>
-<span class="line">│ │ | ├── 🖼️ messenger_icon_512x512.png</span>
+<span class="line">│ │ | ├── 🖼️ lms_icon_72x72.png</span>
+<span class="line">│ │ | ├── 🖼️ lms_icon_96x96.png</span>
+<span class="line">│ │ | ├── 🖼️ lms_icon_128x128.png</span>
+<span class="line">│ │ | ├── 🖼️ lms_icon_144x144.png</span>
+<span class="line">│ │ | ├── 🖼️ lms_icon_152x152.png</span>
+<span class="line">│ │ | ├── 🖼️ lms_icon_192x192.png</span>
+<span class="line">│ │ | ├── 🖼️ lms_icon_256x256.png</span>
+<span class="line">│ │ | ├── 🖼️ lms_icon_384x384.png</span>
+<span class="line">│ │ | ├── 🖼️ lms_icon_512x512.png</span>
 <span class="line">│ | ├── screenshots/</span>
 <span class="line">│ │ | ├── 🖼️ screenshots.png</span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">messenger_icon_72x72</span>
-<span class="line">messenger_icon_96x96</span>
-<span class="line">messenger_icon_128x128</span>
-<span class="line">messenger_icon_144x144</span>
-<span class="line">messenger_icon_152x152</span>
-<span class="line">messenger_icon_192x192</span>
-<span class="line">messenger_icon_256x256</span>
-<span class="line">messenger_icon_384x384</span>
-<span class="line">messenger_icon_512x512</span>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">lms_icon_72x72</span>
+<span class="line">lms_icon_96x96</span>
+<span class="line">lms_icon_128x128</span>
+<span class="line">lms_icon_144x144</span>
+<span class="line">lms_icon_152x152</span>
+<span class="line">lms_icon_192x192</span>
+<span class="line">lms_icon_256x256</span>
+<span class="line">lms_icon_384x384</span>
+<span class="line">lms_icon_512x512</span>
 <span class="line">screenshots_640x480</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h6 id="👉️-go-to-website-to-resize-image" tabindex="-1"><a class="header-anchor" href="#👉️-go-to-website-to-resize-image"><span>👉️ Go To Website To Resize Image</span></a></h6>
@@ -1846,11 +1846,9 @@
 <li>🧞‍♂️ User Store</li>
 <li>📝 Create Page [ user.js ] Inside Stores</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line"></span>
-<span class="line">user.js</span>
-<span class="line"></span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">user.js</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token comment">// Page [ messenger/messenger_vue/src/stores/user.js ]</span></span>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token comment">// Page [ lms/lms_vue/src/stores/user.js ]</span></span>
 <span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> defineStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pinia"</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">"axios"</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">export</span> <span class="token keyword">const</span> useUserStore <span class="token operator">=</span> <span class="token function">defineStore</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span>
@@ -1992,11 +1990,11 @@
 <span class="line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="📝-page-index-html" tabindex="-1"><a class="header-anchor" href="#📝-page-index-html"><span>📝 Page [ index.html ]</span></a></h3>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">cheang App Name [ messenger | ]</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">cheang App Name [ lms | ]</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="🌊-run-vue" tabindex="-1"><a class="header-anchor" href="#🌊-run-vue"><span>🌊 Run Vue</span></a></h3>
 <h6 id="run-vue" tabindex="-1"><a class="header-anchor" href="#run-vue"><span>Run Vue</span></a></h6>
-<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">cd messenger_vue</span>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">cd lms_vue</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm install</span>
 <span class="line"></span></code></pre>
