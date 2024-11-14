@@ -238,6 +238,1904 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h6 id="🚀-activate-virtual-environment-🔋" tabindex="-1"><a class="header-anchor" href="#🚀-activate-virtual-environment-🔋"><span>🚀 Activate Virtual Environment 🔋</span></a></h6>
 <div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">lms_virtual_environment\Scripts\activate</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></div></template>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="🔧-install-django" tabindex="-1"><a class="header-anchor" href="#🔧-install-django"><span>🔧 Install Django</span></a></h3>
+<h6 id="🔧-install-django-🦄" tabindex="-1"><a class="header-anchor" href="#🔧-install-django-🦄"><span>🔧 Install Django 🦄</span></a></h6>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">pip install django</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h6 id="🔧-django-version-🦄" tabindex="-1"><a class="header-anchor" href="#🔧-django-version-🦄"><span>🔧 Django Version 🦄</span></a></h6>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">python -m django --version</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="🛠️-django-libraries" tabindex="-1"><a class="header-anchor" href="#🛠️-django-libraries"><span>🛠️ Django Libraries</span></a></h3>
+<h6 id="🛠️-install-django-libraries-📚" tabindex="-1"><a class="header-anchor" href="#🛠️-install-django-libraries-📚"><span>🛠️ Install Django Libraries 📚</span></a></h6>
+<p>1 - 🌐 Django Rest Framework</p>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">pip install djangorestframework</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>2 - 🔒 Django Rest Framework Simplejwt 🛡️</p>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">pip install djangorestframework-simplejwt</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>3 - 🌍 Django Cors Headers 🔗</p>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">pip install django-cors-headers</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>4 - 🖼️ pillow 📷</p>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">pip install pillow</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="📂-create-django-project" tabindex="-1"><a class="header-anchor" href="#📂-create-django-project"><span>📂 Create Django Project</span></a></h3>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">django-admin startproject lms_django</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="👤-create-django-app-account" tabindex="-1"><a class="header-anchor" href="#👤-create-django-app-account"><span>👤 Create Django App Account</span></a></h3>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">cd lms_django</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">python manage.py startapp account</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="⚙️-settings" tabindex="-1"><a class="header-anchor" href="#⚙️-settings"><span>⚙️ Settings</span></a></h3>
+<h4 id="⚙️-page-settings-settings-py-📝" tabindex="-1"><a class="header-anchor" href="#⚙️-page-settings-settings-py-📝"><span>⚙️ Page Settings [ settings.py ] 📝</span></a></h4>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py" data-title="py"><pre v-pre><code><span class="line"><span class="token comment"># Page [lms/lms_django/lms_django/settings.py]</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">from</span> datetime <span class="token keyword">import</span> timedelta</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># The address of the site that points to the local server.</span></span>
+<span class="line">WEBSITE_URL <span class="token operator">=</span> <span class="token string">"http://127.0.0.1:8000"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># Define the default user model used in the application.</span></span>
+<span class="line">AUTH_USER_MODEL <span class="token operator">=</span> <span class="token string">"account.User"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># SIMPLE_JWT library settings to specify the validity period of tokens</span></span>
+<span class="line"><span class="token comment"># Access Token Validity (30 days)</span></span>
+<span class="line"><span class="token comment"># Refresh Token Validity (180 days)</span></span>
+<span class="line"><span class="token comment"># Disable Auto Refresh Tokens</span></span>
+<span class="line">SIMPLE_JWT <span class="token operator">=</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token string">"ACCESS_TOKEN_LIFETIME"</span><span class="token punctuation">:</span> timedelta<span class="token punctuation">(</span>days<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">  <span class="token string">"REFRESH_TOKEN_LIFETIME"</span><span class="token punctuation">:</span> timedelta<span class="token punctuation">(</span>days<span class="token operator">=</span><span class="token number">180</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">  <span class="token string">"ROTATE_REFRESH_TOKENS"</span><span class="token punctuation">:</span> <span class="token boolean">False</span><span class="token punctuation">,</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># Django REST Framework settings for identity and permissions verification</span></span>
+<span class="line"><span class="token comment"># Use JWT for identity verification</span></span>
+<span class="line"><span class="token comment"># Allow only authenticated users</span></span>
+<span class="line">REST_FRAMEWORK <span class="token operator">=</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token string">"DEFAULT_AUTHENTICATION_CLASSES"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span></span>
+<span class="line">      <span class="token string">"rest_framework_simplejwt.authentication.JWTAuthentication"</span><span class="token punctuation">,</span></span>
+<span class="line">  <span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">  <span class="token string">"DEFAULT_PERMISSION_CLASSES"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token string">"rest_framework.permissions.IsAuthenticated"</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># Allow CORS requests from specific addresses</span></span>
+<span class="line"><span class="token comment"># Allow requests from this origin</span></span>
+<span class="line">CORS_ALLOWED_ORIGINS <span class="token operator">=</span> <span class="token punctuation">[</span></span>
+<span class="line">    <span class="token string">"http://localhost:5173"</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token string">"http://localhost:5174"</span><span class="token punctuation">,</span></span>
+<span class="line"><span class="token punctuation">]</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># Allow CSRF requests from specific addresses</span></span>
+<span class="line">CSRF_TRUSTED_ORIGINS <span class="token operator">=</span> <span class="token punctuation">[</span></span>
+<span class="line">    <span class="token string">"http://localhost:5173"</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token string">"http://localhost:5174"</span><span class="token punctuation">,</span></span>
+<span class="line"><span class="token punctuation">]</span></span>
+<span class="line"></span>
+<span class="line">INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuation">[</span></span>
+<span class="line">    <span class="token comment"># ...</span></span>
+<span class="line">    <span class="token comment"># Apps</span></span>
+<span class="line">    <span class="token string">"account"</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token comment"># Libraries</span></span>
+<span class="line">    <span class="token string">"rest_framework"</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token string">"rest_framework_simplejwt"</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token string">"corsheaders"</span><span class="token punctuation">,</span></span>
+<span class="line"><span class="token punctuation">]</span></span>
+<span class="line"></span>
+<span class="line">MIDDLEWARE <span class="token operator">=</span> <span class="token punctuation">[</span></span>
+<span class="line">    <span class="token comment"># Libraries [ Django Cors Headers ]</span></span>
+<span class="line">    <span class="token string">"corsheaders.middleware.CorsMiddleware"</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token comment"># ...</span></span>
+<span class="line"><span class="token punctuation">]</span></span>
+<span class="line"><span class="token comment"># Access path for static files (such as CSS and JavaScript files)</span></span>
+<span class="line">STATIC_URL <span class="token operator">=</span> <span class="token string">"static/"</span></span>
+<span class="line"><span class="token comment"># Access path for media files (such as images and files uploaded by users)</span></span>
+<span class="line">MEDIA_URL <span class="token operator">=</span> <span class="token string">"media/"</span></span>
+<span class="line"><span class="token comment"># Specify a "media" folder in the project to store uploaded media files</span></span>
+<span class="line">MEDIA_ROOT <span class="token operator">=</span> BASE_DIR <span class="token operator">/</span> <span class="token string">"media"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="🧑-account-page-models-py" tabindex="-1"><a class="header-anchor" href="#🧑-account-page-models-py"><span>🧑 Account Page [ models.py ]</span></a></h3>
+<h4 id="🧑-app-account-page-models-py-📝" tabindex="-1"><a class="header-anchor" href="#🧑-app-account-page-models-py-📝"><span>🧑 App [ Account ] Page [ models.py ] 📝</span></a></h4>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py" data-title="py"><pre v-pre><code><span class="line"><span class="token comment"># 📄 صفحة [lms/lms_django/account/models.py]</span></span>
+<span class="line"><span class="token comment"># uuid: يُستخدم لإنشاء معرّفات فريدة عالمياً</span></span>
+<span class="line"><span class="token comment"># (UUID) التي يمكن استخدامها لتعريف المستخدمين.</span></span>
+<span class="line"><span class="token keyword">import</span> uuid</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># settings: لاستيراد إعدادات</span></span>
+<span class="line"><span class="token comment"># Django الخاصة بالمشروع.</span></span>
+<span class="line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>conf <span class="token keyword">import</span> settings</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># AbstractBaseUser, PermissionsMixin: لإنشاء نموذج مستخدم مخصص.</span></span>
+<span class="line"><span class="token comment"># UserManager: لإدارة إنشاء المستخدمين.</span></span>
+<span class="line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>contrib<span class="token punctuation">.</span>auth<span class="token punctuation">.</span>models <span class="token keyword">import</span> AbstractBaseUser<span class="token punctuation">,</span> PermissionsMixin<span class="token punctuation">,</span> UserManager</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># models: لإنشاء نماذج Django.</span></span>
+<span class="line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>db <span class="token keyword">import</span> models</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># Time</span></span>
+<span class="line"><span class="token comment"># timezone: للتعامل مع التوقيتات.</span></span>
+<span class="line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>utils <span class="token keyword">import</span> timezone</span>
+<span class="line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>timesince <span class="token keyword">import</span> timesince</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 👥 Dedicated manager to create and manage users</span></span>
+<span class="line"><span class="token comment"># 👥 مدير مخصص لإنشاء وإدارة المستخدمين</span></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">CustomUserManager</span><span class="token punctuation">(</span>UserManager<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token keyword">def</span> <span class="token function">_create_user</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> email<span class="token punctuation">,</span> password<span class="token punctuation">,</span> <span class="token operator">**</span>extra_fields<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">        <span class="token comment"># ✉️ Verify email entry</span></span>
+<span class="line">        <span class="token comment"># ✉️ تحقق من إدخال البريد الإلكتروني</span></span>
+<span class="line">        <span class="token keyword">if</span> <span class="token keyword">not</span> email<span class="token punctuation">:</span></span>
+<span class="line">            <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">"You have not provided a valid e-mail address"</span><span class="token punctuation">)</span></span>
+<span class="line">        email <span class="token operator">=</span> self<span class="token punctuation">.</span>normalize_email<span class="token punctuation">(</span>email<span class="token punctuation">)</span></span>
+<span class="line">        user <span class="token operator">=</span> self<span class="token punctuation">.</span>model<span class="token punctuation">(</span>email<span class="token operator">=</span>email<span class="token punctuation">,</span> name<span class="token operator">=</span>name<span class="token punctuation">,</span> <span class="token operator">**</span>extra_fields<span class="token punctuation">)</span></span>
+<span class="line">        user<span class="token punctuation">.</span>set_password<span class="token punctuation">(</span>password<span class="token punctuation">)</span></span>
+<span class="line">        user<span class="token punctuation">.</span>save<span class="token punctuation">(</span>using<span class="token operator">=</span>self<span class="token punctuation">.</span>_db<span class="token punctuation">)</span></span>
+<span class="line">        <span class="token keyword">return</span> user</span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># 👤 Create a regular user</span></span>
+<span class="line">    <span class="token comment"># 👤 إنشاء مستخدم عادي</span></span>
+<span class="line">    <span class="token keyword">def</span> <span class="token function">create_user</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> email<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> password<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token operator">**</span>extra_fields<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">        extra_fields<span class="token punctuation">.</span>setdefault<span class="token punctuation">(</span><span class="token string">"is_staff"</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">)</span></span>
+<span class="line">        extra_fields<span class="token punctuation">.</span>setdefault<span class="token punctuation">(</span><span class="token string">"is_superuser"</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">)</span></span>
+<span class="line">        <span class="token keyword">return</span> self<span class="token punctuation">.</span>_create_user<span class="token punctuation">(</span>name<span class="token punctuation">,</span> email<span class="token punctuation">,</span> password<span class="token punctuation">,</span> <span class="token operator">**</span>extra_fields<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># 🛡️ Create an administrative user (super user)</span></span>
+<span class="line">    <span class="token comment"># 🛡️ إنشاء مستخدم إداري (سوبر يوزر)</span></span>
+<span class="line">    <span class="token keyword">def</span> <span class="token function">create_superuser</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> email<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> password<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token operator">**</span>extra_fields<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">        extra_fields<span class="token punctuation">.</span>setdefault<span class="token punctuation">(</span><span class="token string">"is_staff"</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">)</span></span>
+<span class="line">        extra_fields<span class="token punctuation">.</span>setdefault<span class="token punctuation">(</span><span class="token string">"is_superuser"</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">)</span></span>
+<span class="line">        <span class="token keyword">return</span> self<span class="token punctuation">.</span>_create_user<span class="token punctuation">(</span>name<span class="token punctuation">,</span> email<span class="token punctuation">,</span> password<span class="token punctuation">,</span> <span class="token operator">**</span>extra_fields<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 🧑 Custom User Form</span></span>
+<span class="line"><span class="token comment"># 🧑 نموذج المستخدم المخصص</span></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">User</span><span class="token punctuation">(</span>AbstractBaseUser<span class="token punctuation">,</span> PermissionsMixin<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token comment"># 🔑 Define the primary field to be UUID  تعريف الحقل الأساسي ليكون</span></span>
+<span class="line">    <span class="token builtin">id</span> <span class="token operator">=</span> models<span class="token punctuation">.</span>UUIDField<span class="token punctuation">(</span>primary_key<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> default<span class="token operator">=</span>uuid<span class="token punctuation">.</span>uuid4<span class="token punctuation">,</span> editable<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment"># 📛 User Data Properties خصائص بيانات المستخدم</span></span>
+<span class="line">    name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">255</span><span class="token punctuation">,</span> blank<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> default<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">)</span></span>
+<span class="line">    surname <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">255</span><span class="token punctuation">,</span> blank<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> default<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">)</span></span>
+<span class="line">    email <span class="token operator">=</span> models<span class="token punctuation">.</span>EmailField<span class="token punctuation">(</span>unique<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></span>
+<span class="line">    date_of_birth <span class="token operator">=</span> models<span class="token punctuation">.</span>DateField<span class="token punctuation">(</span>default<span class="token operator">=</span>timezone<span class="token punctuation">.</span>now<span class="token punctuation">)</span></span>
+<span class="line">    gender <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">15</span><span class="token punctuation">,</span> blank<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment"># 🖼️ Profile Picture صورة شخصية</span></span>
+<span class="line">    avatar <span class="token operator">=</span> models<span class="token punctuation">.</span>ImageField<span class="token punctuation">(</span>upload_to<span class="token operator">=</span><span class="token string">"avatars"</span><span class="token punctuation">,</span> blank<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment"># 🖼️ Cover Photo صورة الغلاف</span></span>
+<span class="line">    cover <span class="token operator">=</span> models<span class="token punctuation">.</span>ImageField<span class="token punctuation">(</span>upload_to<span class="token operator">=</span><span class="token string">"covers"</span><span class="token punctuation">,</span> blank<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># ⚙️ User Status  حالة المستخدم</span></span>
+<span class="line">    is_active <span class="token operator">=</span> models<span class="token punctuation">.</span>BooleanField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></span>
+<span class="line">    is_superuser <span class="token operator">=</span> models<span class="token punctuation">.</span>BooleanField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span></span>
+<span class="line">    is_staff <span class="token operator">=</span> models<span class="token punctuation">.</span>BooleanField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># 📋 Custom Admin Link ربط المدير المخصص</span></span>
+<span class="line">    objects <span class="token operator">=</span> CustomUserManager<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># 👥 Friends and Characteristics of Friendships الأصدقاء وخصائص الصداقات</span></span>
+<span class="line">    friends <span class="token operator">=</span> models<span class="token punctuation">.</span>ManyToManyField<span class="token punctuation">(</span><span class="token string">"self"</span><span class="token punctuation">)</span></span>
+<span class="line">    friends_count <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span></span>
+<span class="line">    people_you_may_know <span class="token operator">=</span> models<span class="token punctuation">.</span>ManyToManyField<span class="token punctuation">(</span><span class="token string">"self"</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># 📋 Tasks and Their Number المهام وعددها</span></span>
+<span class="line">    task_count <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># 📅 Join Date &amp; Last Login تاريخ الانضمام وآخر تسجيل دخول و حالة الاتصال</span></span>
+<span class="line">    <span class="token comment"># Automatic</span></span>
+<span class="line">    date_joined <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>default<span class="token operator">=</span>timezone<span class="token punctuation">.</span>now<span class="token punctuation">)</span></span>
+<span class="line">    last_login <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>auto_now<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> blank<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></span>
+<span class="line">    is_online <span class="token operator">=</span> models<span class="token punctuation">.</span>BooleanField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># 🔒 إعدادات تسجيل الدخول: البريد الإلكتروني كمحدد رئيسي لتسجيل الدخول</span></span>
+<span class="line">    <span class="token comment"># يحدد الحقل الذي سيتم استخدامه لتسجيل الدخول. في هذه الحالة، هو email.</span></span>
+<span class="line">    USERNAME_FIELD <span class="token operator">=</span> <span class="token string">"email"</span></span>
+<span class="line">    <span class="token comment"># يحدد الحقل الذي يتم استخدامه كالبريد الإلكتروني الرئيسي للمستخدم. في هذه الحالة، هو email.</span></span>
+<span class="line">    EMAIL_FIELD <span class="token operator">=</span> <span class="token string">"email"</span></span>
+<span class="line">    <span class="token comment"># 📝 لا توجد حقول إضافية مطلوبة بجانب البريد الإلكتروني وكلمة المرور عند إنشاء مستخدم جديد عبر الأوامر الإدارية.</span></span>
+<span class="line">    REQUIRED_FIELDS <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># 🖼️ Function to get cover image link With default link if none exists</span></span>
+<span class="line">    <span class="token comment"># 🖼️ دالة للحصول على رابط صورة الغلاف مع رابط افتراضي إذا لم تكن موجودة</span></span>
+<span class="line">    <span class="token keyword">def</span> <span class="token function">get_avatar</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">        <span class="token keyword">if</span> self<span class="token punctuation">.</span>avatar<span class="token punctuation">:</span></span>
+<span class="line">            <span class="token keyword">return</span> settings<span class="token punctuation">.</span>WEBSITE_URL <span class="token operator">+</span> self<span class="token punctuation">.</span>avatar<span class="token punctuation">.</span>url</span>
+<span class="line">        <span class="token keyword">else</span><span class="token punctuation">:</span></span>
+<span class="line">            <span class="token keyword">return</span> <span class="token string">"https://picsum.photos/200/200"</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">def</span> <span class="token function">get_cover</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">        <span class="token keyword">if</span> self<span class="token punctuation">.</span>cover<span class="token punctuation">:</span></span>
+<span class="line">            <span class="token keyword">return</span> settings<span class="token punctuation">.</span>WEBSITE_URL <span class="token operator">+</span> self<span class="token punctuation">.</span>cover<span class="token punctuation">.</span>url</span>
+<span class="line">        <span class="token keyword">else</span><span class="token punctuation">:</span></span>
+<span class="line">            <span class="token keyword">return</span> <span class="token string">"https://picsum.photos/200/200"</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">def</span> <span class="token function">date_joined_formatted</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">        <span class="token keyword">return</span> timesince<span class="token punctuation">(</span>self<span class="token punctuation">.</span>date_joined<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 📬 Friend Request Form نموذج طلب الصداقة</span></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">FriendshipRequest</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token comment"># 📝 Friend request cases  حالات طلب الصداقة</span></span>
+<span class="line">    SENT <span class="token operator">=</span> <span class="token string">"sent"</span></span>
+<span class="line">    NOT_SENT <span class="token operator">=</span> <span class="token string">"not sent"</span></span>
+<span class="line">    ACCEPTED <span class="token operator">=</span> <span class="token string">"accepted"</span></span>
+<span class="line">    WAITING <span class="token operator">=</span> <span class="token string">"waiting"</span></span>
+<span class="line">    REJECTED <span class="token operator">=</span> <span class="token string">"rejected"</span></span>
+<span class="line">    CANCEL <span class="token operator">=</span> <span class="token string">"cancel"</span></span>
+<span class="line"></span>
+<span class="line">    STATUS_CHOICES <span class="token operator">=</span> <span class="token punctuation">(</span></span>
+<span class="line">        <span class="token punctuation">(</span>SENT<span class="token punctuation">,</span> <span class="token string">"Sent"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token punctuation">(</span>NOT_SENT<span class="token punctuation">,</span> <span class="token string">"Not Sent"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token punctuation">(</span>ACCEPTED<span class="token punctuation">,</span> <span class="token string">"Accepted"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token punctuation">(</span>WAITING<span class="token punctuation">,</span> <span class="token string">"Waiting"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token punctuation">(</span>REJECTED<span class="token punctuation">,</span> <span class="token string">"Rejected"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token punctuation">(</span>CANCEL<span class="token punctuation">,</span> <span class="token string">"Cancel"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment"># 🔑 Friend Request UUID Essential Field حقل أساسي UUID لطلب الصداقة</span></span>
+<span class="line">    <span class="token builtin">id</span> <span class="token operator">=</span> models<span class="token punctuation">.</span>UUIDField<span class="token punctuation">(</span>primary_key<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> default<span class="token operator">=</span>uuid<span class="token punctuation">.</span>uuid4<span class="token punctuation">,</span> editable<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment"># 🧑 User receiving the request  المستخدم المستلم للطلب</span></span>
+<span class="line">    created_for <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span></span>
+<span class="line">        User<span class="token punctuation">,</span> related_name<span class="token operator">=</span><span class="token string">"received_friendshiprequests"</span><span class="token punctuation">,</span> on_delete<span class="token operator">=</span>models<span class="token punctuation">.</span>CASCADE</span>
+<span class="line">    <span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment"># 📅 Creation date تاريخ الإنشاء</span></span>
+<span class="line">    created_at <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>auto_now_add<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment"># 🧑 The user who sent the request  المستخدم المرسل للطلب</span></span>
+<span class="line">    created_by <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span></span>
+<span class="line">        User<span class="token punctuation">,</span> related_name<span class="token operator">=</span><span class="token string">"created_friendshiprequests"</span><span class="token punctuation">,</span> on_delete<span class="token operator">=</span>models<span class="token punctuation">.</span>CASCADE</span>
+<span class="line">    <span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment"># 📝 Order Status  حالة الطلب</span></span>
+<span class="line">    status <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> choices<span class="token operator">=</span>STATUS_CHOICES<span class="token punctuation">,</span> default<span class="token operator">=</span>NOT_SENT<span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="🆕-makemigrations" tabindex="-1"><a class="header-anchor" href="#🆕-makemigrations"><span>🆕 Makemigrations</span></a></h3>
+<h6 id="🛠️-modifications-to-models-file-تعديلات-على-ملف-النماذج" tabindex="-1"><a class="header-anchor" href="#🛠️-modifications-to-models-file-تعديلات-على-ملف-النماذج"><span>🛠️ Modifications To Models File | تعديلات على ملف النماذج</span></a></h6>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">python manage.py makemigrations</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="🛠️-makemigrations" tabindex="-1"><a class="header-anchor" href="#🛠️-makemigrations"><span>🛠️ Makemigrations</span></a></h3>
+<h6 id="🛠️-migrate-to-the-database-الانتقال-إلى-قاعدة-البيانات" tabindex="-1"><a class="header-anchor" href="#🛠️-migrate-to-the-database-الانتقال-إلى-قاعدة-البيانات"><span>🛠️ Migrate To The Database |الانتقال إلى قاعدة البيانات</span></a></h6>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">python manage.py migrate</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="🧑-account-page-admin-py" tabindex="-1"><a class="header-anchor" href="#🧑-account-page-admin-py"><span>🧑 Account Page [ admin.py ]</span></a></h3>
+<h4 id="🧑-app-account-page-admin-py-📝" tabindex="-1"><a class="header-anchor" href="#🧑-app-account-page-admin-py-📝"><span>🧑 App [ Account ] Page [ admin.py ] 📝</span></a></h4>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py" data-title="py"><pre v-pre><code><span class="line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>contrib <span class="token keyword">import</span> admin</span>
+<span class="line"><span class="token keyword">from</span> <span class="token punctuation">.</span>models <span class="token keyword">import</span> User</span>
+<span class="line">admin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>register<span class="token punctuation">(</span>User<span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="🧑-account-page-serializers-py" tabindex="-1"><a class="header-anchor" href="#🧑-account-page-serializers-py"><span>🧑 Account Page [ serializers.py ]</span></a></h3>
+<h4 id="🧑-app-account-page-serializers-py-📝" tabindex="-1"><a class="header-anchor" href="#🧑-app-account-page-serializers-py-📝"><span>🧑 App [ Account ] Page [ serializers.py ] 📝</span></a></h4>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">serializers.py</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py" data-title="py"><pre v-pre><code><span class="line"><span class="token comment">#  📝 Page [ lms/lms_django/account/serializers.py ]</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># استيراد الاطار لتحويل البيانات</span></span>
+<span class="line"><span class="token keyword">from</span> rest_framework <span class="token keyword">import</span> serializers</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># استيراد نموذج البيانات المراد تحويلة</span></span>
+<span class="line"><span class="token keyword">from</span> <span class="token punctuation">.</span>models <span class="token keyword">import</span> User<span class="token punctuation">,</span> FriendshipRequest</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># from django.utils import timezone</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 🧑 سيريلايزر لمستخدم</span></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">UserSerializer</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>ModelSerializer<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span></span>
+<span class="line">        <span class="token comment"># النموذج المرتبط بالسيريلايزر</span></span>
+<span class="line">        <span class="token comment"># النموذج المراد استخدامه</span></span>
+<span class="line">        model <span class="token operator">=</span> User</span>
+<span class="line">        <span class="token comment"># الحقول المطلوبة</span></span>
+<span class="line">        <span class="token comment"># 🔍 تستخدم لتحديد الحقول المضمنة في البيانات المُسترجعة أو المرسلة عبر المسلسل.</span></span>
+<span class="line">        fields <span class="token operator">=</span> <span class="token punctuation">(</span></span>
+<span class="line">            <span class="token string">"id"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"name"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"surname"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"email"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"date_of_birth"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"gender"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"get_avatar"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"get_cover"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token comment"># Friends</span></span>
+<span class="line">            <span class="token string">"friends_count"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token comment"># Tasks</span></span>
+<span class="line">            <span class="token string">"task_count"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token comment"># Data &amp; Time</span></span>
+<span class="line">            <span class="token string">"date_joined"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"date_joined_formatted"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"last_login"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"is_online"</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">FriendshipRequestSerializer</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>ModelSerializer<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token comment"># 👤 Sender information using UserSerializer (read-only)</span></span>
+<span class="line">    <span class="token comment"># 👤 معلومات المرسل باستخدام المستخدمين (القراءة فقط)</span></span>
+<span class="line">    created_by <span class="token operator">=</span> UserSerializer<span class="token punctuation">(</span>read_only<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span></span>
+<span class="line">        model <span class="token operator">=</span> FriendshipRequest</span>
+<span class="line">        <span class="token comment"># 🆔 Request ID and sender data</span></span>
+<span class="line">        <span class="token comment"># 🆔 طلب معرف وبيانات المرسل</span></span>
+<span class="line">        fields <span class="token operator">=</span> <span class="token punctuation">(</span></span>
+<span class="line">            <span class="token string">"id"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"created_by"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"status"</span></span>
+<span class="line">        <span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="🧑-account-page-forms-py" tabindex="-1"><a class="header-anchor" href="#🧑-account-page-forms-py"><span>🧑 Account Page [ forms.py ]</span></a></h3>
+<h4 id="🧑-app-account-page-forms-py-📝" tabindex="-1"><a class="header-anchor" href="#🧑-app-account-page-forms-py-📝"><span>🧑 App [ Account ] Page [ forms.py ] 📝</span></a></h4>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">forms.py</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py" data-title="py"><pre v-pre><code><span class="line"><span class="token comment"># 📄 ملف [ lms/lms_django/account/forms.py ]</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>contrib<span class="token punctuation">.</span>auth<span class="token punctuation">.</span>forms <span class="token keyword">import</span> UserCreationForm</span>
+<span class="line"><span class="token keyword">from</span> django <span class="token keyword">import</span> forms</span>
+<span class="line"><span class="token keyword">from</span> <span class="token punctuation">.</span>models <span class="token keyword">import</span> User</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 📝 نموذج التسجيل</span></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">SignupForm</span><span class="token punctuation">(</span>UserCreationForm<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token comment"># 🔧 إعدادات النموذج: تحديد الحقول المطلوبة</span></span>
+<span class="line">    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span></span>
+<span class="line">        model <span class="token operator">=</span> User</span>
+<span class="line">        fields <span class="token operator">=</span> <span class="token punctuation">(</span></span>
+<span class="line">            <span class="token comment"># 🧑 الاسم الأول</span></span>
+<span class="line">            <span class="token string">"name"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token comment"># 🧑 اللقب</span></span>
+<span class="line">            <span class="token string">"surname"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token comment"># 📧 البريد الإلكتروني</span></span>
+<span class="line">            <span class="token string">"email"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token comment"># 📅 تاريخ الميلاد</span></span>
+<span class="line">            <span class="token string">"date_of_birth"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token comment"># ⚧ الجنس</span></span>
+<span class="line">            <span class="token string">"gender"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token comment"># 🔑 كلمة المرور</span></span>
+<span class="line">            <span class="token string">"password1"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token comment"># 🔑 تأكيد كلمة المرور</span></span>
+<span class="line">            <span class="token string">"password2"</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">ProfileForm</span><span class="token punctuation">(</span>forms<span class="token punctuation">.</span>ModelForm<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span></span>
+<span class="line">        model <span class="token operator">=</span> User</span>
+<span class="line">        fields <span class="token operator">=</span> <span class="token punctuation">(</span></span>
+<span class="line">            <span class="token comment"># 🧑 User's name الاسم الأول</span></span>
+<span class="line">            <span class="token string">"name"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token comment"># 🧑 اللقب</span></span>
+<span class="line">            <span class="token string">"surname"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token comment"># 📧 User's email البريد الإلكتروني</span></span>
+<span class="line">            <span class="token string">"email"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token comment"># 📅 تاريخ الميلاد</span></span>
+<span class="line">            <span class="token string">"date_of_birth"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token comment"># ⚧ الجنس</span></span>
+<span class="line">            <span class="token string">"gender"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token comment"># 🖼️ User's profile picture صورة ملف تعريف المستخدم</span></span>
+<span class="line">            <span class="token string">"avatar"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token comment"># 🖼️ User's Cover picture صورة ملف غلااف المستخدم</span></span>
+<span class="line">            <span class="token string">"cover"</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="🧑-account-page-api-py" tabindex="-1"><a class="header-anchor" href="#🧑-account-page-api-py"><span>🧑 Account Page [ api.py ]</span></a></h3>
+<h4 id="🧑-app-account-page-api-py-📝" tabindex="-1"><a class="header-anchor" href="#🧑-app-account-page-api-py-📝"><span>🧑 App [ Account ] Page [ api.py ] 📝</span></a></h4>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py" data-title="py"><pre v-pre><code><span class="line">api<span class="token punctuation">.</span>py</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py" data-title="py"><pre v-pre><code><span class="line"><span class="token comment"># 📄 ملف [ lms/lms_django/account/api.py ]</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 🌐 API for User Signup and Profile Info Retrieval</span></span>
+<span class="line"><span class="token comment"># 🌐 API لتسجيل المستخدم واسترجاع معلومات الحساب</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># Django إستيراد إعدادات المشروع في</span></span>
+<span class="line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>conf <span class="token keyword">import</span> settings</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># إستيراد نموذج تغيير كلمة المرور</span></span>
+<span class="line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>contrib<span class="token punctuation">.</span>auth<span class="token punctuation">.</span>forms <span class="token keyword">import</span> PasswordChangeForm</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># إستيراد دالة إرسال البريد الإلكتروني</span></span>
+<span class="line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>core<span class="token punctuation">.</span>mail <span class="token keyword">import</span> send_mail</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># JSON لإرجاع استجابات JsonResponse إستيراد</span></span>
+<span class="line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>http <span class="token keyword">import</span> JsonResponse</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># إستيراد الديكورات لتعريف وحدات الواجهة البرمجية</span></span>
+<span class="line"><span class="token keyword">from</span> rest_framework<span class="token punctuation">.</span>decorators <span class="token keyword">import</span> <span class="token punctuation">(</span></span>
+<span class="line">    api_view<span class="token punctuation">,</span></span>
+<span class="line">    authentication_classes<span class="token punctuation">,</span></span>
+<span class="line">    permission_classes<span class="token punctuation">,</span></span>
+<span class="line"><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># إستيراد النماذج المخصصة لتسجيل المستخدم وتعديل الملف الشخصي</span></span>
+<span class="line"><span class="token keyword">from</span> <span class="token punctuation">.</span>forms <span class="token keyword">import</span> SignupForm<span class="token punctuation">,</span> ProfileForm</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># إستيراد النماذج المخصصة للمستخدم وطلبات الصداقة</span></span>
+<span class="line"><span class="token keyword">from</span> <span class="token punctuation">.</span>models <span class="token keyword">import</span> User<span class="token punctuation">,</span> FriendshipRequest</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># إستيراد المسلسلات للمستخدم وطلبات الصداقة</span></span>
+<span class="line"><span class="token keyword">from</span> <span class="token punctuation">.</span>serializers <span class="token keyword">import</span> UserSerializer<span class="token punctuation">,</span> FriendshipRequestSerializer</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 📝 Signup API Endpoint</span></span>
+<span class="line"><span class="token comment"># 📝 واجهة برمجية للتسجيل</span></span>
+<span class="line"><span class="token decorator annotation punctuation">@api_view</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"POST"</span><span class="token punctuation">]</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token decorator annotation punctuation">@authentication_classes</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 🚫 لا تتطلب مصادقة</span></span>
+<span class="line"><span class="token decorator annotation punctuation">@permission_classes</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 🚫 لا تتطلب أذونات</span></span>
+<span class="line"><span class="token keyword">def</span> <span class="token function">signup</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    data <span class="token operator">=</span> request<span class="token punctuation">.</span>data</span>
+<span class="line">    message <span class="token operator">=</span> <span class="token string">"success"</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># 🧾 Initialize signup form with request data</span></span>
+<span class="line">    <span class="token comment"># 🧾 تهيئة نموذج التسجيل باستخدام بيانات الطلب</span></span>
+<span class="line">    form <span class="token operator">=</span> SignupForm<span class="token punctuation">(</span></span>
+<span class="line">        <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token string">"name"</span><span class="token punctuation">:</span> data<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"surname"</span><span class="token punctuation">:</span> data<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"surname"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"email"</span><span class="token punctuation">:</span> data<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"email"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"date_of_birth"</span><span class="token punctuation">:</span> data<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"date_of_birth"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"gender"</span><span class="token punctuation">:</span> data<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"gender"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"password1"</span><span class="token punctuation">:</span> data<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"password1"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"password2"</span><span class="token punctuation">:</span> data<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"password2"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># ✅ Check if form is valid</span></span>
+<span class="line">    <span class="token comment"># ✅ التحقق من صحة النموذج</span></span>
+<span class="line">    <span class="token keyword">if</span> form<span class="token punctuation">.</span>is_valid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">        <span class="token comment"># 🛠️ Save the new user</span></span>
+<span class="line">        <span class="token comment"># 🛠️ حفظ المستخدم الجديد</span></span>
+<span class="line">        user <span class="token operator">=</span> form<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">        <span class="token comment"># 🔓 Activate the account</span></span>
+<span class="line">        <span class="token comment"># 🔓 تأكيد الحساب مباشرة</span></span>
+<span class="line">        user<span class="token punctuation">.</span>is_active <span class="token operator">=</span> <span class="token boolean">True</span></span>
+<span class="line">        user<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">        <span class="token keyword">return</span> JsonResponse<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"message"</span><span class="token punctuation">:</span> message<span class="token punctuation">,</span> <span class="token string">"email_sent"</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">}</span><span class="token punctuation">,</span> safe<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token keyword">else</span><span class="token punctuation">:</span></span>
+<span class="line">        <span class="token comment"># ❌ If errors exist, return them</span></span>
+<span class="line">        <span class="token comment"># ❌ إذا كان هناك أخطاء</span></span>
+<span class="line">        message <span class="token operator">=</span> form<span class="token punctuation">.</span>errors<span class="token punctuation">.</span>as_json<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment"># 🔍 Print errors for debugging</span></span>
+<span class="line">    <span class="token comment"># 🔍 طباعة الأخطاء لأغراض التصحيح</span></span>
+<span class="line">    <span class="token keyword">print</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span></span>
+<span class="line">    <span class="token keyword">return</span> JsonResponse<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"message"</span><span class="token punctuation">:</span> message<span class="token punctuation">}</span><span class="token punctuation">,</span> safe<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 👤 User Info API Endpoint</span></span>
+<span class="line"><span class="token comment"># JSON إرجاع بيانات المستخدم الحالي كاستجابة</span></span>
+<span class="line"><span class="token comment"># 👤 واجهة برمجية لاسترجاع معلومات المستخدم</span></span>
+<span class="line"><span class="token decorator annotation punctuation">@api_view</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"GET"</span><span class="token punctuation">]</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token keyword">def</span> <span class="token function">me</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token keyword">if</span> request<span class="token punctuation">.</span>user<span class="token punctuation">.</span>is_authenticated<span class="token punctuation">:</span></span>
+<span class="line">        user_serializer <span class="token operator">=</span> UserSerializer<span class="token punctuation">(</span>request<span class="token punctuation">.</span>user<span class="token punctuation">)</span></span>
+<span class="line">        <span class="token keyword">return</span> JsonResponse<span class="token punctuation">(</span>user_serializer<span class="token punctuation">.</span>data<span class="token punctuation">,</span> safe<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token keyword">return</span> JsonResponse<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"error"</span><span class="token punctuation">:</span> <span class="token string">"User not authenticated"</span><span class="token punctuation">}</span><span class="token punctuation">,</span> status<span class="token operator">=</span><span class="token number">401</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># Profile</span></span>
+<span class="line"><span class="token decorator annotation punctuation">@api_view</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"GET"</span><span class="token punctuation">]</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token keyword">def</span> <span class="token function">profile</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> <span class="token builtin">id</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token comment"># (primary key) استرجاع معلومات المستخدم بناءً على معرفه الفريد</span></span>
+<span class="line">    user <span class="token operator">=</span> User<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>pk<span class="token operator">=</span><span class="token builtin">id</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment"># print("Profile User By Id 👉️", user)</span></span>
+<span class="line">    <span class="token comment"># (primary key)</span></span>
+<span class="line">    <span class="token comment"># تسلسل بيانات المستخدم باستخدام السيريالايزر المخصص</span></span>
+<span class="line">    user_serializer <span class="token operator">=</span> UserSerializer<span class="token punctuation">(</span>user<span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment"># print("Profile User By Id 👍", user_serializer)</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">#</span></span>
+<span class="line">    can_send_friendship_request <span class="token operator">=</span> <span class="token boolean">True</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">if</span> request<span class="token punctuation">.</span>user <span class="token keyword">in</span> user<span class="token punctuation">.</span>friends<span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">        can_send_friendship_request <span class="token operator">=</span> <span class="token boolean">False</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># 🔍 Check if a request already exists between the users</span></span>
+<span class="line">    <span class="token comment"># 🔍 التحقق مما إذا كان هناك طلب صداقة موجود بالفعل بين المستخدمين</span></span>
+<span class="line">    check1 <span class="token operator">=</span> FriendshipRequest<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>created_for<span class="token operator">=</span>request<span class="token punctuation">.</span>user<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span></span>
+<span class="line">        created_by<span class="token operator">=</span>user</span>
+<span class="line">    <span class="token punctuation">)</span></span>
+<span class="line">    check2 <span class="token operator">=</span> FriendshipRequest<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>created_for<span class="token operator">=</span>user<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span></span>
+<span class="line">        created_by<span class="token operator">=</span>request<span class="token punctuation">.</span>user</span>
+<span class="line">    <span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment"># For Test</span></span>
+<span class="line">    <span class="token comment"># print("How Is User check1", check1)</span></span>
+<span class="line">    <span class="token comment"># print("_______________________________________")</span></span>
+<span class="line">    <span class="token comment"># print("How Is User check2", check2)</span></span>
+<span class="line">    <span class="token comment"># print("_______________________________________")</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">if</span> check1 <span class="token keyword">or</span> check2<span class="token punctuation">:</span></span>
+<span class="line">        can_send_friendship_request <span class="token operator">=</span> <span class="token boolean">False</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># JSON إرجاع البيانات كاستجابة</span></span>
+<span class="line">    <span class="token keyword">return</span> JsonResponse<span class="token punctuation">(</span></span>
+<span class="line">        <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token string">"user"</span><span class="token punctuation">:</span> user_serializer<span class="token punctuation">.</span>data<span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"can_send_friendship_request"</span><span class="token punctuation">:</span> can_send_friendship_request<span class="token punctuation">,</span></span>
+<span class="line">        <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">        safe<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token decorator annotation punctuation">@api_view</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"POST"</span><span class="token punctuation">]</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token keyword">def</span> <span class="token function">editprofile</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token comment"># 👤 Get current user and new email data</span></span>
+<span class="line">    <span class="token comment"># 👤 احصل على بيانات بريد إلكتروني حالية وبيانات بريد إلكتروني جديدة</span></span>
+<span class="line">    user <span class="token operator">=</span> request<span class="token punctuation">.</span>user</span>
+<span class="line">    email <span class="token operator">=</span> request<span class="token punctuation">.</span>data<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"email"</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># 📧 Check if email is already in use by another user</span></span>
+<span class="line">    <span class="token comment"># 📧 تحقق مما إذا كان البريد الإلكتروني قيد الاستخدام بالفعل من قبل مستخدم آخر</span></span>
+<span class="line">    <span class="token keyword">if</span> User<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>exclude<span class="token punctuation">(</span><span class="token builtin">id</span><span class="token operator">=</span>user<span class="token punctuation">.</span><span class="token builtin">id</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>email<span class="token operator">=</span>email<span class="token punctuation">)</span><span class="token punctuation">.</span>exists<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">        <span class="token keyword">return</span> JsonResponse<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"message"</span><span class="token punctuation">:</span> <span class="token string">"email already exists"</span><span class="token punctuation">}</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token keyword">else</span><span class="token punctuation">:</span></span>
+<span class="line">        <span class="token comment"># 📝 Initialize profile form with request data and files</span></span>
+<span class="line">        <span class="token comment"># 📝 تهيئة نموذج الملف الشخصي مع بيانات الطلب والملفات</span></span>
+<span class="line">        form <span class="token operator">=</span> ProfileForm<span class="token punctuation">(</span>request<span class="token punctuation">.</span>POST<span class="token punctuation">,</span> request<span class="token punctuation">.</span>FILES<span class="token punctuation">,</span> instance<span class="token operator">=</span>user<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">        <span class="token comment"># ✅ Validate and save profile if valid</span></span>
+<span class="line">        <span class="token comment"># ✅ التحقق من صحة وحفظ الملف الشخصي إذا كان صالحًا</span></span>
+<span class="line">        <span class="token keyword">if</span> form<span class="token punctuation">.</span>is_valid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">            form<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">        <span class="token comment"># 🔄 Serialize updated user data</span></span>
+<span class="line">        <span class="token comment"># 🔄 قم بتسلسل بيانات المستخدم المحدثة</span></span>
+<span class="line">        serializer <span class="token operator">=</span> UserSerializer<span class="token punctuation">(</span>user<span class="token punctuation">)</span></span>
+<span class="line">        <span class="token keyword">return</span> JsonResponse<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"message"</span><span class="token punctuation">:</span> <span class="token string">"information updated"</span><span class="token punctuation">,</span> <span class="token string">"user"</span><span class="token punctuation">:</span> serializer<span class="token punctuation">.</span>data<span class="token punctuation">}</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token decorator annotation punctuation">@api_view</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"POST"</span><span class="token punctuation">]</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token keyword">def</span> <span class="token function">editpassword</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token comment"># 🔒 Initialize password change form with request data</span></span>
+<span class="line">    <span class="token comment"># 🔒 تهيئة نموذج تغيير كلمة المرور مع بيانات الطلب</span></span>
+<span class="line">    user <span class="token operator">=</span> request<span class="token punctuation">.</span>user</span>
+<span class="line">    form <span class="token operator">=</span> PasswordChangeForm<span class="token punctuation">(</span>data<span class="token operator">=</span>request<span class="token punctuation">.</span>POST<span class="token punctuation">,</span> user<span class="token operator">=</span>user<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># ✅ Validate and save new password if valid</span></span>
+<span class="line">    <span class="token comment"># ✅ التحقق من صحة وحفظ كلمة مرور جديدة إذا كانت صالحة</span></span>
+<span class="line">    <span class="token keyword">if</span> form<span class="token punctuation">.</span>is_valid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">        form<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">        <span class="token keyword">return</span> JsonResponse<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"message"</span><span class="token punctuation">:</span> <span class="token string">"success"</span><span class="token punctuation">}</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token keyword">else</span><span class="token punctuation">:</span></span>
+<span class="line">        <span class="token comment"># ❌ Return errors if form is invalid</span></span>
+<span class="line">        <span class="token comment"># ❌ أخطاء الإرجاع إذا كان النموذج غير صالح</span></span>
+<span class="line">        <span class="token keyword">return</span> JsonResponse<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"message"</span><span class="token punctuation">:</span> form<span class="token punctuation">.</span>errors<span class="token punctuation">.</span>as_json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">,</span> safe<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 🌐 Friendship Request and Friends Management API</span></span>
+<span class="line"><span class="token comment"># 🌐 واجهة برمجية لإدارة طلبات الصداقة وإدارة الأصدقاء</span></span>
+<span class="line"><span class="token decorator annotation punctuation">@api_view</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"POST"</span><span class="token punctuation">]</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token keyword">def</span> <span class="token function">send_friendship_request</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> pk<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token comment"># 👤 Get the user to whom the friendship request is being sent</span></span>
+<span class="line">    <span class="token comment"># 👤 جلب المستخدم الذي يتم إرسال طلب الصداقة إليه</span></span>
+<span class="line">    user <span class="token operator">=</span> User<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>pk<span class="token operator">=</span>pk<span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment"># For Test</span></span>
+<span class="line">    <span class="token comment"># print("How Is User Send Friend Ship Request", pk)</span></span>
+<span class="line">    <span class="token comment"># print("_______________________________________")</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># 🔍 Check if a request already exists between the users</span></span>
+<span class="line">    <span class="token comment"># 🔍 التحقق مما إذا كان هناك طلب صداقة موجود بالفعل بين المستخدمين</span></span>
+<span class="line">    check1 <span class="token operator">=</span> FriendshipRequest<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>created_for<span class="token operator">=</span>request<span class="token punctuation">.</span>user<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span></span>
+<span class="line">        created_by<span class="token operator">=</span>user</span>
+<span class="line">    <span class="token punctuation">)</span></span>
+<span class="line">    check2 <span class="token operator">=</span> FriendshipRequest<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>created_for<span class="token operator">=</span>user<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span></span>
+<span class="line">        created_by<span class="token operator">=</span>request<span class="token punctuation">.</span>user</span>
+<span class="line">    <span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment"># For Test</span></span>
+<span class="line">    <span class="token comment"># print("How Is User check1", check1)</span></span>
+<span class="line">    <span class="token comment"># print("_______________________________________")</span></span>
+<span class="line">    <span class="token comment"># print("How Is User check2", check2)</span></span>
+<span class="line">    <span class="token comment"># print("_______________________________________")</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">if</span> <span class="token keyword">not</span> check1 <span class="token keyword">or</span> <span class="token keyword">not</span> check2<span class="token punctuation">:</span></span>
+<span class="line">        <span class="token comment"># ✉️ Create a new friendship request if it doesn't exist</span></span>
+<span class="line">        <span class="token comment"># ✉️ إنشاء طلب صداقة جديد إذا لم يكن موجودًا</span></span>
+<span class="line">        friendrequest <span class="token operator">=</span> FriendshipRequest<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>create<span class="token punctuation">(</span></span>
+<span class="line">            created_for<span class="token operator">=</span>user<span class="token punctuation">,</span> created_by<span class="token operator">=</span>request<span class="token punctuation">.</span>user</span>
+<span class="line">        <span class="token punctuation">)</span></span>
+<span class="line">        <span class="token comment"># For Test</span></span>
+<span class="line">        <span class="token comment"># print("Friend Ship Request If ", friendrequest)</span></span>
+<span class="line">        <span class="token comment"># print("_______________________________________")</span></span>
+<span class="line">        <span class="token comment"># Return = The Message Show In Frontend</span></span>
+<span class="line">        <span class="token keyword">return</span> JsonResponse<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"message"</span><span class="token punctuation">:</span> <span class="token string">"friendship request created"</span><span class="token punctuation">}</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token keyword">else</span><span class="token punctuation">:</span></span>
+<span class="line">        <span class="token comment"># Return = The Message Show In Frontend</span></span>
+<span class="line">        <span class="token keyword">return</span> JsonResponse<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"message"</span><span class="token punctuation">:</span> <span class="token string">"request already sent"</span><span class="token punctuation">}</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token decorator annotation punctuation">@api_view</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"GET"</span><span class="token punctuation">]</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token keyword">def</span> <span class="token function">friends</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> pk<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token comment"># 👥 Get the friends and requests for the specified user</span></span>
+<span class="line">    <span class="token comment"># 👥 جلب الأصدقاء والطلبات للمستخدم المحدد</span></span>
+<span class="line">    user <span class="token operator">=</span> User<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>pk<span class="token operator">=</span>pk<span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment"># print("Friends User By Id 👉️", user)</span></span>
+<span class="line"></span>
+<span class="line">    requests <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></span>
+<span class="line">    <span class="token comment"># print("Friends Requests By Id 👉️", requests)</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># 📝 Check if the current user is the requested user</span></span>
+<span class="line">    <span class="token comment"># 📝 التحقق مما إذا كان المستخدم الحالي هو نفس المستخدم المطلوب</span></span>
+<span class="line">    <span class="token keyword">if</span> user <span class="token operator">==</span> request<span class="token punctuation">.</span>user<span class="token punctuation">:</span></span>
+<span class="line">        requests <span class="token operator">=</span> FriendshipRequest<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span></span>
+<span class="line">            created_for<span class="token operator">=</span>request<span class="token punctuation">.</span>user<span class="token punctuation">,</span> status<span class="token operator">=</span>FriendshipRequest<span class="token punctuation">.</span>NOT_SENT</span>
+<span class="line">        <span class="token punctuation">)</span></span>
+<span class="line">        <span class="token comment"># print("requests Friends", requests)</span></span>
+<span class="line">        requests <span class="token operator">=</span> FriendshipRequestSerializer<span class="token punctuation">(</span>requests<span class="token punctuation">,</span> many<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></span>
+<span class="line">        requests <span class="token operator">=</span> requests<span class="token punctuation">.</span>data</span>
+<span class="line"></span>
+<span class="line">        <span class="token comment"># print("Friends Requests By Id 👉️", requests)</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># 👫 Retrieve all friends of the user</span></span>
+<span class="line">    <span class="token comment"># 👫 جلب جميع أصدقاء المستخدم</span></span>
+<span class="line">    friends <span class="token operator">=</span> user<span class="token punctuation">.</span>friends<span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment"># print("Friends Friends 👉️", friends)</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">return</span> JsonResponse<span class="token punctuation">(</span></span>
+<span class="line">        <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token string">"user"</span><span class="token punctuation">:</span> UserSerializer<span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">.</span>data<span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"friends"</span><span class="token punctuation">:</span> UserSerializer<span class="token punctuation">(</span>friends<span class="token punctuation">,</span> many<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">.</span>data<span class="token punctuation">,</span></span>
+<span class="line">            <span class="token string">"requests"</span><span class="token punctuation">:</span> requests<span class="token punctuation">,</span></span>
+<span class="line">        <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">        safe<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token decorator annotation punctuation">@api_view</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"GET"</span><span class="token punctuation">]</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token keyword">def</span> <span class="token function">my_friendship_suggestions</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token comment"># 🤝 Suggest users the current user may know</span></span>
+<span class="line">    <span class="token comment"># 🤝 اقتراح المستخدمين الذين قد يعرفهم المستخدم الحالي</span></span>
+<span class="line">    serializer <span class="token operator">=</span> UserSerializer<span class="token punctuation">(</span>request<span class="token punctuation">.</span>user<span class="token punctuation">.</span>people_you_may_know<span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> many<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment"># print("🤝 Suggest users", serializer)</span></span>
+<span class="line">    <span class="token keyword">return</span> JsonResponse<span class="token punctuation">(</span>serializer<span class="token punctuation">.</span>data<span class="token punctuation">,</span> safe<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token decorator annotation punctuation">@api_view</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"POST"</span><span class="token punctuation">]</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token keyword">def</span> <span class="token function">handle_request</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> pk<span class="token punctuation">,</span> status<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token comment"># 🛠️ Handle and update the status of a friendship request</span></span>
+<span class="line">    <span class="token comment"># 🛠️ معالجة وتحديث حالة طلب الصداقة</span></span>
+<span class="line">    user <span class="token operator">=</span> User<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>pk<span class="token operator">=</span>pk<span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment"># friendship_request = FriendshipRequest.objects.filter(created_for=request.user).get(</span></span>
+<span class="line">    <span class="token comment">#     created_by=user</span></span>
+<span class="line">    <span class="token comment"># )</span></span>
+<span class="line">    friendship_request <span class="token operator">=</span> FriendshipRequest<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span></span>
+<span class="line">        created_for<span class="token operator">=</span>request<span class="token punctuation">.</span>user<span class="token punctuation">,</span> created_by<span class="token operator">=</span>user</span>
+<span class="line">    <span class="token punctuation">)</span><span class="token punctuation">.</span>first<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token keyword">if</span> <span class="token keyword">not</span> friendship_request<span class="token punctuation">:</span></span>
+<span class="line">        <span class="token keyword">return</span> JsonResponse<span class="token punctuation">(</span></span>
+<span class="line">            <span class="token punctuation">{</span><span class="token string">"error"</span><span class="token punctuation">:</span> <span class="token string">"Friendship request not found or already handled"</span><span class="token punctuation">}</span><span class="token punctuation">,</span> status<span class="token operator">=</span><span class="token number">404</span></span>
+<span class="line">        <span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment"># إذا كان يوجد طلب صداقة واحد فقط</span></span>
+<span class="line">    <span class="token comment"># friendship_request = friendship_requests.first()</span></span>
+<span class="line">    <span class="token comment"># استخدام first() بدلاً من get()</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">if</span> <span class="token keyword">not</span> friendship_request<span class="token punctuation">:</span></span>
+<span class="line">        <span class="token keyword">return</span> JsonResponse<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"error"</span><span class="token punctuation">:</span> <span class="token string">"Friendship request not found"</span><span class="token punctuation">}</span><span class="token punctuation">,</span> status<span class="token operator">=</span><span class="token number">404</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">    friendship_request<span class="token punctuation">.</span>status <span class="token operator">=</span> status</span>
+<span class="line">    friendship_request<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># 👥 Add each user to the other's friends list if accepted</span></span>
+<span class="line">    <span class="token comment"># 👥 إضافة كل مستخدم إلى قائمة أصدقاء الآخر إذا تم قبول الطلب</span></span>
+<span class="line">    user<span class="token punctuation">.</span>friends<span class="token punctuation">.</span>add<span class="token punctuation">(</span>request<span class="token punctuation">.</span>user<span class="token punctuation">)</span></span>
+<span class="line">    user<span class="token punctuation">.</span>friends_count <span class="token operator">+=</span> <span class="token number">1</span></span>
+<span class="line">    user<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">    request_user <span class="token operator">=</span> request<span class="token punctuation">.</span>user</span>
+<span class="line">    request_user<span class="token punctuation">.</span>friends_count <span class="token operator">+=</span> <span class="token number">1</span></span>
+<span class="line">    request_user<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># return JsonResponse({"message": "friendship request updated"})</span></span>
+<span class="line">    <span class="token keyword">return</span> JsonResponse<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"message"</span><span class="token punctuation">:</span> <span class="token string-interpolation"><span class="token string">f"Friendship request </span><span class="token interpolation"><span class="token punctuation">{</span>status<span class="token punctuation">}</span></span><span class="token string"> successfully"</span></span><span class="token punctuation">}</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="🧑-account-page-urls-py" tabindex="-1"><a class="header-anchor" href="#🧑-account-page-urls-py"><span>🧑 Account Page [ urls.py ]</span></a></h3>
+<h4 id="🧑-app-account-page-urls-py-📝" tabindex="-1"><a class="header-anchor" href="#🧑-app-account-page-urls-py-📝"><span>🧑 App [ Account ] Page [ urls.py ] 📝</span></a></h4>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py" data-title="py"><pre v-pre><code><span class="line">urls<span class="token punctuation">.</span>py</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py" data-title="py"><pre v-pre><code><span class="line"><span class="token comment"># 📄 ملف [ lms/lms_django/account/urls.py ]</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 🌐 URL Configuration for User and Friend Management API</span></span>
+<span class="line"><span class="token comment"># 🌐 تكوين الروابط لواجهة برمجية لإدارة المستخدم والأصدقاء</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>urls <span class="token keyword">import</span> path</span>
+<span class="line"><span class="token keyword">from</span> rest_framework_simplejwt<span class="token punctuation">.</span>views <span class="token keyword">import</span> TokenObtainPairView<span class="token punctuation">,</span> TokenRefreshView</span>
+<span class="line"><span class="token keyword">from</span> <span class="token punctuation">.</span> <span class="token keyword">import</span> api</span>
+<span class="line"></span>
+<span class="line">urlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span></span>
+<span class="line">    <span class="token comment"># 👤 Retrieve current user's information استرجاع معلومات المستخدم الحالي</span></span>
+<span class="line">    path<span class="token punctuation">(</span><span class="token string">"me/"</span><span class="token punctuation">,</span> api<span class="token punctuation">.</span>me<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">"me"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token comment"># 📝 Signup for new users تسجيل مستخدمين جدد</span></span>
+<span class="line">    path<span class="token punctuation">(</span><span class="token string">"signup/"</span><span class="token punctuation">,</span> api<span class="token punctuation">.</span>signup<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">"signup"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token comment"># 🔑 Obtain JWT token for login الحصول على رمز JWT لتسجيل الدخول</span></span>
+<span class="line">    path<span class="token punctuation">(</span><span class="token string">"login/"</span><span class="token punctuation">,</span> TokenObtainPairView<span class="token punctuation">.</span>as_view<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">"token_obtain"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token comment"># ♻️ Refresh JWT token تحديث رمز</span></span>
+<span class="line">    path<span class="token punctuation">(</span><span class="token string">"refresh/"</span><span class="token punctuation">,</span> TokenRefreshView<span class="token punctuation">.</span>as_view<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">"token_refresh"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token comment"># ___________________________</span></span>
+<span class="line">    <span class="token comment"># ___________________________</span></span>
+<span class="line">    <span class="token comment"># ___________________________</span></span>
+<span class="line">    <span class="token comment"># Profile</span></span>
+<span class="line">    path<span class="token punctuation">(</span><span class="token string">"profile/&lt;uuid:id>/"</span><span class="token punctuation">,</span> api<span class="token punctuation">.</span>profile<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">"profile"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token comment"># ✏️ Edit user profile تعديل ملف المستخدم</span></span>
+<span class="line">    path<span class="token punctuation">(</span><span class="token string">"editprofile/"</span><span class="token punctuation">,</span> api<span class="token punctuation">.</span>editprofile<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">"editprofile"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token comment"># 🔒 Change user password تغيير كلمة مرور المستخدم</span></span>
+<span class="line">    path<span class="token punctuation">(</span><span class="token string">"editpassword/"</span><span class="token punctuation">,</span> api<span class="token punctuation">.</span>editpassword<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">"editpassword"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token comment"># ___________________________</span></span>
+<span class="line">    <span class="token comment"># ___________________________</span></span>
+<span class="line">    <span class="token comment"># ___________________________</span></span>
+<span class="line">    <span class="token comment"># All Friends</span></span>
+<span class="line">    <span class="token comment"># 👫 Retrieve friends of a user  استرجاع أصدقاء المستخدم</span></span>
+<span class="line">    path<span class="token punctuation">(</span><span class="token string">"friends/&lt;uuid:pk>/"</span><span class="token punctuation">,</span> api<span class="token punctuation">.</span>friends<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">"friends"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token comment"># 🤝 Retrieve suggested friends استرجاع الأصدقاء المقترحين</span></span>
+<span class="line">    path<span class="token punctuation">(</span></span>
+<span class="line">        <span class="token string">"friends/suggested/"</span><span class="token punctuation">,</span></span>
+<span class="line">        api<span class="token punctuation">.</span>my_friendship_suggestions<span class="token punctuation">,</span></span>
+<span class="line">        name<span class="token operator">=</span><span class="token string">"my_friendship_suggestions"</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token comment"># ✉️ Send friendship request إرسال طلب صداقة</span></span>
+<span class="line">    path<span class="token punctuation">(</span></span>
+<span class="line">        <span class="token string">"friends/&lt;uuid:pk>/request/"</span><span class="token punctuation">,</span></span>
+<span class="line">        api<span class="token punctuation">.</span>send_friendship_request<span class="token punctuation">,</span></span>
+<span class="line">        name<span class="token operator">=</span><span class="token string">"send_friendship_request"</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token comment"># 🛠️ Handle friendship request (accept/reject) معالجة طلب الصداقة (قبول/رفض)</span></span>
+<span class="line">    path<span class="token punctuation">(</span><span class="token string">"friends/&lt;uuid:pk>/&lt;str:status>/"</span><span class="token punctuation">,</span> api<span class="token punctuation">.</span>handle_request<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">"handle_request"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line"><span class="token punctuation">]</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="⚙️-project-page-urls-py" tabindex="-1"><a class="header-anchor" href="#⚙️-project-page-urls-py"><span>⚙️ Project Page [ urls.py ]</span></a></h3>
+<h4 id="⚙-project-page-urls-py-📝" tabindex="-1"><a class="header-anchor" href="#⚙-project-page-urls-py-📝"><span>⚙ Project Page [ urls.py ] 📝</span></a></h4>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py" data-title="py"><pre v-pre><code><span class="line"><span class="token comment"># 📄 ملف [ lms/lms_django/lms_django/urls.py ]</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 🌐 Main URL Configuration for Django Project</span></span>
+<span class="line"><span class="token comment"># 🌐 تكوين الروابط الرئيسية لمشروع Django</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>contrib <span class="token keyword">import</span> admin</span>
+<span class="line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>urls <span class="token keyword">import</span> path<span class="token punctuation">,</span> include</span>
+<span class="line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>conf <span class="token keyword">import</span> settings</span>
+<span class="line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>urls<span class="token punctuation">.</span>static <span class="token keyword">import</span> static</span>
+<span class="line"></span>
+<span class="line">urlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span></span>
+<span class="line">    <span class="token comment"># 🔗 Include URLs from the 'account' app for API endpoints</span></span>
+<span class="line">    <span class="token comment"># 🔗 تضمين روابط تطبيق 'account' للنقاط البرمجية</span></span>
+<span class="line">    path<span class="token punctuation">(</span><span class="token string">"api/"</span><span class="token punctuation">,</span> include<span class="token punctuation">(</span><span class="token string">"account.urls"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token comment"># 🔧 Admin panel for site management</span></span>
+<span class="line">    <span class="token comment"># 🔧 لوحة تحكم الإدارة لإدارة الموقع</span></span>
+<span class="line">    path<span class="token punctuation">(</span><span class="token string">"admin/"</span><span class="token punctuation">,</span> admin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>urls<span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line"><span class="token punctuation">]</span> <span class="token operator">+</span> static<span class="token punctuation">(</span>settings<span class="token punctuation">.</span>MEDIA_URL<span class="token punctuation">,</span> document_root<span class="token operator">=</span>settings<span class="token punctuation">.</span>MEDIA_ROOT<span class="token punctuation">)</span></span>
+<span class="line"><span class="token comment"># 🖼️ Serve media files during development</span></span>
+<span class="line"><span class="token comment"># 🖼️ عرض ملفات الوسائط أثناء التطوير</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="🧑-create-file-script" tabindex="-1"><a class="header-anchor" href="#🧑-create-file-script"><span>🧑 Create File Script</span></a></h3>
+<h4 id="⚙-create-page-generate-friend-suggestions-py" tabindex="-1"><a class="header-anchor" href="#⚙-create-page-generate-friend-suggestions-py"><span>⚙ Create Page [ generate_friend_suggestions.py ]</span></a></h4>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py" data-title="py"><pre v-pre><code><span class="line">scripts<span class="token operator">/</span>generate_friend_suggestions<span class="token punctuation">.</span>py</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py" data-title="py"><pre v-pre><code><span class="line"><span class="token comment"># -*- coding: utf-8 -*-</span></span>
+<span class="line"><span class="token comment"># 🌐 تحديد نوع الترميز للملف كـ UTF-8 لدعم الأحرف غير اللاتينية.</span></span>
+<span class="line"><span class="token comment"># Set the file encoding to UTF-8 to support non-Latin characters.</span></span>
+<span class="line"><span class="token comment"># python scripts\generate_friend_suggestions.py</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 📚 استيراد مكتبة Django.</span></span>
+<span class="line"><span class="token keyword">import</span> django</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 📂 استيراد مكتبة os للتعامل مع نظام الملفات.</span></span>
+<span class="line"><span class="token keyword">import</span> os</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># ⚙️ استيراد مكتبة sys للتعامل مع مسار Python والبيئة.</span></span>
+<span class="line"><span class="token keyword">import</span> sys</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># ⏳ استيراد timedelta لحساب الفروقات الزمنية.</span></span>
+<span class="line"><span class="token keyword">from</span> datetime <span class="token keyword">import</span> timedelta</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 📊 استيراد Counter لحساب تكرار العناصر.</span></span>
+<span class="line"><span class="token keyword">from</span> collections <span class="token keyword">import</span> Counter</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 🕰️ استيراد timezone للتعامل مع التواريخ في Django.</span></span>
+<span class="line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>utils <span class="token keyword">import</span> timezone</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># ➕ إضافة مسار المشروع الرئيسي إلى sys.path للتأكد من أن Python يمكنه العثور على الوحدات.</span></span>
+<span class="line">sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">".."</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># ⚙️ إعداد متغير البيئة لاستخدام إعدادات Django.</span></span>
+<span class="line">os<span class="token punctuation">.</span>environ<span class="token punctuation">.</span>setdefault<span class="token punctuation">(</span><span class="token string">"DJANGO_SETTINGS_MODULE"</span><span class="token punctuation">,</span> <span class="token string">"lms_django.settings"</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 🚀 تشغيل إعدادات Django.</span></span>
+<span class="line">django<span class="token punctuation">.</span>setup<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 👥 استيراد نموذج المستخدم من تطبيق account.</span></span>
+<span class="line"><span class="token keyword">from</span> account<span class="token punctuation">.</span>models <span class="token keyword">import</span> User</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 🔍 الحصول على جميع المستخدمين في قاعدة البيانات.</span></span>
+<span class="line">users <span class="token operator">=</span> User<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 🔄 حلقة تمر على كل مستخدم في القائمة.</span></span>
+<span class="line"><span class="token keyword">for</span> user <span class="token keyword">in</span> users<span class="token punctuation">:</span></span>
+<span class="line">    <span class="token comment"># 🧹 مسح قائمة "الأشخاص الذين قد تعرفهم" للمستخدم الحالي.</span></span>
+<span class="line">    <span class="token comment"># Clear the "people you may know" list for the current user.</span></span>
+<span class="line">    user<span class="token punctuation">.</span>people_you_may_know<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># 🔁 حلقة تمر على كل صديق للمستخدم.</span></span>
+<span class="line">    <span class="token keyword">for</span> friend <span class="token keyword">in</span> user<span class="token punctuation">.</span>friends<span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">        <span class="token comment"># 📝 طباعة رسالة توضح أن المستخدم صديق مع الشخص الحالي.</span></span>
+<span class="line">        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"User:"</span><span class="token punctuation">,</span> user<span class="token punctuation">,</span> <span class="token string">"Is Friend With 🧑 "</span><span class="token punctuation">,</span> friend<span class="token punctuation">)</span></span>
+<span class="line">        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"________________________________________________________________"</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">        <span class="token comment"># 🔁 حلقة تمر على أصدقاء الصديق (أصدقاء أصدقائي).</span></span>
+<span class="line">        <span class="token keyword">for</span> friendsfriend <span class="token keyword">in</span> friend<span class="token punctuation">.</span>friends<span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">            <span class="token comment"># 🔎 طباعة قائمة الأصدقاء المقترحين.</span></span>
+<span class="line">            <span class="token comment"># print("Checking Suggested Friend 👉️ ", friendsfriend)</span></span>
+<span class="line">            <span class="token comment"># print("________________________________________________________________")</span></span>
+<span class="line">            <span class="token comment"># طباعة جميع أصدقاء المستخدم.</span></span>
+<span class="line">            <span class="token comment"># print("All Friends user.friends.all() 👉️ ", user.friends.all())</span></span>
+<span class="line">            <span class="token comment"># print("________________________________________________________________")</span></span>
+<span class="line">            <span class="token comment"># تحقق من أن الصديق ليس المستخدم نفسه وليس ضمن أصدقائه الحاليين.</span></span>
+<span class="line">            <span class="token comment"># print("All friendsfriend != user 👉️ ", friendsfriend != user)</span></span>
+<span class="line">            <span class="token comment"># print("________________________________________________________________")</span></span>
+<span class="line">            <span class="token keyword">if</span> friendsfriend <span class="token operator">!=</span> user <span class="token keyword">and</span> friendsfriend <span class="token keyword">not</span> <span class="token keyword">in</span> user<span class="token punctuation">.</span>friends<span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">                <span class="token keyword">print</span><span class="token punctuation">(</span></span>
+<span class="line">                    <span class="token string">"Adding friend suggestion for:"</span><span class="token punctuation">,</span></span>
+<span class="line">                    user<span class="token punctuation">,</span></span>
+<span class="line">                    <span class="token string-interpolation"><span class="token string">f"✔️  Suggested Friend:"</span></span><span class="token punctuation">,</span></span>
+<span class="line">                    friendsfriend<span class="token punctuation">,</span></span>
+<span class="line">                <span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">                <span class="token comment"># إضافة الصديق المقترح إلى قائمة "الأشخاص الذين قد تعرفهم".</span></span>
+<span class="line">                user<span class="token punctuation">.</span>people_you_may_know<span class="token punctuation">.</span>add<span class="token punctuation">(</span>friendsfriend<span class="token punctuation">)</span></span>
+<span class="line">                <span class="token comment"># print("Added to suggestions 👉️ ", friendsfriend)</span></span>
+<span class="line">                <span class="token comment"># print(</span></span>
+<span class="line">                <span class="token comment">#     "________________________________________________________________"</span></span>
+<span class="line">                <span class="token comment"># )</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment"># طباعة سطر فارغ للوضوح بين المستخدمين.</span></span>
+<span class="line">    <span class="token comment"># print("Updated suggestions for user:", user)</span></span>
+<span class="line">    <span class="token comment"># print("Suggestions:", user.people_you_may_know.all())</span></span>
+<span class="line">    <span class="token comment"># print("----------------------------------------------------")</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Finished updating 'people you may know' for all users."</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token triple-quoted-string string">"""</span>
+<span class="line">شرح الكود بشكل عام:</span>
+<span class="line">🔹 الوصف العام: الكود يمر على جميع المستخدمين في قاعدة البيانات، ثم يحلل أصدقاء كل مستخدم ويبحث عن أصدقاء أصدقائه لإضافتهم إلى قائمة "الأشخاص الذين قد تعرفهم"، بشرط ألا يكون هؤلاء الأصدقاء موجودين بالفعل في قائمة أصدقاء المستخدم أو أن يكونوا المستخدم نفسه.</span>
+<span class="line">"""</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="👤-superuser" tabindex="-1"><a class="header-anchor" href="#👤-superuser"><span>👤 Superuser</span></a></h3>
+<h4 id="⚙-create-superuser" tabindex="-1"><a class="header-anchor" href="#⚙-create-superuser"><span>⚙ Create Superuser</span></a></h4>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">python manage.py createsuperuser</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">Email: learncodingeasy0100@gmail.com</span>
+<span class="line">Password: ******</span>
+<span class="line">Password (again): ******</span>
+<span class="line">Superuser created successfully.</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="🚀-run-server" tabindex="-1"><a class="header-anchor" href="#🚀-run-server"><span>🚀 Run Server</span></a></h3>
+<h6 id="🚀-run-server-1" tabindex="-1"><a class="header-anchor" href="#🚀-run-server-1"><span>🚀 Run Server</span></a></h6>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">python manage.py runserver</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h6 id="👉️-go-to" tabindex="-1"><a class="header-anchor" href="#👉️-go-to"><span>👉️ Go To</span></a></h6>
+<hr>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">http://127.0.0.1:8000/</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">http://127.0.0.1:8000/admin</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<h2 id="vue" tabindex="-1"><a class="header-anchor" href="#vue"><span>Vue</span></a></h2>
+<h3 id="🖥️-create-vue-project" tabindex="-1"><a class="header-anchor" href="#🖥️-create-vue-project"><span>🖥️ Create Vue Project</span></a></h3>
+<h6 id="📁-create-vue-project" tabindex="-1"><a class="header-anchor" href="#📁-create-vue-project"><span>📁 Create Vue Project</span></a></h6>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm create vue@latest</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h6 id="🚀-choose-vite-project-name-select-a-framework-🛠️" tabindex="-1"><a class="header-anchor" href="#🚀-choose-vite-project-name-select-a-framework-🛠️"><span>🚀 Choose Vite [ Project name &amp; Select a framework] 🛠️</span></a></h6>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">√ Project name: ... messenger_vue</span>
+<span class="line">√ Add TypeScript? ... [No] / Yes</span>
+<span class="line">√ Add JSX Support? ... [No] / Yes</span>
+<span class="line">√ Add Vue Router for Single Page Application development? ... No / [Yes]</span>
+<span class="line">√ Add Pinia for state management? ... No / [Yes]</span>
+<span class="line">√ Add Vitest for Unit Testing? ... [No] / Yes</span>
+<span class="line">√ Add an End-to-End Testing Solution? » [No]</span>
+<span class="line">√ Add ESLint for code quality? ... No / [Yes]</span>
+<span class="line">√ Add Prettier for code formatting? ... No / [Yes]</span>
+<span class="line">√ Add Vue DevTools 7 extension for debugging? (experimental) ... [No] / Yes</span>
+<span class="line"></span>
+<span class="line">Scaffolding project in E:\Projects\messenger\messenger_vue...</span>
+<span class="line"></span>
+<span class="line">Done. Now run:</span>
+<span class="line">  cd messenger_vue</span>
+<span class="line">  npm install</span>
+<span class="line">  npm run format</span>
+<span class="line">  npm run build</span>
+<span class="line">  npm run dev</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">cd messenger_vue</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm install</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm run format</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm run build</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm run dev</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="📚-install-vue-libraries" tabindex="-1"><a class="header-anchor" href="#📚-install-vue-libraries"><span>📚 Install Vue Libraries</span></a></h3>
+<h6 id="📚-install-vue-libraries-1" tabindex="-1"><a class="header-anchor" href="#📚-install-vue-libraries-1"><span>📚 Install Vue Libraries</span></a></h6>
+<ul>
+<li>1️⃣ Tailwind</li>
+</ul>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm install -D tailwindcss postcss autoprefixer</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npx tailwindcss init -p</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
+<li>2️⃣ PrimeVue</li>
+</ul>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm install primevue primeicons</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm install @primevue/themes</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm install quill</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
+<li>3️⃣ scss</li>
+</ul>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm install -D sass@latest</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
+<li>4️⃣ Axios</li>
+</ul>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm install axios</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
+<li>5️⃣ Font Awesome</li>
+</ul>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm i --save @fortawesome/fontawesome-svg-core @fortawesome/vue-fontawesome@latest @fortawesome/vue-fontawesome@prerelease @fortawesome/free-solid-svg-icons @fortawesome/free-brands-svg-icons @fortawesome/free-regular-svg-icons</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
+<li>6️⃣ Pwa</li>
+</ul>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm install -D vite-plugin-pwa</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
+<li>7️⃣ Prism</li>
+</ul>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm i prismjs</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm i vue-prism-component</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
+<li>8️⃣ Swiper</li>
+</ul>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm i swiper</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
+<li>9️⃣</li>
+</ul>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="📦-setup-vue-libraries" tabindex="-1"><a class="header-anchor" href="#📦-setup-vue-libraries"><span>📦 Setup Vue Libraries</span></a></h3>
+<h6 id="_1️⃣-tailwind" tabindex="-1"><a class="header-anchor" href="#_1️⃣-tailwind"><span>1️⃣ Tailwind</span></a></h6>
+<ul>
+<li>
+<p>Configure Tailwind</p>
+</li>
+<li>
+<p>📝 File [ tailwind.config.js ]</p>
+</li>
+</ul>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token comment">// Page [ messenger/messenger_vue/tailwind.config.js ]</span></span>
+<span class="line"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span>
+<span class="line">  <span class="token comment">// ...</span></span>
+<span class="line">  <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./index.html"</span><span class="token punctuation">,</span> <span class="token string">"./src/**/*.{vue,js,ts,jsx,tsx}"</span><span class="token punctuation">]</span></span>
+<span class="line">  <span class="token comment">// ...</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>📝 File [ main.css ]</li>
+</ul>
+<div class="language-css line-numbers-mode" data-highlighter="prismjs" data-ext="css" data-title="css"><pre v-pre><code><span class="line"><span class="token atrule"><span class="token rule">@tailwind</span> base<span class="token punctuation">;</span></span></span>
+<span class="line"><span class="token atrule"><span class="token rule">@tailwind</span> components<span class="token punctuation">;</span></span></span>
+<span class="line"><span class="token atrule"><span class="token rule">@tailwind</span> utilities<span class="token punctuation">;</span></span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h6 id="_2️⃣-primevue" tabindex="-1"><a class="header-anchor" href="#_2️⃣-primevue"><span>- 2️⃣ PrimeVue</span></a></h6>
+<ul>
+<li>📝 Create Page [ primeTheme.js ] Inside stores</li>
+</ul>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">primeTheme.js</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token comment">// Page [ messenger/messenger_vue/src/stores/primeTheme.js ]</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> reactive <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"vue"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token function-variable function">install</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">app</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">const</span> _appState <span class="token operator">=</span> <span class="token function">reactive</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">theme</span><span class="token operator">:</span> <span class="token string">"Aura"</span><span class="token punctuation">,</span> <span class="token literal-property property">darkTheme</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    app<span class="token punctuation">.</span>config<span class="token punctuation">.</span>globalProperties<span class="token punctuation">.</span>$appState <span class="token operator">=</span> _appState<span class="token punctuation">;</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>📝 Create Page [ Theme/ThemeSwitcher.vue ] Inside components</li>
+</ul>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">Theme/ThemeSwitcher.vue</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-html line-numbers-mode" data-highlighter="prismjs" data-ext="html" data-title="html"><pre v-pre><code><span class="line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span></span>
+<span class="line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+<span class="line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex list-none m-0 p-0 gap-2 items-center<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+<span class="line">      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span></span>
+<span class="line">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span></span>
+<span class="line">          <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span></span>
+<span class="line">          <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>inline-flex w-8 h-8 p-0 items-center justify-center surface-0 dark:surface-800 border border-surface-200 dark:border-surface-600 rounded-full<span class="token punctuation">"</span></span></span>
+<span class="line">          <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>onThemeToggler<span class="token punctuation">"</span></span></span>
+<span class="line">        <span class="token punctuation">></span></span></span>
+<span class="line">          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>`dark:text-white pi ${iconClass}`<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></span>
+<span class="line">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></span>
+<span class="line">      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span></span>
+<span class="line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></span>
+<span class="line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span></span>
+<span class="line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token operator">&lt;</span>script<span class="token operator">></span></span>
+<span class="line">  <span class="token keyword">import</span> <span class="token punctuation">{</span> updatePreset<span class="token punctuation">,</span> updateSurfacePalette <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@primevue/themes'</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token keyword">return</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token literal-property property">iconClass</span><span class="token operator">:</span> <span class="token string">'pi-moon'</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">selectedPrimaryColor</span><span class="token operator">:</span> <span class="token string">'noir'</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">selectedSurfaceColor</span><span class="token operator">:</span> <span class="token keyword">null</span></span>
+<span class="line">      <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token function">onThemeToggler</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">const</span> root <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'html'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span></span>
+<span class="line">        root<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token string">'p-dark'</span><span class="token punctuation">)</span></span>
+<span class="line">        <span class="token keyword">this</span><span class="token punctuation">.</span>iconClass <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>iconClass <span class="token operator">===</span> <span class="token string">'pi-moon'</span> <span class="token operator">?</span> <span class="token string">'pi-sun'</span> <span class="token operator">:</span> <span class="token string">'pi-moon'</span></span>
+<span class="line">      <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line"></span>
+<span class="line">      <span class="token function">updateColors</span><span class="token punctuation">(</span><span class="token parameter">type<span class="token punctuation">,</span> color</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">if</span> <span class="token punctuation">(</span>type <span class="token operator">===</span> <span class="token string">'primary'</span><span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>selectedPrimaryColor <span class="token operator">=</span> color<span class="token punctuation">.</span>name</span>
+<span class="line">        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>type <span class="token operator">===</span> <span class="token string">'surface'</span><span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>selectedSurfaceColor <span class="token operator">=</span> color<span class="token punctuation">.</span>name</span>
+<span class="line"></span>
+<span class="line">        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">applyTheme</span><span class="token punctuation">(</span>type<span class="token punctuation">,</span> color<span class="token punctuation">)</span></span>
+<span class="line">      <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token function">applyTheme</span><span class="token punctuation">(</span><span class="token parameter">type<span class="token punctuation">,</span> color</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">if</span> <span class="token punctuation">(</span>type <span class="token operator">===</span> <span class="token string">'primary'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">          <span class="token function">updatePreset</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getPresetExt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line">        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>type <span class="token operator">===</span> <span class="token string">'surface'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">          <span class="token function">updateSurfacePalette</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>palette<span class="token punctuation">)</span></span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line">      <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token function">onRippleChange</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">this</span><span class="token punctuation">.</span>$primevue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>ripple <span class="token operator">=</span> value</span>
+<span class="line">      <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token literal-property property">computed</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token function">rippleActive</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$primevue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>ripple</span>
+<span class="line">      <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line"><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>📝 Create Page [ presets/Noir.js ] Inside src</li>
+</ul>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">presets/Noir.js</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> definePreset <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@primevue/themes"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> Aura <span class="token keyword">from</span> <span class="token string">"@primevue/themes/aura"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">const</span> Noir <span class="token operator">=</span> <span class="token function">definePreset</span><span class="token punctuation">(</span>Aura<span class="token punctuation">,</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token literal-property property">semantic</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token literal-property property">primary</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token number">50</span><span class="token operator">:</span> <span class="token string">"{surface.50}"</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token number">100</span><span class="token operator">:</span> <span class="token string">"{surface.100}"</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token number">200</span><span class="token operator">:</span> <span class="token string">"{surface.200}"</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token number">300</span><span class="token operator">:</span> <span class="token string">"{surface.300}"</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token number">400</span><span class="token operator">:</span> <span class="token string">"{surface.400}"</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token number">500</span><span class="token operator">:</span> <span class="token string">"{surface.500}"</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token number">600</span><span class="token operator">:</span> <span class="token string">"{surface.600}"</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token number">700</span><span class="token operator">:</span> <span class="token string">"{surface.700}"</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token number">800</span><span class="token operator">:</span> <span class="token string">"{surface.800}"</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token number">900</span><span class="token operator">:</span> <span class="token string">"{surface.900}"</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token number">950</span><span class="token operator">:</span> <span class="token string">"{surface.950}"</span></span>
+<span class="line">    <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token literal-property property">colorScheme</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token literal-property property">light</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token literal-property property">primary</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">          <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">"{primary.950}"</span><span class="token punctuation">,</span></span>
+<span class="line">          <span class="token literal-property property">contrastColor</span><span class="token operator">:</span> <span class="token string">"#ffffff"</span><span class="token punctuation">,</span></span>
+<span class="line">          <span class="token literal-property property">hoverColor</span><span class="token operator">:</span> <span class="token string">"{primary.900}"</span><span class="token punctuation">,</span></span>
+<span class="line">          <span class="token literal-property property">activeColor</span><span class="token operator">:</span> <span class="token string">"{primary.800}"</span></span>
+<span class="line">        <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">highlight</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">          <span class="token literal-property property">background</span><span class="token operator">:</span> <span class="token string">"{primary.950}"</span><span class="token punctuation">,</span></span>
+<span class="line">          <span class="token literal-property property">focusBackground</span><span class="token operator">:</span> <span class="token string">"{primary.700}"</span><span class="token punctuation">,</span></span>
+<span class="line">          <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">"#ffffff"</span><span class="token punctuation">,</span></span>
+<span class="line">          <span class="token literal-property property">focusColor</span><span class="token operator">:</span> <span class="token string">"#ffffff"</span></span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line">      <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token literal-property property">dark</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token literal-property property">primary</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">          <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">"{primary.50}"</span><span class="token punctuation">,</span></span>
+<span class="line">          <span class="token literal-property property">contrastColor</span><span class="token operator">:</span> <span class="token string">"{primary.950}"</span><span class="token punctuation">,</span></span>
+<span class="line">          <span class="token literal-property property">hoverColor</span><span class="token operator">:</span> <span class="token string">"{primary.100}"</span><span class="token punctuation">,</span></span>
+<span class="line">          <span class="token literal-property property">activeColor</span><span class="token operator">:</span> <span class="token string">"{primary.200}"</span></span>
+<span class="line">        <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">highlight</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">          <span class="token literal-property property">background</span><span class="token operator">:</span> <span class="token string">"{primary.50}"</span><span class="token punctuation">,</span></span>
+<span class="line">          <span class="token literal-property property">focusBackground</span><span class="token operator">:</span> <span class="token string">"{primary.300}"</span><span class="token punctuation">,</span></span>
+<span class="line">          <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">"{primary.950}"</span><span class="token punctuation">,</span></span>
+<span class="line">          <span class="token literal-property property">focusColor</span><span class="token operator">:</span> <span class="token string">"{primary.950}"</span></span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line">      <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">export</span> <span class="token keyword">default</span> Noir<span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h6 id="import-inside-main-js" tabindex="-1"><a class="header-anchor" href="#import-inside-main-js"><span>Import Inside main.js</span></a></h6>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token comment">// --------------- PrimeVue Core Configuration ---------------</span></span>
+<span class="line"><span class="token comment">// Import PrimeVue library configuration</span></span>
+<span class="line"><span class="token comment">// استيراد مكتبة PrimeVue وإعداداتها الأساسية</span></span>
+<span class="line"><span class="token keyword">import</span> PrimeVue <span class="token keyword">from</span> <span class="token string">"primevue/config"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// --------------- Popup Services (For Dialogs and Confirmations) ---------------</span></span>
+<span class="line"><span class="token comment">// Import services for confirmation and dialog popups</span></span>
+<span class="line"><span class="token comment">// خدمات النوافذ المنبثقة لتأكيد العمليات وفتح الحوارات</span></span>
+<span class="line"><span class="token keyword">import</span> ConfirmationService <span class="token keyword">from</span> <span class="token string">"primevue/confirmationservice"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> DialogService <span class="token keyword">from</span> <span class="token string">"primevue/dialogservice"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Buttons</span></span>
+<span class="line"><span class="token comment">// الأزرار وزر التبديل</span></span>
+<span class="line"><span class="token keyword">import</span> Button <span class="token keyword">from</span> <span class="token string">"primevue/button"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> ToggleButton <span class="token keyword">from</span> <span class="token string">"primevue/togglebutton"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// --------------- Form Components ---------------</span></span>
+<span class="line"><span class="token comment">// Import components for creating forms</span></span>
+<span class="line"><span class="token comment">// عناصر النماذج</span></span>
+<span class="line"><span class="token keyword">import</span> Fluid <span class="token keyword">from</span> <span class="token string">"primevue/fluid"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> InputText <span class="token keyword">from</span> <span class="token string">"primevue/inputtext"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> Textarea <span class="token keyword">from</span> <span class="token string">"primevue/textarea"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> Password <span class="token keyword">from</span> <span class="token string">"primevue/password"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> FloatLabel <span class="token keyword">from</span> <span class="token string">"primevue/floatlabel"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> Checkbox <span class="token keyword">from</span> <span class="token string">"primevue/checkbox"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> RadioButton <span class="token keyword">from</span> <span class="token string">"primevue/radiobutton"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> Listbox <span class="token keyword">from</span> <span class="token string">"primevue/listbox"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> DatePicker <span class="token keyword">from</span> <span class="token string">"primevue/datepicker"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> InputGroup <span class="token keyword">from</span> <span class="token string">"primevue/inputgroup"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> InputGroupAddon <span class="token keyword">from</span> <span class="token string">"primevue/inputgroupaddon"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> ColorPicker <span class="token keyword">from</span> <span class="token string">"primevue/colorpicker"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// --------------- File Components ---------------</span></span>
+<span class="line"><span class="token comment">// Import file upload</span></span>
+<span class="line"><span class="token comment">// تحميل الملفات</span></span>
+<span class="line"><span class="token keyword">import</span> FileUpload <span class="token keyword">from</span> <span class="token string">"primevue/fileupload"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// --------------- Menu Components ---------------</span></span>
+<span class="line"><span class="token comment">// Import components for building menus</span></span>
+<span class="line"><span class="token comment">// عناصر القائمة</span></span>
+<span class="line"><span class="token keyword">import</span> Menubar <span class="token keyword">from</span> <span class="token string">"primevue/menubar"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> TieredMenu <span class="token keyword">from</span> <span class="token string">"primevue/tieredmenu"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// --------------- Image Components ---------------</span></span>
+<span class="line"><span class="token comment">// Import components for handling images and avatars</span></span>
+<span class="line"><span class="token comment">// مكونات الصور والأفاتار</span></span>
+<span class="line"><span class="token keyword">import</span> Image <span class="token keyword">from</span> <span class="token string">"primevue/image"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> Avatar <span class="token keyword">from</span> <span class="token string">"primevue/avatar"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> AvatarGroup <span class="token keyword">from</span> <span class="token string">"primevue/avatargroup"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// --------------- Popup Components ---------------</span></span>
+<span class="line"><span class="token comment">// Import popover, dialog, and drawer components for popups</span></span>
+<span class="line"><span class="token comment">// مكونات النوافذ المنبثقة</span></span>
+<span class="line"><span class="token keyword">import</span> Popover <span class="token keyword">from</span> <span class="token string">"primevue/popover"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> Dialog <span class="token keyword">from</span> <span class="token string">"primevue/dialog"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> Drawer <span class="token keyword">from</span> <span class="token string">"primevue/drawer"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// --------------- Panel Components ---------------</span></span>
+<span class="line"><span class="token comment">// Import panel-related components for layout and navigation</span></span>
+<span class="line"><span class="token comment">// مكونات اللوحات لعرض المعلومات المنظمة</span></span>
+<span class="line"><span class="token keyword">import</span> Fieldset <span class="token keyword">from</span> <span class="token string">"primevue/fieldset"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> Stepper <span class="token keyword">from</span> <span class="token string">"primevue/stepper"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> StepList <span class="token keyword">from</span> <span class="token string">"primevue/steplist"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> StepPanels <span class="token keyword">from</span> <span class="token string">"primevue/steppanels"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> StepItem <span class="token keyword">from</span> <span class="token string">"primevue/stepitem"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> Step <span class="token keyword">from</span> <span class="token string">"primevue/step"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> StepPanel <span class="token keyword">from</span> <span class="token string">"primevue/steppanel"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// --------------- Card Components ---------------</span></span>
+<span class="line"><span class="token comment">// Import card component for displaying content in card format</span></span>
+<span class="line"><span class="token comment">// مكون البطاقات لعرض المحتوى بطريقة منسقة</span></span>
+<span class="line"><span class="token keyword">import</span> Card <span class="token keyword">from</span> <span class="token string">"primevue/card"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// --------------- Theme Components ---------------</span></span>
+<span class="line"><span class="token comment">// Import theme presets and theme switcher component</span></span>
+<span class="line"><span class="token comment">// مكونات اللوحات لعرض المعلومات المنظمة</span></span>
+<span class="line"><span class="token keyword">import</span> Noir <span class="token keyword">from</span> <span class="token string">"./presets/Noir.js"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> ThemeSwitcher <span class="token keyword">from</span> <span class="token string">"./components/Theme/ThemeSwitcher.vue"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// --------------- Notification Components ---------------</span></span>
+<span class="line"><span class="token comment">// Import toast and message components for notifications</span></span>
+<span class="line"><span class="token keyword">import</span> Toast <span class="token keyword">from</span> <span class="token string">"primevue/toast"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> ToastService <span class="token keyword">from</span> <span class="token string">"primevue/toastservice"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> Message <span class="token keyword">from</span> <span class="token string">"primevue/message"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// --------------- Icon Components ---------------</span></span>
+<span class="line"><span class="token comment">// Import icon components for enhanced UI elements</span></span>
+<span class="line"><span class="token keyword">import</span> IconField <span class="token keyword">from</span> <span class="token string">"primevue/iconfield"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> InputIcon <span class="token keyword">from</span> <span class="token string">"primevue/inputicon"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// --------------- Editor Components ---------------</span></span>
+<span class="line"><span class="token comment">// Import rich text editor component (Quill-based)</span></span>
+<span class="line"><span class="token keyword">import</span> Editor <span class="token keyword">from</span> <span class="token string">"primevue/editor"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// --------------- Table Components ---------------</span></span>
+<span class="line"><span class="token comment">// Import table components for data presentation</span></span>
+<span class="line"><span class="token comment">// Quill محرر النصوص الغنية المستندة إلى</span></span>
+<span class="line"><span class="token keyword">import</span> DataTable <span class="token keyword">from</span> <span class="token string">"primevue/datatable"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> Column <span class="token keyword">from</span> <span class="token string">"primevue/column"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> ColumnGroup <span class="token keyword">from</span> <span class="token string">"primevue/columngroup"</span><span class="token punctuation">;</span> <span class="token comment">// optional</span></span>
+<span class="line"><span class="token keyword">import</span> Row <span class="token keyword">from</span> <span class="token string">"primevue/row"</span><span class="token punctuation">;</span> <span class="token comment">// optional</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// --------------- Placeholder Components ---------------</span></span>
+<span class="line"><span class="token comment">// Import skeleton component for loading placeholders</span></span>
+<span class="line"><span class="token keyword">import</span> Skeleton <span class="token keyword">from</span> <span class="token string">"primevue/skeleton"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// --------------- Placeholder Components ---------------</span></span>
+<span class="line"><span class="token comment">// Badge is a small status indicator for another element.</span></span>
+<span class="line"><span class="token keyword">import</span> Badge <span class="token keyword">from</span> <span class="token string">"primevue/badge"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> OverlayBadge <span class="token keyword">from</span> <span class="token string">"primevue/overlaybadge"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// --------------- Styles ---------------</span></span>
+<span class="line"><span class="token comment">// Import necessary styles for PrimeVue and Tailwind CSS</span></span>
+<span class="line"><span class="token keyword">import</span> <span class="token string">"primeicons/primeicons.css"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> <span class="token string">"tailwindcss/tailwind.css"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// --------------- Initialize PrimeVue ---------------</span></span>
+<span class="line"><span class="token comment">// Configure and initialize PrimeVue with theme settings</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>PrimeVue<span class="token punctuation">,</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token literal-property property">theme</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token literal-property property">preset</span><span class="token operator">:</span> Noir<span class="token punctuation">,</span></span>
+<span class="line">    <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token literal-property property">prefix</span><span class="token operator">:</span> <span class="token string">"p"</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token literal-property property">darkModeSelector</span><span class="token operator">:</span> <span class="token string">".p-dark"</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token literal-property property">cssLayer</span><span class="token operator">:</span> <span class="token boolean">false</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Initialize and add services</span></span>
+<span class="line"><span class="token comment">// تهيئة وإضافة الخدمات</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>ConfirmationService<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>DialogService<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>ToastService<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// --------------- Register Components ---------------</span></span>
+<span class="line"><span class="token comment">// Register components in the application for global usage</span></span>
+<span class="line"><span class="token comment">// Prime Button</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_button"</span><span class="token punctuation">,</span> Button<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Theme Switcher Component</span></span>
+<span class="line"><span class="token comment">// مكون تبديل السمة</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"ThemeSwitcher"</span><span class="token punctuation">,</span> ThemeSwitcher<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Form Components</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_fluid"</span><span class="token punctuation">,</span> Fluid<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_input_text"</span><span class="token punctuation">,</span> InputText<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_textarea"</span><span class="token punctuation">,</span> Textarea<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_input_password"</span><span class="token punctuation">,</span> Password<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_float_label"</span><span class="token punctuation">,</span> FloatLabel<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_check_box"</span><span class="token punctuation">,</span> Checkbox<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_radio_button"</span><span class="token punctuation">,</span> RadioButton<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_list_box"</span><span class="token punctuation">,</span> Listbox<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_date_picker"</span><span class="token punctuation">,</span> DatePicker<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_input_group"</span><span class="token punctuation">,</span> InputGroup<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_input_group_addon"</span><span class="token punctuation">,</span> InputGroupAddon<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_file_upload"</span><span class="token punctuation">,</span> FileUpload<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_toggle_button"</span><span class="token punctuation">,</span> ToggleButton<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_color_picker"</span><span class="token punctuation">,</span> ColorPicker<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Menu Components</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_menubar"</span><span class="token punctuation">,</span> Menubar<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_tiered_menu"</span><span class="token punctuation">,</span> TieredMenu<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Image Components</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_image"</span><span class="token punctuation">,</span> Image<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_avatar"</span><span class="token punctuation">,</span> Avatar<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_avatar_group"</span><span class="token punctuation">,</span> AvatarGroup<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Card Components</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_card"</span><span class="token punctuation">,</span> Card<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Popup Components</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_popover"</span><span class="token punctuation">,</span> Popover<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_dialog"</span><span class="token punctuation">,</span> Dialog<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_drawer"</span><span class="token punctuation">,</span> Drawer<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Panel Components</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_fieldset"</span><span class="token punctuation">,</span> Fieldset<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_stepper"</span><span class="token punctuation">,</span> Stepper<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_steplist"</span><span class="token punctuation">,</span> StepList<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_steppanels"</span><span class="token punctuation">,</span> StepPanels<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_stepitem"</span><span class="token punctuation">,</span> StepItem<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_step"</span><span class="token punctuation">,</span> Step<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_steppanel"</span><span class="token punctuation">,</span> StepPanel<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Notification Components</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_toast"</span><span class="token punctuation">,</span> Toast<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_message"</span><span class="token punctuation">,</span> Message<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Icon Components</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_icon_field"</span><span class="token punctuation">,</span> IconField<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_input_icon"</span><span class="token punctuation">,</span> InputIcon<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Editor Component</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_editor"</span><span class="token punctuation">,</span> Editor<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Table Components</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_data_table"</span><span class="token punctuation">,</span> DataTable<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_column"</span><span class="token punctuation">,</span> Column<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_column_group"</span><span class="token punctuation">,</span> ColumnGroup<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_row"</span><span class="token punctuation">,</span> Row<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Placeholder Components</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_skeleton"</span><span class="token punctuation">,</span> Skeleton<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Badge is a small status indicator for another element.</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_badge"</span><span class="token punctuation">,</span> Badge<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"prime_overlay_badge"</span><span class="token punctuation">,</span> OverlayBadge<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h6 id="_3️⃣-scss" tabindex="-1"><a class="header-anchor" href="#_3️⃣-scss"><span>- 3️⃣ scss</span></a></h6>
+<h6 id="📂-create-folder-scss-inside-assets-and-file-style-scss" tabindex="-1"><a class="header-anchor" href="#📂-create-folder-scss-inside-assets-and-file-style-scss"><span>📂 Create Folder [scss] Inside assets And File [style.scss]</span></a></h6>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">scss/style.scss</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h6 id="import-inside-main-js-1" tabindex="-1"><a class="header-anchor" href="#import-inside-main-js-1"><span>Import Inside main.js</span></a></h6>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token comment">// My Style</span></span>
+<span class="line"><span class="token keyword">import</span> <span class="token string">"./assets/scss/style.scss"</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h6 id="_4️⃣-axios" tabindex="-1"><a class="header-anchor" href="#_4️⃣-axios"><span>- 4️⃣ Axios</span></a></h6>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token comment">// Axios  Import</span></span>
+<span class="line"><span class="token comment">// Axios  استيراد</span></span>
+<span class="line"><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">"axios"</span><span class="token punctuation">;</span></span>
+<span class="line">axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>baseURL <span class="token operator">=</span> <span class="token string">"http://127.0.0.1:8000"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">,</span> axios<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h6 id="_5️⃣-font-awesome" tabindex="-1"><a class="header-anchor" href="#_5️⃣-font-awesome"><span>- 5️⃣ Font Awesome</span></a></h6>
+<div class="language-html line-numbers-mode" data-highlighter="prismjs" data-ext="html" data-title="html"><pre v-pre><code><span class="line"><span class="token comment">&lt;!-- Font Awesome --></span></span>
+<span class="line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span></span>
+<span class="line">  <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span></span>
+<span class="line">  <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css<span class="token punctuation">"</span></span></span>
+<span class="line"><span class="token punctuation">/></span></span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token comment">// Page [ messenger/messenger_vue/src/main.js ]</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// Font Awesome</span></span>
+<span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> FontAwesomeIcon <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@fortawesome/vue-fontawesome"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> library <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@fortawesome/fontawesome-svg-core"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> fas <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@fortawesome/free-solid-svg-icons"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> fab <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@fortawesome/free-brands-svg-icons"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> far <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@fortawesome/free-regular-svg-icons"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token comment">// Add Free Icons Styles To SVG Core</span></span>
+<span class="line">library<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>fas<span class="token punctuation">,</span> far<span class="token punctuation">,</span> fab<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// eslint-disable-next-line vue/multi-word-component-names</span></span>
+<span class="line">app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"fa"</span><span class="token punctuation">,</span> FontAwesomeIcon<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h6 id="_6️⃣-pwa" tabindex="-1"><a class="header-anchor" href="#_6️⃣-pwa"><span>- 6️⃣ Pwa</span></a></h6>
+<ul>
+<li>📝 Edit Page [ vite.config.js ]</li>
+</ul>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> fileURLToPath<span class="token punctuation">,</span> <span class="token constant">URL</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"node:url"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> defineConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"vite"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> vue <span class="token keyword">from</span> <span class="token string">"@vitejs/plugin-vue"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// For Pwa</span></span>
+<span class="line"><span class="token comment">// https://vite-pwa-org.netlify.app/guide/</span></span>
+<span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> VitePWA <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"vite-plugin-pwa"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// https://vite.dev/config/</span></span>
+<span class="line"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span>
+<span class="line">  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span></span>
+<span class="line">    <span class="token function">vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token comment">// For Pwa</span></span>
+<span class="line">    <span class="token function">VitePWA</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span>
+<span class="line">      <span class="token literal-property property">registerType</span><span class="token operator">:</span> <span class="token string">"autoUpdate"</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token literal-property property">workbox</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token literal-property property">globPatterns</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"**/*.{js,css,html,ico,png,svg}"</span><span class="token punctuation">]</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">clientsClaim</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">skipWaiting</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">cleanupOutdatedCaches</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">offlineGoogleAnalytics</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">sourcemap</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">runtimeCaching</span><span class="token operator">:</span> <span class="token punctuation">[</span></span>
+<span class="line">          <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token function-variable function">urlPattern</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> request <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span></span>
+<span class="line">              request<span class="token punctuation">.</span>destination <span class="token operator">===</span> <span class="token string">"document"</span> <span class="token operator">||</span></span>
+<span class="line">              request<span class="token punctuation">.</span>destination <span class="token operator">===</span> <span class="token string">"script"</span> <span class="token operator">||</span></span>
+<span class="line">              request<span class="token punctuation">.</span>destination <span class="token operator">===</span> <span class="token string">"style"</span> <span class="token operator">||</span></span>
+<span class="line">              request<span class="token punctuation">.</span>destination <span class="token operator">===</span> <span class="token string">"image"</span> <span class="token operator">||</span></span>
+<span class="line">              request<span class="token punctuation">.</span>destination <span class="token operator">===</span> <span class="token string">"font"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">handler</span><span class="token operator">:</span> <span class="token string">"StaleWhileRevalidate"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">              <span class="token literal-property property">cacheName</span><span class="token operator">:</span> <span class="token string">"assets-cache"</span><span class="token punctuation">,</span></span>
+<span class="line">              <span class="token literal-property property">expiration</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">                <span class="token literal-property property">maxEntries</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span></span>
+<span class="line">                <span class="token literal-property property">maxAgeSeconds</span><span class="token operator">:</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">24</span> <span class="token operator">*</span> <span class="token number">30</span></span>
+<span class="line">              <span class="token punctuation">}</span></span>
+<span class="line">            <span class="token punctuation">}</span></span>
+<span class="line">          <span class="token punctuation">}</span></span>
+<span class="line">        <span class="token punctuation">]</span></span>
+<span class="line">      <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token literal-property property">devOptions</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token literal-property property">enabled</span><span class="token operator">:</span> <span class="token boolean">true</span></span>
+<span class="line">      <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token literal-property property">injectRegister</span><span class="token operator">:</span> <span class="token string">"auto"</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token literal-property property">includeAssets</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"**/*"</span><span class="token punctuation">]</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token literal-property property">manifest</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Script Youtube"</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">short_name</span><span class="token operator">:</span> <span class="token string">"Script Youtube"</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">description</span><span class="token operator">:</span> <span class="token string">"My Awesome App Script Youtube"</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">theme_color</span><span class="token operator">:</span> <span class="token string">"#ffffff"</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">icons</span><span class="token operator">:</span> <span class="token punctuation">[</span></span>
+<span class="line">          <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/messenger_icon_72x72.png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">sizes</span><span class="token operator">:</span> <span class="token string">"72x72"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">purpose</span><span class="token operator">:</span> <span class="token string">"any maskable"</span></span>
+<span class="line">          <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">          <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/messenger_icon_96x96.png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">sizes</span><span class="token operator">:</span> <span class="token string">"96x96"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">purpose</span><span class="token operator">:</span> <span class="token string">"any maskable"</span></span>
+<span class="line">          <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">          <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/messenger_icon_128x128.png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">sizes</span><span class="token operator">:</span> <span class="token string">"128x128"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">purpose</span><span class="token operator">:</span> <span class="token string">"any maskable"</span></span>
+<span class="line">          <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">          <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/messenger_icon_144x144.png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">sizes</span><span class="token operator">:</span> <span class="token string">"144x144"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">purpose</span><span class="token operator">:</span> <span class="token string">"any maskable"</span></span>
+<span class="line">          <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">          <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/messenger_icon_152x152.png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">sizes</span><span class="token operator">:</span> <span class="token string">"152x152"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">purpose</span><span class="token operator">:</span> <span class="token string">"any maskable"</span></span>
+<span class="line">          <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">          <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/messenger_icon_192x192.png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">sizes</span><span class="token operator">:</span> <span class="token string">"192x192"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">purpose</span><span class="token operator">:</span> <span class="token string">"any maskable"</span></span>
+<span class="line">          <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">          <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/messenger_icon_384x384.png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">sizes</span><span class="token operator">:</span> <span class="token string">"384x384"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">purpose</span><span class="token operator">:</span> <span class="token string">"any maskable"</span></span>
+<span class="line">          <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">          <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/icons/messenger_icon_512x512.png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">sizes</span><span class="token operator">:</span> <span class="token string">"512x512"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">purpose</span><span class="token operator">:</span> <span class="token string">"any maskable"</span></span>
+<span class="line">          <span class="token punctuation">}</span></span>
+<span class="line">        <span class="token punctuation">]</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token literal-property property">screenshots</span><span class="token operator">:</span> <span class="token punctuation">[</span></span>
+<span class="line">          <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token string">"./images/screenshots/screenshots.png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">sizes</span><span class="token operator">:</span> <span class="token string">"640x480"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token literal-property property">form_factor</span><span class="token operator">:</span> <span class="token string">"wide"</span></span>
+<span class="line">            <span class="token comment">// "form_factor": "narrow"</span></span>
+<span class="line">          <span class="token punctuation">}</span></span>
+<span class="line">        <span class="token punctuation">]</span></span>
+<span class="line">      <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token punctuation">}</span><span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">]</span><span class="token punctuation">,</span></span>
+<span class="line">  <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./index.html"</span><span class="token punctuation">,</span> <span class="token string">"./src/**/*.{vue,js,ts,jsx,tsx}"</span><span class="token punctuation">]</span><span class="token punctuation">,</span></span>
+<span class="line">  <span class="token literal-property property">resolve</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token literal-property property">alias</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token string-property property">"@"</span><span class="token operator">:</span> <span class="token function">fileURLToPath</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">"./src"</span><span class="token punctuation">,</span> <span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>🖼️ Add Image Inside Public</li>
+</ul>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">images</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">icons</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">screenshots</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line"></span>
+<span class="line">├── public/</span>
+<span class="line">│ ├── images/</span>
+<span class="line">│ | ├── icons/</span>
+<span class="line">│ │ | ├── 🖼️ messenger_icon_72x72.png</span>
+<span class="line">│ │ | ├── 🖼️ messenger_icon_96x96.png</span>
+<span class="line">│ │ | ├── 🖼️ messenger_icon_128x128.png</span>
+<span class="line">│ │ | ├── 🖼️ messenger_icon_144x144.png</span>
+<span class="line">│ │ | ├── 🖼️ messenger_icon_152x152.png</span>
+<span class="line">│ │ | ├── 🖼️ messenger_icon_192x192.png</span>
+<span class="line">│ │ | ├── 🖼️ messenger_icon_256x256.png</span>
+<span class="line">│ │ | ├── 🖼️ messenger_icon_384x384.png</span>
+<span class="line">│ │ | ├── 🖼️ messenger_icon_512x512.png</span>
+<span class="line">│ | ├── screenshots/</span>
+<span class="line">│ │ | ├── 🖼️ screenshots.png</span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">messenger_icon_72x72</span>
+<span class="line">messenger_icon_96x96</span>
+<span class="line">messenger_icon_128x128</span>
+<span class="line">messenger_icon_144x144</span>
+<span class="line">messenger_icon_152x152</span>
+<span class="line">messenger_icon_192x192</span>
+<span class="line">messenger_icon_256x256</span>
+<span class="line">messenger_icon_384x384</span>
+<span class="line">messenger_icon_512x512</span>
+<span class="line">screenshots_640x480</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h6 id="👉️-go-to-website-to-resize-image" tabindex="-1"><a class="header-anchor" href="#👉️-go-to-website-to-resize-image"><span>👉️ Go To Website To Resize Image</span></a></h6>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">https://www.iloveimg.com/resize-image</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h6 id="_7️⃣-prism" tabindex="-1"><a class="header-anchor" href="#_7️⃣-prism"><span>- 7️⃣ Prism</span></a></h6>
+<h6 id="_8️⃣-swiper" tabindex="-1"><a class="header-anchor" href="#_8️⃣-swiper"><span>- 8️⃣ Swiper</span></a></h6>
+<h6 id="_9️⃣-pinia" tabindex="-1"><a class="header-anchor" href="#_9️⃣-pinia"><span>- 9️⃣ Pinia</span></a></h6>
+<ul>
+<li>🧞‍♂️ User Store</li>
+<li>📝 Create Page [ user.js ] Inside Stores</li>
+</ul>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line"></span>
+<span class="line">user.js</span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token comment">// Page [ messenger/messenger_vue/src/stores/user.js ]</span></span>
+<span class="line"><span class="token keyword">import</span> <span class="token punctuation">{</span> defineStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pinia"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">"axios"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">export</span> <span class="token keyword">const</span> useUserStore <span class="token operator">=</span> <span class="token function">defineStore</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span>
+<span class="line">  <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">"user"</span><span class="token punctuation">,</span></span>
+<span class="line">  <span class="token function-variable function">state</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token literal-property property">user</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token literal-property property">isAuthenticated</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token literal-property property">surname</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token literal-property property">date_of_birth</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token literal-property property">access</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token literal-property property">refresh</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token comment">// 📋 Number of Friends عدد الاصدقاء</span></span>
+<span class="line">      <span class="token literal-property property">friends_count</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token comment">// User gender 👤 جنس المستخدم</span></span>
+<span class="line">      <span class="token literal-property property">gender</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token comment">// 🖼️ Profile picture  صورة الملف الشخصي</span></span>
+<span class="line">      <span class="token literal-property property">get_avatar</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token comment">// 🖼️ Cover photo صورة الغلاف</span></span>
+<span class="line">      <span class="token literal-property property">get_cover</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token comment">// 📋 Number of tasks عدد المهام</span></span>
+<span class="line">      <span class="token literal-property property">task_count</span><span class="token operator">:</span> <span class="token number">0</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">  <span class="token literal-property property">actions</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token comment">// 🔄 Initialize the store</span></span>
+<span class="line">    <span class="token comment">// 🔄 تهيئة المخزن</span></span>
+<span class="line">    <span class="token function">initStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token keyword">if</span> <span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"user.access"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token comment">// console.log('User has access!')</span></span>
+<span class="line">        <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>isAuthenticated <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>id <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"user.id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>name <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"user.name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>surname <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"user.surname"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>email <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"user.email"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>date_of_birth <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"user.date_of_birth"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>gender <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"user.gender"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>get_avatar <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"user.get_avatar"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>get_cover <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"user.get_cover"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>access <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"user.access"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>refresh <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"user.refresh"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>friends_count <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"user.friends_count"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>task_count <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"user.task_count"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">refreshToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token comment">// 🔑 Set access and refresh tokens</span></span>
+<span class="line">    <span class="token comment">// 🔑 إعداد رموز الوصول والتحديث</span></span>
+<span class="line">    <span class="token function">setToken</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token comment">// console.log('setToken', data)</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>access <span class="token operator">=</span> data<span class="token punctuation">.</span>access<span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>refresh <span class="token operator">=</span> data<span class="token punctuation">.</span>refresh<span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>isAuthenticated <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.access"</span><span class="token punctuation">,</span> data<span class="token punctuation">.</span>access<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.refresh"</span><span class="token punctuation">,</span> data<span class="token punctuation">.</span>refresh<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      <span class="token comment">// console.log('user.access: ', localStorage.getItem('user.access'))</span></span>
+<span class="line">    <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token comment">// ❌ Remove tokens and clear user data</span></span>
+<span class="line">    <span class="token comment">// ❌ إزالة الرموز ومسح بيانات المستخدم</span></span>
+<span class="line">    <span class="token function">removeToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token comment">// console.log('removeToken')</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>refresh <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>access <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>isAuthenticated <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>id <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>surname <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>email <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>date_of_birth <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>gender <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>get_avatar <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>get_cover <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>friends_count <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>task_count <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.access"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.refresh"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.id"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.name"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.surname"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.email"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.date_of_birth"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.gender"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.get_avatar"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.get_cover"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.friends_count"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.task_count"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token comment">// ✍️ Set user info in state and localStorage</span></span>
+<span class="line">    <span class="token comment">// ✍️ تعيين بيانات المستخدم في الحالة و localStorage</span></span>
+<span class="line">    <span class="token function">setUserInfo</span><span class="token punctuation">(</span><span class="token parameter">user</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token comment">// console.log('setUserInfo', user)</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>id <span class="token operator">=</span> user<span class="token punctuation">.</span>id<span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>name <span class="token operator">=</span> user<span class="token punctuation">.</span>name<span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>surname <span class="token operator">=</span> user<span class="token punctuation">.</span>surname<span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>email <span class="token operator">=</span> user<span class="token punctuation">.</span>email<span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>date_of_birth <span class="token operator">=</span> user<span class="token punctuation">.</span>date_of_birth<span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>gender <span class="token operator">=</span> user<span class="token punctuation">.</span>gender<span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>get_avatar <span class="token operator">=</span> user<span class="token punctuation">.</span>get_avatar<span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>get_cover <span class="token operator">=</span> user<span class="token punctuation">.</span>get_cover<span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>friends_count <span class="token operator">=</span> user<span class="token punctuation">.</span>friends_count<span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>task_count <span class="token operator">=</span> user<span class="token punctuation">.</span>task_count<span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.id"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.name"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.surname"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>surname<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.email"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>email<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.date_of_birth"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>date_of_birth<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.gender"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>gender<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.get_avatar"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>get_avatar<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.get_cover"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>get_cover<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.friends_count"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>friends_count<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.task_count"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>task_count<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token comment">// 🔄 Refresh access token</span></span>
+<span class="line">    <span class="token comment">// 🔄 تحديث رمز الوصول</span></span>
+<span class="line">    <span class="token function">refreshToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Attempting to refresh token:"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>refresh<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      <span class="token comment">// عرض قيمة الرمز</span></span>
+<span class="line">      axios</span>
+<span class="line">        <span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"/api/refresh/"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span></span>
+<span class="line">          <span class="token literal-property property">refresh</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>refresh</span>
+<span class="line">        <span class="token punctuation">}</span><span class="token punctuation">)</span></span>
+<span class="line">        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="line">          <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span>access <span class="token operator">=</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>access<span class="token punctuation">;</span></span>
+<span class="line">          localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user.access"</span><span class="token punctuation">,</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>access<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">          axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>common<span class="token punctuation">[</span><span class="token string">"Authorization"</span><span class="token punctuation">]</span> <span class="token operator">=</span></span>
+<span class="line">            <span class="token string">"Bearer "</span> <span class="token operator">+</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>access<span class="token punctuation">;</span></span>
+<span class="line">        <span class="token punctuation">}</span><span class="token punctuation">)</span></span>
+<span class="line">        <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="line">          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">          <span class="token comment">// عرض تفاصيل الخطأ</span></span>
+<span class="line">          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Refresh token error:"</span><span class="token punctuation">,</span> error<span class="token punctuation">.</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="📝-page-index-html" tabindex="-1"><a class="header-anchor" href="#📝-page-index-html"><span>📝 Page [ index.html ]</span></a></h3>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">cheang App Name [ messenger | ]</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="🌊-run-vue" tabindex="-1"><a class="header-anchor" href="#🌊-run-vue"><span>🌊 Run Vue</span></a></h3>
+<h6 id="run-vue" tabindex="-1"><a class="header-anchor" href="#run-vue"><span>Run Vue</span></a></h6>
+<div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">cd messenger_vue</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm install</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm run format</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm run build</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-cmd line-numbers-mode" data-highlighter="prismjs" data-ext="cmd" data-title="cmd"><pre v-pre><code><span class="line">npm run dev</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="📝-page-page-not-found" tabindex="-1"><a class="header-anchor" href="#📝-page-page-not-found"><span>📝 Page Page Not Found</span></a></h3>
+<h6 id="📝-create-page-pagenotfound-vue-inside-components" tabindex="-1"><a class="header-anchor" href="#📝-create-page-pagenotfound-vue-inside-components"><span>📝 Create Page [PageNotFound.vue ] Inside Components</span></a></h6>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">PageNotFound/PageNotFound.vue</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-html line-numbers-mode" data-highlighter="prismjs" data-ext="html" data-title="html"><pre v-pre><code><span class="line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span></span>
+<span class="line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>PageNotFound<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+<span class="line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>w-full<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+<span class="line">      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span></span>
+<span class="line">        <span class="token attr-name">:src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>imageSrc<span class="token punctuation">"</span></span></span>
+<span class="line">        <span class="token attr-name">@error</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>loadFallbackImage<span class="token punctuation">"</span></span></span>
+<span class="line">        <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Page Not Found<span class="token punctuation">"</span></span></span>
+<span class="line">        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>img-fluid h-screen w-full<span class="token punctuation">"</span></span></span>
+<span class="line">      <span class="token punctuation">/></span></span></span>
+<span class="line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+<span class="line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
+<span class="line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token operator">&lt;</span>script<span class="token operator">></span></span>
+<span class="line">  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'PageNotFound'</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token keyword">return</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token comment">// الرابط الأساسي للصورة من الإنترنت</span></span>
+<span class="line">        <span class="token literal-property property">imageSrc</span><span class="token operator">:</span></span>
+<span class="line">          <span class="token string">'https://raw.githubusercontent.com/LearnCodingEasy/Images/refs/heads/main/images/Page_Not_Found/404.jpg'</span><span class="token punctuation">,</span></span>
+<span class="line">      <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token function">loadFallbackImage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token comment">// في حالة الخطأ، تغيير الصورة إلى المسار المحلي</span></span>
+<span class="line">        <span class="token comment">// eslint-disable-next-line no-undef</span></span>
+<span class="line">        <span class="token keyword">this</span><span class="token punctuation">.</span>imageSrc <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../../Images/Page_Not_Found/404.jpg'</span><span class="token punctuation">)</span></span>
+<span class="line">        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Bad</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span></span>
+<span class="line">      <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">      document<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">'Trello | Page Not Found'</span></span>
+<span class="line">    <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line">  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-css line-numbers-mode" data-highlighter="prismjs" data-ext="css" data-title="css"><pre v-pre><code><span class="line"><span class="token selector">&lt;style lang="scss"></span>
+<span class="line">  .PageNotFound</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token selector">> div</span> <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token property">height</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>100vh - 70px<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line">&lt;/style></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="📝-page-app" tabindex="-1"><a class="header-anchor" href="#📝-page-app"><span>📝 Page App</span></a></h3>
+<h6 id="📝-edit-page-app-vue" tabindex="-1"><a class="header-anchor" href="#📝-edit-page-app-vue"><span>📝 Edit Page [ App.vue ]</span></a></h6>
+<div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-html line-numbers-mode" data-highlighter="prismjs" data-ext="html" data-title="html"><pre v-pre><code><span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="📝-page-login" tabindex="-1"><a class="header-anchor" href="#📝-page-login"><span>📝 Page Login</span></a></h3>
+<h6 id="📝-create-page-loginview-vue-inside-authentication" tabindex="-1"><a class="header-anchor" href="#📝-create-page-loginview-vue-inside-authentication"><span>📝 Create Page [ LoginView.vue ] Inside [ Authentication ]</span></a></h6>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">Authentication/LoginView.vue</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="language-html line-numbers-mode" data-highlighter="prismjs" data-ext="html" data-title="html"><pre v-pre><code><span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="📝-page-profile" tabindex="-1"><a class="header-anchor" href="#📝-page-profile"><span>📝 Page Profile</span></a></h3>
+<h6 id="📝-create-page-profileview-vue-inside-account" tabindex="-1"><a class="header-anchor" href="#📝-create-page-profileview-vue-inside-account"><span>📝 Create Page [ ProfileView.vue ] Inside [ Account ]</span></a></h6>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line">Account/ProfileView.vue</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="📝-page-page-not-found-1" tabindex="-1"><a class="header-anchor" href="#📝-page-page-not-found-1"><span>📝 Page Page Not Found</span></a></h3>
+<h6 id="📝-page-page-not-found-2" tabindex="-1"><a class="header-anchor" href="#📝-page-page-not-found-2"><span>📝 Page Page Not Found</span></a></h6>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre v-pre><code><span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+</div></template>
 
 
