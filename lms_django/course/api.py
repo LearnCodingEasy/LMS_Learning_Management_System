@@ -34,8 +34,10 @@ from .serializers import (
     UserSerializer,
 )
 
-#
+# 🧐 Django كائن يُستخدم لبناء استعلامات معقدة في
 from django.db.models import Q
+
+from uuid import UUID
 
 
 # 📝 دالة لإنشاء دورة جديدة
@@ -105,42 +107,6 @@ def categories_list(request):  # 🏷️ دالة لجلب جميع الفئات
     return Response(serializer.data)
 
 
-#
-"""
-# 📚 دالة لجلب الدورات المتاحة
-# 📝 الدالة تستقبل فقط طلبات من نوع GET
-# 🔒 تعطيل المصادقة للوصول المفتوح
-# 🛡️ السماح بالوصول بدون تحقق من الأذونات
-# @api_view(["GET"])
-# @authentication_classes([])
-# @permission_classes([])
-# def courses_list(request):
-#     # 🗃️ جلب الدورات المتاحة فقط (التي حالتها منشورة)
-#     # 📚 جلب الدورات المنشورة فقط
-#     # courses = Course.objects.filter(status=Course.PUBLISHED)
-#     courses = Course.objects.all()
-#     print("courses", courses)
-
-#     # 🆔 جلب معرف الفئة من الطلب
-#     # category_id = request.GET.get("category_id", "")
-
-#     # # 🏷️ تصفية الدورات حسب الفئة إذا تم تمرير معرف فئة
-#     # if category_id:
-#     #     # 🏷️ تصفية الدورات حسب معرف الفئة
-#     #     try:
-#     #         category_id = int(category_id)  # ✅ التأكد من أن المعرف رقم صحيح
-#     #         courses = courses.filter(categories__in=[category_id])
-#     #     except ValueError:
-#     #         return Response(
-#     #             {"error": "Invalid category ID"}, status=400
-#     #         )  # ⚠️ معالجة الأخطاء في حالة الإدخال غير الصحيح
-
-#     # 🔄 تحويل قائمة الدورات إلى صيغة JSON باستخدام الـ Serializer
-#     serializer = CourseListSerializer(courses, many=True)
-#     return JsonResponse(serializer.data, safe=False)
-"""
-
-
 @api_view(["GET"])
 @authentication_classes([])
 @permission_classes([])
@@ -150,28 +116,39 @@ def courses_list(request):
     return JsonResponse(serializer.data, safe=False)
 
 
-# 📖 دالة لجلب تفاصيل دورة معينة
 @api_view(["GET"])
-def get_course(request, slug):
-    # 🔎 جلب الدورة بالـ Slug
-    course = Course.objects.filter(status=Course.PUBLISHED).get(slug=slug)
-    course_serializer = CourseDetailSerializer(course)
-    lesson_serializer = LessonListSerializer(course.lessons.all(), many=True)
+@authentication_classes([])
+@permission_classes([])
+def courses_list_by_category(request):
+    category_id = request.GET.get("category_id", "")
+    courses = Course.objects.filter(status=Course.PUBLISHED)
+    if category_id:
+        try:
+            # ✅ التحقق من صحة الـ UUID
+            category_uuid = UUID(category_id)
+            # 📝 تصفية الدورات بناءً على الفئة
+            courses = courses.filter(categories__id=category_uuid)
+        except ValueError:
+            # ❌ إرجاع خطأ إذا كان UUID غير صالح
+            return JsonResponse({"error": "Invalid category_id format"}, status=400)
 
-    # 🔐 التحقق من إذا كان المستخدم مصرحًا له
-    if request.user.is_authenticated:
-        course_data = course_serializer.data
-    else:
-        course_data = {}
-
-    return Response(
-        {
-            "course": course_data,  # 📝 بيانات الدورة
-            "lessons": lesson_serializer.data,  # 📚 بيانات الدروس
-        }
-    )
+    serializer = CourseListSerializer(courses, many=True)
+    return JsonResponse(serializer.data, safe=False)
 
 
+# 📄 دالة لجلب الدورات الأمامية (الواجهة)
+@api_view(["GET"])
+@authentication_classes([])  # 🔓 عدم استخدام مصادقة
+@permission_classes([])  # 🔓 عدم استخدام تصاريح
+def courses_list_frontpage(request):
+    courses = Course.objects.filter(status=Course.PUBLISHED)[
+        0:4
+    ]  # 📚 جلب أول 4 دورات منشورة
+    serializer = CourseListSerializer(courses, many=True)
+    return JsonResponse(serializer.data, safe=False)
+
+
+# 📚 دالة لجلب بيانات دورة معينة باستخدام المعرف (pk)
 @api_view(["GET"])
 def course_detail(request, pk):
     user_ids = [request.user.id]
@@ -179,19 +156,30 @@ def course_detail(request, pk):
     for user in request.user.friends.all():
         user_ids.append(user.id)
 
+    # 📦 جلب الدورة إذا كان منشؤها موجودًا ضمن معرفات المستخدمين
+    # 🔍 البحث عن الدورة المحددة باستخدام شرط أن تكون منشأة بواسطة المستخدم أو أصدقائه.
     course = Course.objects.filter(Q(created_by_id__in=list(user_ids))).get(pk=pk)
+
+    # 🎨 تحويل بيانات الدورة إلى JSON باستخدام الـ Serializer
     course_serializer = CourseDetailSerializer(course)
     course_data = course_serializer.data
 
     # 🔐 التحقق من إذا كان المستخدم مصرحًا له
+    # 🔐 التحقق من إذا كان المستخدم قد سجل الدخول
     if request.user.is_authenticated:
+        # ✅ إذا كان مصرحًا له، يتم استخدام بيانات الدورة كما هي
         course_data = course_serializer.data
     else:
+        # 🚫 إذا لم يكن مصرحًا له، تكون بيانات الدورة فارغة
         course_data = {}
-    #
+
+    # 📚 جلب جميع الدروس المرتبطة بالدورة
     lesson = course.lessons.all()
+    # 🎨 تحويل بيانات الدروس إلى JSON باستخدام الـ Serializer
     lesson_serializer = LessonListSerializer(lesson, many=True)
     lesson_data = lesson_serializer.data
+
+    # 📝 إرجاع بيانات الدورة والدروس في صيغة JSON
     return JsonResponse(
         {
             "course": course_data,  # 📝 بيانات الدورة
@@ -200,48 +188,44 @@ def course_detail(request, pk):
     )
 
 
-"""
-
-
-# 📄 دالة لجلب الدورات الأمامية (الواجهة)
-@api_view(["GET"])
-@authentication_classes([])  # 🔓 عدم استخدام مصادقة
-@permission_classes([])  # 🔓 عدم استخدام تصاريح
-def get_frontpage_courses(request):
-    courses = Course.objects.filter(status=Course.PUBLISHED)[
-        0:4
-    ]  # 📚 جلب أول 4 دورات منشورة
-    serializer = CourseListSerializer(courses, many=True)
-    return Response(serializer.data)
-
-
-
 # 💬 دالة لجلب التعليقات المرتبطة بدورة ودرس معينين
 @api_view(["GET"])
-def get_comments(request, course_slug, lesson_slug):
-    lesson = Lesson.objects.get(slug=lesson_slug)  # 🔎 جلب الدرس بالـ Slug
-    serializer = CommentsSerializer(lesson.comments.all(), many=True)
+def comments_list(request, course_id, lesson_id):
+    course = Course.objects.get(id=course_id)  # 🔎 جلب الدورة باستخدام المعرف (id)
+    lesson = Lesson.objects.get(id=lesson_id)  # 🔎 جلب الدرس باستخدام المعرف (id)
+    # 📝 جلب التعليقات المرتبطة بالدرس
+    comments = lesson.comments.all()  # 💬 جميع التعليقات المرتبطة بالدرس
+    # 🎨 تحويل التعليقات المرتبطة بالدرس إلى صيغة JSON باستخدام الـ Serializer
+    serializer = CommentsSerializer(comments, many=True)
+    # 📤 إرجاع البيانات كاستجابة
     return Response(serializer.data)
 
 
 # ➕ دالة لإضافة تعليق على درس
 @api_view(["POST"])
-def add_comment(request, course_slug, lesson_slug):
+def add_comment(request, course_id, lesson_id):
+    # البيانات المرسلة الى قاعدة البيانات
     data = request.data
-    course = Course.objects.get(slug=course_slug)  # 🔎 جلب الدورة بالـ Slug
-    lesson = Lesson.objects.get(slug=lesson_slug)  # 🔎 جلب الدرس بالـ Slug
+    course = Course.objects.get(id=course_id)  # 🔎 جلب الدورة باستخدام المعرف (id)
+    lesson = Lesson.objects.get(id=lesson_id)  # 🔎 جلب الدرس باستخدام المعرف (id)
 
     # ✍️ إنشاء تعليق جديد
     comment = Comment.objects.create(
         course=course,
         lesson=lesson,
-        name=data.get("name"),
-        content=data.get("content"),
+        name=request.data.get("name"),
+        content=request.data.get("content"),
         created_by=request.user,  # 👤 المستخدم الذي أنشأ التعليق
     )
+    lesson.comments.add(comment)
+    lesson.save()
 
     serializer = CommentsSerializer(comment)
-    return Response(serializer.data)
+    # 📤 إرجاع البيانات باستخدام JsonResponse من Django
+    return JsonResponse(serializer.data, safe=False)
+
+
+"""
 
 
 # 📚 دالة لجلب الدورات التي أنشأها مستخدم معين

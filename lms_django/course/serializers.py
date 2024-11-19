@@ -66,11 +66,21 @@ class LessonListSerializer(serializers.ModelSerializer):
 
 # 💬 مُسلسل لعرض التعليقات
 class CommentsSerializer(serializers.ModelSerializer):
+    # 👤 تضمين معلومات المستخدم الذي أنشأ الدورة
+    created_by = UserSerializer(read_only=True)
+
     class Meta:
         # 🔗 ربط النموذج بموديل التعليق
         model = Comment
         # 📄 الحقول التي سيتم تضمينها في السيريالايزر لعرض معلومات التعليق
-        fields = ("id", "name", "content", "created_at")
+        fields = (
+            "id",
+            "name",
+            "content",
+            "created_at",
+            "created_at_formatted",
+            "created_by",
+        )
 
 
 # ❓ مُسلسل لعرض معلومات الاختبارات

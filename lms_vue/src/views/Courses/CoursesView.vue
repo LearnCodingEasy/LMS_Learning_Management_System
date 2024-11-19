@@ -14,18 +14,16 @@
               <p class="menu-label">Categories</p>
 
               <ul class="menu-list" v-if="categories.length">
-                <li>
-                  <a
-                    v-bind:class="{ 'is-active': !activeCategory }"
-                    @click="setActiveCategory(null)"
-                  >
+                <li class="h-10 cursor-pointer p-2 border mb-2 mt-4 rounded-md">
+                  <a :class="{ 'is-active': !activeCategory }" @click="setActiveCategory(null)">
                     All courses
                   </a>
                 </li>
                 <li
                   v-for="category in categories"
-                  v-bind:key="category.id"
+                  :key="category.id"
                   @click="setActiveCategory(category)"
+                  class="h-10 cursor-pointer p-2 border mb-2 rounded-md"
                 >
                   <a>{{ category.title }}</a>
                 </li>
@@ -33,16 +31,97 @@
 
               <ul class="menu-list" v-else>
                 <li>
-                  <a> All courses </a>
+                  <a class="h-6"> All courses </a>
                 </li>
                 <li>
-                  <a> Html </a>
+                  <a>
+                    <prime_skeleton
+                      height="1.5rem"
+                      width="10rem"
+                      class="mt-2"
+                      borderRadius="5px"
+                    ></prime_skeleton>
+                  </a>
                 </li>
                 <li>
-                  <a> Css </a>
+                  <a>
+                    <prime_skeleton
+                      height="1.5rem"
+                      width="10rem"
+                      class="mt-2"
+                      borderRadius="5px"
+                    ></prime_skeleton>
+                  </a>
                 </li>
                 <li>
-                  <a> Javascript </a>
+                  <a>
+                    <prime_skeleton
+                      height="1.5rem"
+                      width="10rem"
+                      class="mt-2"
+                      borderRadius="5px"
+                    ></prime_skeleton>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <prime_skeleton
+                      height="1.5rem"
+                      width="10rem"
+                      class="mt-2"
+                      borderRadius="5px"
+                    ></prime_skeleton>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <prime_skeleton
+                      height="1.5rem"
+                      width="10rem"
+                      class="mt-2"
+                      borderRadius="5px"
+                    ></prime_skeleton>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <prime_skeleton
+                      height="1.5rem"
+                      width="10rem"
+                      class="mt-2"
+                      borderRadius="5px"
+                    ></prime_skeleton>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <prime_skeleton
+                      height="1.5rem"
+                      width="10rem"
+                      class="mt-2"
+                      borderRadius="5px"
+                    ></prime_skeleton>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <prime_skeleton
+                      height="1.5rem"
+                      width="10rem"
+                      class="mt-2"
+                      borderRadius="5px"
+                    ></prime_skeleton>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <prime_skeleton
+                      height="1.5rem"
+                      width="10rem"
+                      class="mt-2"
+                      borderRadius="5px"
+                    ></prime_skeleton>
+                  </a>
                 </li>
               </ul>
             </aside>
@@ -126,8 +205,6 @@
 <script>
 import axios from 'axios'
 
-// import CourseItem from '@/components/CourseItem.vue'
-
 export default {
   name: 'CoursesView',
   data() {
@@ -135,52 +212,55 @@ export default {
       courses: [],
       categories: [],
       activeCategory: null,
+      loadingCourses: false,
+      loadingCategories: false,
     }
   },
-  components: {
-    // CourseItem,
-  },
+  components: {},
   async mounted() {
     document.title = 'Courses | Study Net'
-    this.getCourses()
-    this.getCategory()
+    this.getCategory() // تحميل الأقسام
+    this.getCourses() // تحميل الكورسات
   },
   methods: {
     setActiveCategory(category) {
       console.log(category)
       this.activeCategory = category
-
-      this.getCourses()
+      // تحميل الكورسات بناءً على القسم النشط
+      this.getCoursesByCategory()
     },
     getCourses() {
-      // let url = 'courses/'
-
-      // if (this.activeCategory) {
-      //   url += '?category_id=' + this.activeCategory.id
-      // }
-
-      // axios.get(url).then((response) => {
-      //   console.log(response.data)
-
-      //   this.courses = response.data
-      // })
-      // console.log(`Yes`)
       axios.get('/api/courses/courses_list/').then((response) => {
-        let line = '👉️'.repeat(30)
-        console.log(` %c${line} `, 'color: #1cd07c; font-size: 16px')
-        console.log('courses_list response: ', response)
         this.courses = response.data
-        console.log('this.courses: ', this.courses)
-        console.log('this.courses: ', this.courses.length)
       })
     },
+    getCoursesByCategory() {
+      this.loadingCourses = true
+      let url = '/api/courses/courses_list_by_category/'
+      if (this.activeCategory) {
+        url += '?category_id=' + this.activeCategory.id
+      }
+      axios
+        .get(url)
+        .then((response) => {
+          this.courses = response.data
+          this.loadingCourses = false
+        })
+        .catch(() => {
+          this.loadingCourses = false
+        })
+    },
     getCategory() {
-      axios.get('/api/courses/categories_list/').then((response) => {
-        let line = '📌'.repeat(30)
-        console.log(` %c${line} `, 'color: #1cd07c; font-size: 16px')
-        console.log('categories_list response: ', response)
-        this.categories = response.data
-      })
+      this.loadingCategories = true
+      axios
+        .get('/api/courses/categories_list/')
+        .then((response) => {
+          this.categories = response.data
+          this.loadingCategories = false
+        })
+        .catch(() => {
+          this.loadingCategories = false
+        })
     },
   },
 }

@@ -11,6 +11,8 @@ from account.models import User
 
 from django.db import models
 
+# 📥 استيراد دالة timesince من Django
+from django.utils.timesince import timesince  
 
 # 🏷️ تعريف نموذج "الفئة" لتصنيف الدورات
 class Category(models.Model):
@@ -165,6 +167,20 @@ class Comment(models.Model):
     created_by = models.ForeignKey(
         User, related_name="comments", on_delete=models.CASCADE
     )
+
+    # ترتيب الدورات الأحدث أولًا
+    class Meta:
+        ordering = ("-created_at",)
+
+    # - 🔍 اسم الاوبجكت اللى هيترتب بية فى صفحة الادمان
+    def __str__(self):
+        return "%s" % self.name
+    
+    # 🎯 دالة لإرجاع الزمن الذي مر منذ إنشاء العنصر
+    def created_at_formatted(self):
+        # 🕒 استدعاء timesince لحساب الوقت المنقضي منذ الحقل created_at
+        return timesince(self.created_at)
+
 
 
 # ❓ تعريف نموذج "الاختبارات"
