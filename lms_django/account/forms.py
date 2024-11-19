@@ -28,6 +28,7 @@ class SignupForm(UserCreationForm):
         )
 
 
+# 📝 نموذج تعديل بيانات المستخدم
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = User
@@ -46,4 +47,6 @@ class ProfileForm(forms.ModelForm):
             "avatar",
             # 🖼️ User's Cover picture صورة ملف غلااف المستخدم
             "cover",
+            #
+            "is_online",
         )

@@ -22,7 +22,9 @@ export const useUserStore = defineStore({
       // 🖼️ Cover photo صورة الغلاف
       get_cover: null,
       // 📋 Number of tasks عدد المهام
-      task_count: 0
+      task_count: 0,
+      // User Is Online
+      is_online: false
     }
   }),
   actions: {
@@ -44,6 +46,8 @@ export const useUserStore = defineStore({
         this.user.refresh = localStorage.getItem("user.refresh");
         this.user.friends_count = localStorage.getItem("user.friends_count");
         this.user.task_count = localStorage.getItem("user.task_count");
+        this.user.is_online = localStorage.getItem("user.is_online");
+        // this.user.is_online = true;
         this.refreshToken();
       }
     },
@@ -54,6 +58,7 @@ export const useUserStore = defineStore({
       this.user.access = data.access;
       this.user.refresh = data.refresh;
       this.user.isAuthenticated = true;
+      // this.user.is_online = true;
       localStorage.setItem("user.access", data.access);
       localStorage.setItem("user.refresh", data.refresh);
       // console.log('user.access: ', localStorage.getItem('user.access'))
@@ -75,6 +80,7 @@ export const useUserStore = defineStore({
       this.user.get_cover = null;
       this.user.friends_count = null;
       this.user.task_count = null;
+      this.user.is_online = false;
 
       localStorage.setItem("user.access", "");
       localStorage.setItem("user.refresh", "");
@@ -88,6 +94,7 @@ export const useUserStore = defineStore({
       localStorage.setItem("user.get_cover", "");
       localStorage.setItem("user.friends_count", "");
       localStorage.setItem("user.task_count", "");
+      localStorage.setItem("user.is_online", "");
     },
     // ✍️ Set user info in state and localStorage
     // ✍️ تعيين بيانات المستخدم في الحالة و localStorage
@@ -103,6 +110,7 @@ export const useUserStore = defineStore({
       this.user.get_cover = user.get_cover;
       this.user.friends_count = user.friends_count;
       this.user.task_count = user.task_count;
+      this.user.is_online = user.is_online;
       localStorage.setItem("user.id", this.user.id);
       localStorage.setItem("user.name", this.user.name);
       localStorage.setItem("user.surname", this.user.surname);
@@ -113,6 +121,7 @@ export const useUserStore = defineStore({
       localStorage.setItem("user.get_cover", this.user.get_cover);
       localStorage.setItem("user.friends_count", this.user.friends_count);
       localStorage.setItem("user.task_count", this.user.task_count);
+      localStorage.setItem("user.is_online", this.user.is_online);
     },
     // 🔄 Refresh access token
     // 🔄 تحديث رمز الوصول

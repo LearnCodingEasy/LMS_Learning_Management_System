@@ -128,6 +128,24 @@ import Skeleton from "primevue/skeleton";
 import Badge from "primevue/badge";
 import OverlayBadge from "primevue/overlaybadge";
 
+// --------------- Carousel Components ---------------
+//
+import Carousel from 'primevue/carousel';
+
+
+// --------------- Tag Components ---------------
+//
+import Tag  from 'primevue/tag';
+
+// --------------- [[       Data      ]] ---------------
+// --------------- pagination Components ---------------
+//
+import DataView from 'primevue/dataview';
+
+// --------------- Paginator Components ---------------
+//
+import Paginator from 'primevue/paginator';
+
 // --------------- Styles ---------------
 // Import necessary styles for PrimeVue and Tailwind CSS
 import "primeicons/primeicons.css";
@@ -240,12 +258,22 @@ app.component("prime_column", Column);
 app.component("prime_column_group", ColumnGroup);
 app.component("prime_row", Row);
 
-// Placeholder Components
+// Placeholder Components Skeleton
 app.component("prime_skeleton", Skeleton);
 
 // Badge is a small status indicator for another element.
 app.component("prime_badge", Badge);
 app.component("prime_overlay_badge", OverlayBadge);
 
+// Carousel
+app.component("prime_carousel", Carousel);
 
+// Tag
+app.component("prime_tag", Tag);
+
+// DataView
+app.component("prime_data_view", DataView);
+
+// Paginator
+app.component("prime_paginator", Paginator);
 app.mount('#app')

@@ -1,5 +1,20 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
+// Home
 import HomeView from '../views/HomeView.vue'
+
+// Authentication
+import LoginView from '../views/Authentication/LoginView.vue'
+
+// Account
+import ProfileView from '../views/Account/ProfileView.vue'
+
+// 404 catchall Page Not Found
+import PageNotFound from "@/components/PageNotFound/PageNotFound.vue";
+
+// Courses
+import CoursesView from '../views/Courses/CoursesView.vue'
+import CourseView from '../views/Courses/CourseView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -9,6 +24,45 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
     },
+    // 404 Catchall Page Not Found
+    {
+      path: "/:catchAll(.*)",
+      name: "PageNotFound",
+      component: PageNotFound
+    },
+    // Authentication [ Login ]
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginView
+    },
+    // Account [ Profile ]
+    {
+      path: '/profile/:id',
+      name: 'profile',
+      component: ProfileView,
+      meta: {
+        requireLogin: true
+      }
+    },
+    // Courses [ Profile ]
+    {
+      path: '/courses',
+      name: 'courses',
+      component: CoursesView,
+      meta: {
+        requireLogin: true
+      }
+    },
+    {
+      path: '/courses/:id',
+      name: 'course',
+      component: CourseView,
+      meta: {
+        requireLogin: true
+      }
+    },
+    //  
     {
       path: '/about',
       name: 'about',

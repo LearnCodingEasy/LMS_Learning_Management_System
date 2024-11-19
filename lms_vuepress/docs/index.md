@@ -2566,11 +2566,470 @@ PageNotFound/PageNotFound.vue
 ###### 📝 Edit Page [ App.vue ]
 
 ```js
+<script setup>
+  import { RouterLink, RouterView } from 'vue-router'
+  import axios from 'axios'
 
+  // import { ref } from 'vue'
+  //
+  import { onMounted } from 'vue'
+  import { useUserStore } from '@/stores/user'
+  import { useRouter } from 'vue-router'
+
+  const userStore = useUserStore()
+  userStore.initStore()
+  const router = useRouter()
+
+  onMounted(() => {
+    // Perform any necessary operations on component mount
+    if (!userStore.user.access) {
+      // console.log('User Data: ', userStore.user.access)
+      // Replace '/login' with your actual login route
+      router.push('/login')
+    } else {
+      // Set default Authorization header for axios
+      axios.defaults.headers.common['Authorization'] = `Bearer ${userStore.user.access}`
+      // console.log('User Data: ', userStore.user)
+    }
+  })
+
+  // For Toggle Theme
+  // const op = ref(null)
+  // const toggle = event => {
+  //   // console.log('toggle: ', toggle);
+  //   op.value.toggle(event)
+  // }
+  // Log Out
+  let logout = () => {
+    // console.log('User Log out')
+    userStore.removeToken()
+    // توجيه المستخدم إلى صفحة تسجيل الدخول
+    setTimeout(() => {
+      router.push('/login').then(() => {})
+    }, 10)
+  }
+</script>
 ```
 
 ```html
+<template>
+  <div class="wrapper_page_app">
+    <!-- Header Tailwind -->
+    <div class="header_wrapper sticky top-0 left-0 right-0">
+      <div class="container mx-auto">
+        <div class="header_inner">
+          <prime_card
+            class="header_card px-2"
+            v-if="userStore.user.isAuthenticated"
+          >
+            <template #content>
+              <header class="header_header">
+                <nav class="header_nav">
+                  <div class="header_content">
+                    <div
+                      class="header_content_inner relative flex items-center justify-between"
+                    >
+                      <div
+                        class="header_mobile_menu_button absolute inset-y-0 left-0 flex items-center sm:hidden"
+                      >
+                        <!-- Mobile menu button-->
+                        <button
+                          type="button"
+                          class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                          aria-controls="mobile-menu"
+                          aria-expanded="false"
+                        >
+                          <span class="absolute -inset-0.5"></span>
+                          <span class="sr-only">Open main menu</span>
+                          <!--
+                  Icon when menu is closed.
 
+                  Menu open: "hidden", Menu closed: "block"
+                -->
+                          <svg
+                            class="block h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                            data-slot="icon"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                            />
+                          </svg>
+                          <!--
+                  Icon when menu is open.
+
+                  Menu open: "block", Menu closed: "hidden"
+                -->
+                          <svg
+                            class="hidden h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                            data-slot="icon"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M6 18 18 6M6 6l12 12"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                      <div
+                        class="header_wrapper_links flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+                      >
+                        <div
+                          class="header_logo_link flex flex-shrink-0 items-center"
+                        >
+                          <!-- Logo -->
+                          <RouterLink to="/" class="logo flex">
+                            <img
+                              class="h-10 w-auto"
+                              src="../"
+                              alt="Your Company"
+                            />
+                          </RouterLink>
+                        </div>
+                        <div class="header_main_links hidden sm:ml-6 sm:block">
+                          <div class="header_main_link flex space-x-4">
+                            <RouterLink
+                              to="/Workspace"
+                              class="rounded-md px-3 py-2 text-md"
+                              aria-current="page"
+                            >
+                              workspace</RouterLink
+                            >
+                            <RouterLink
+                              to="/"
+                              class="rounded-md px-3 py-2 text-md"
+                              >Recent
+                            </RouterLink>
+                            <RouterLink
+                              to="/"
+                              class="rounded-md px-3 py-2 text-md"
+                              >Starred
+                            </RouterLink>
+                            <RouterLink
+                              to="/"
+                              class="rounded-md px-3 py-2 text-md"
+                              >More
+                            </RouterLink>
+                            <prime_button
+                              icon="pi pi-plus"
+                              severity="info"
+                              @click="visibleAddBoard = true"
+                              class="class_name"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="header_wrapper_profile_search absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+                      >
+                        <!-- input_search -->
+                        <div class="header_input_search">
+                          <prime_input_text></prime_input_text>
+                        </div>
+                        <button
+                          type="button"
+                          class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                        >
+                          <span class="absolute -inset-1.5"></span>
+                          <span class="sr-only">View notifications</span>
+                          <svg
+                            class="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                            data-slot="icon"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
+                            />
+                          </svg>
+                        </button>
+                        <!-- Profile  -->
+                        <div class="relative ml-3">
+                          <div>
+                            <button
+                              type="button"
+                              class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                              id="user-menu-button"
+                              aria-expanded="false"
+                              aria-haspopup="true"
+                              @click="toggleDropdown"
+                            >
+                              <span class="absolute -inset-1.5"></span>
+                              <span class="sr-only">Open user menu</span>
+                              <img
+                                v-if="userStore.user.get_avatar !== 'undefined'"
+                                :src="userStore.user.get_avatar"
+                                class="h-8 w-8 rounded-full"
+                                alt=""
+                              />
+                              <img
+                                v-else
+                                class="h-8 w-8 rounded-full"
+                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                alt=""
+                              />
+                            </button>
+                          </div>
+                          <!-- dropdown -->
+                          <div
+                            v-if="isDropdownOpen"
+                            class="border absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                            role="menu"
+                            aria-orientation="vertical"
+                            aria-labelledby="user-menu-button"
+                            tabindex="-1"
+                          >
+                            <!-- User Profile -->
+                            <div
+                              class="div_wrapper_profile flex py-1 items-center cursor-pointer"
+                            >
+                              <div
+                                class="icon_div_wrapper_profile flex justify-center items-center"
+                              >
+                                <RouterLink
+                                  class="flex justify-center items-center"
+                                  v-if="userStore.user.id"
+                                  :to="{
+                                    name: 'profile',
+                                    params: { id: userStore.user.id },
+                                  }"
+                                  @click="closeDropdown"
+                                >
+                                  <!-- If Image -->
+                                  <div class="mr-1">
+                                    <span
+                                      class="user_img"
+                                      v-if="userStore.user.get_avatar !== 'undefined'"
+                                    >
+                                      <img
+                                        :src="userStore.user.get_avatar"
+                                        class="rounded-full w-8 h-8"
+                                        alt=""
+                                      />
+                                    </span>
+                                    <span class="user_icon" v-else>
+                                      <i
+                                        class="pi pi-user px-2"
+                                        shape="circle"
+                                      ></i>
+                                    </span>
+                                  </div>
+                                  <!-- If Name -->
+                                  <div class="">
+                                    <span
+                                      class="user_name"
+                                      v-if="userStore.user.name"
+                                      >{{ userStore.user.name }}</span
+                                    >
+                                    <span class="user_name" v-else
+                                      >Your Profile</span
+                                    >
+                                  </div>
+                                </RouterLink>
+                              </div>
+                            </div>
+                            <!-- Settings -->
+                            <div
+                              class="div_wrapper_logout flex py-1 items-center cursor-pointer"
+                            >
+                              <div
+                                class="icon_logout flex justify-center items-center"
+                                @click="closeDropdown"
+                              >
+                                <i class="pi pi-cog px-2" shape="circle"></i>
+                                <button class="">Settings</button>
+                              </div>
+                            </div>
+                            <!-- Sign Out -->
+                            <div
+                              class="div_wrapper_logout flex py-1 items-center cursor-pointer"
+                              @click="logout"
+                            >
+                              <div
+                                class="icon_logout flex justify-center items-center"
+                                @click="closeDropdown"
+                              >
+                                <i
+                                  class="pi pi-sign-out px-2"
+                                  shape="circle"
+                                ></i>
+                                <button class="">Sign out</button>
+                              </div>
+                            </div>
+                            <!-- Toggle Theme -->
+                            <div
+                              class="flex div_wrapper_toggle_theme cursor-pointer"
+                              @click="closeDropdown"
+                            >
+                              <ThemeSwitcher />
+                              <span class="mb-2">Toggle theme</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Mobile menu, show/hide based on menu state. -->
+                  <div class="sm:hidden" id="mobile-menu">
+                    <div class="space-y-1 px-2 pb-3 pt-2">
+                      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                      <a
+                        href="#"
+                        class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+                        aria-current="page"
+                        >Dashboard</a
+                      >
+                      <a
+                        href="#"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                        >Team</a
+                      >
+                      <a
+                        href="#"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                        >Projects</a
+                      >
+                      <a
+                        href="#"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                        >Calendar</a
+                      >
+                    </div>
+                  </div>
+                </nav>
+              </header>
+            </template>
+          </prime_card>
+        </div>
+      </div>
+    </div>
+    <prime_toast />
+
+    <RouterView />
+  </div>
+</template>
+```
+
+```js
+<script>
+  export default {
+    data() {
+      return {
+        // تعريف الخاصية
+        visibleAddBoard: false,
+        isDropdownOpen: false,
+      }
+    },
+    mounted() {
+      document.title = 'Trello | Home'
+    },
+    methods: {
+      toggleDropdown() {
+        this.isDropdownOpen = !this.isDropdownOpen
+      },
+      closeDropdown() {
+        this.isDropdownOpen = false
+      },
+    },
+  }
+</script>
+```
+
+```css
+<style lang="scss">
+  .header_right_section {
+    a,
+    RouterLink {
+      margin: 0 0.5rem;
+    }
+  }
+
+  .wrapper_page_app {
+    .header_wrapper {
+      border-bottom: 1px solid #99999985;
+      z-index: 7;
+      .container {
+        .header_inner {
+          .header_card {
+            border-radius: 0;
+            box-shadow: none;
+
+            > div {
+              padding: 0;
+
+              header.header_header {
+                nav.header_nav {
+                  .header_content {
+                    .header_content_inner {
+                      .header_mobile_menu_button {
+                        button {
+                          border: 0.1rem solid #085dd8;
+                        }
+                      }
+
+                      .header_wrapper_links {
+                        .header_logo_link {
+                          .logo {
+                            img {
+                            }
+                          }
+                        }
+
+                        .header_main_links {
+                          .header_main_link {
+                            a {
+                            }
+
+                            button {
+                              background-color: #085dd8;
+                              border: 0;
+                              color: white;
+                            }
+                          }
+                        }
+                      }
+
+                      .header_wrapper_profile_search {
+                        .header_input_search {
+                          margin: 0 0.5rem;
+                          height: 30px;
+
+                          input {
+                            border-radius: 3px;
+                            height: 100%;
+                            box-shadow: none;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+</style>
 ```
 
 ### 📝 Page Login
@@ -2583,9 +3042,1150 @@ Authentication/LoginView.vue
 
 ```js
 
+<script>
+  import axios from 'axios'
+  // eslint-disable-next-line no-unused-vars
+  import { RouterLink } from 'vue-router'
+  import { useUserStore } from '@/stores/user'
+  export default {
+    name: 'loginView',
+    setup() {
+      const userStore = useUserStore()
+      return {
+        userStore,
+      }
+    },
+    data() {
+      return {
+        formLogin: {
+          email: '',
+          password: '',
+        },
+        errorsLogin: [],
+
+        // Signup
+        formSignup: {
+          name: '',
+          surname: '',
+          email: '',
+          date_of_birth: null,
+          gender: '',
+          password1: '',
+          password2: '',
+        },
+        day: '',
+        month: '',
+        year: '',
+        errorsSignup: [],
+      }
+    },
+    methods: {
+      async submitFormLogin() {
+        this.errorsLogin = []
+        if (this.formLogin.email === '') {
+          this.$toast.add({
+            severity: 'error',
+            summary: 'User Name missing',
+            detail: 'Your name is missing',
+            life: 3000,
+          })
+          this.errorsLogin.push('Your e-mail is missing')
+        }
+        if (this.formLogin.password === '') {
+          this.$toast.add({
+            severity: 'error',
+            summary: 'User password is missing',
+            detail: 'Your password is missing',
+            life: 3000,
+          })
+          this.errorsLogin.push('Your password is missing')
+        }
+        if (this.errorsLogin.length === 0) {
+          await axios
+            .post('/api/login/', this.formLogin)
+            .then((response) => {
+              this.userStore.setToken(response.data)
+              // console.log('response.data: ', response.data)
+              axios.defaults.headers.common['Authorization'] = 'Bearer ' + response.data.access
+            })
+            .catch((error) => {
+              console.log('error', error)
+              if (error.response.data.detail) {
+                // Code If True
+                this.$toast.add({
+                  severity: 'error',
+                  summary: 'Error Message',
+                  detail: `${error.response.data.detail}`,
+                  life: 6000,
+                })
+              }
+
+              this.errorsLogin.push(
+                'The email or password is incorrect! Or the user is not activated!',
+              )
+            })
+        }
+        if (this.errorsLogin.length === 0) {
+          await axios
+            .get('/api/me/')
+            .then((response) => {
+              this.userStore.setUserInfo(response.data)
+              this.$router.push('/')
+            })
+            .catch((error) => {
+              console.log('error', error)
+            })
+        }
+      },
+      submitFormSignup() {
+        this.errorsSignup = []
+
+        // استخراج اليوم، الشهر، والسنة من كائنات Date وتنسيقها
+        const day = this.day.getDate().toString().padStart(2, '0')
+        const month = (this.month.getMonth() + 1).toString().padStart(2, '0')
+        const year = this.year.getFullYear()
+
+        const formattedDate = `${year}-${month}-${day}`
+        this.formSignup.date_of_birth = formattedDate
+
+        if (this.formSignup.name === '') {
+          this.$toast.add({
+            severity: 'error',
+            summary: 'User Name missing',
+            detail: 'Your name is missing',
+            life: 3000,
+          })
+          this.errorsSignup.push('Your name is missing')
+        }
+        if (this.formSignup.surname === '') {
+          this.$toast.add({
+            severity: 'error',
+            summary: 'User Surname missing',
+            detail: 'Your Surname is missing',
+            life: 3000,
+          })
+          this.errorsSignup.push('Your surname is missing')
+        }
+        if (this.formSignup.email === '') {
+          this.$toast.add({
+            severity: 'error',
+            summary: 'User Is missing',
+            detail: 'Your e-mail is missing',
+            life: 3000,
+          })
+          this.errorsSignup.push('Your e-mail is missing')
+        }
+        if (this.formSignup.password1 === '') {
+          this.$toast.add({
+            severity: 'error',
+            summary: 'User passwordIs missing',
+            detail: 'Your password is missing',
+            life: 3000,
+          })
+          this.errorsSignup.push('Your password is missing')
+        }
+        if (this.formSignup.password1 !== this.formSignup.password2) {
+          this.$toast.add({
+            severity: 'error',
+            summary: 'User  password does not match',
+            detail: 'Your password  does not match',
+            life: 3000,
+          })
+          this.errorsSignup.push('The password does not match')
+        }
+        if (this.errorsSignup.length === 0) {
+          axios
+            .post('/api/signup/', this.formSignup)
+            .then((response) => {
+              if (response.data.message === 'success') {
+                if (response.data.email_sent) {
+                  this.$toast.add({
+                    severity: 'success',
+                    summary: 'User Registered',
+                    detail: 'Please activate your account by clicking the link sent to your email.',
+                    life: 3000,
+                  })
+                }
+                this.$toast.add({
+                  severity: 'success',
+                  summary: 'User Is Registered',
+                  detail: 'Please activate your account by clicking your email link',
+                  life: 3000,
+                })
+                this.formSignup.name = ''
+                this.formSignup.surname = ''
+                this.formSignup.email = ''
+                this.formSignup.date_of_birth = ''
+                this.formSignup.gender = ''
+                this.formSignup.password1 = ''
+                this.formSignup.password2 = ''
+                // this.$router.push('/loginView')
+                window.location.reload()
+              } else {
+                const data = JSON.parse(response.data.message)
+                this.$toast.add({
+                  severity: 'error',
+                  summary: 'Error Message',
+                  detail: 'Message Content Something went wrong. Please try again',
+                  life: 6000,
+                })
+                for (const key in data) {
+                  this.errors.push(data[key][0].message)
+                }
+                console.log(`Bad`, this.formSignup.date_of_birth)
+                console.log(`Day`, this.day)
+                console.log(`month`, this.month)
+                console.log(`year`, this.year)
+              }
+            })
+            .catch((error) => {
+              console.log('error', error)
+            })
+        }
+      },
+    },
+    mounted() {
+      document.title = 'Trello | Login'
+    },
+  }
+  </script>
+
 ```
 
 ```html
+<template>
+  <div class="wrapper_page_login">
+    <div class="inner_page_login">
+      <div class="container mx-auto">
+        <div
+          class="wrapper_content_page_login flex justify-center items-center"
+        >
+          <div class="inner_content_page_login">
+            <!-- Signup -->
+            <div class="mobile_body_dark">
+              <span class="voice_up"> </span>
+              <span class="voice_down"> </span>
+              <span class="power"> </span>
+              <span class="sonser"> </span>
+              <span class="voice"> </span>
+              <span class="carme"> </span>
+              <div class="mobile_content">
+                <form class="">
+                  <prime_card class="prime_card_form_signup">
+                    <template #header>
+                      <div class="flex justify-between items-center w-full">
+                        <div class="text font-bold text-5xl">Signup</div>
+                        <div class="image_logo">
+                          <img
+                            src="../../assets/Images/Messenger_80x80.png"
+                            class=""
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </template>
+                    <template #content>
+                      <prime_fluid class="prime_card_form_signup_content">
+                        <div class="">
+                          <div class="flex">
+                            <!-- First name -->
+                            <div class="mr-1">
+                              <prime_input_text
+                                placeholder="First name"
+                                v-model="formSignup.name"
+                              />
+                            </div>
+                            <!-- Surname -->
+                            <div class="ml-1">
+                              <prime_input_text
+                                placeholder="Surname"
+                                v-model="formSignup.surname"
+                              />
+                            </div>
+                          </div>
+                          <!-- Mobile number or email address -->
+                          <div class="col-span-full">
+                            <prime_input_text
+                              placeholder="Mobile number or email address"
+                              v-model="formSignup.email"
+                            />
+                          </div>
+                          <!-- password1 -->
+                          <div class="col-span-full">
+                            <prime_input_password
+                              placeholder="New Password"
+                              v-model="formSignup.password1"
+                            />
+                          </div>
+                          <!-- password2 -->
+                          <div class="col-span-full">
+                            <prime_input_password
+                              placeholder="Repeat password"
+                              v-model="formSignup.password2"
+                            />
+                          </div>
+                          <!-- Date of birth -->
+                          <div class="col-span-full">Date of birth</div>
+                          <div class="col-span-full">
+                            <div class="flex flex-col md:flex-row gap-2">
+                              <!-- Day -->
+                              <prime_input_group>
+                                <prime_date_picker
+                                  v-model="day"
+                                  view="day"
+                                  dateFormat="dd"
+                                />
+                              </prime_input_group>
+                              <!-- Month -->
+                              <prime_input_group>
+                                <prime_date_picker
+                                  v-model="month"
+                                  view="month"
+                                  dateFormat="mm"
+                                />
+                              </prime_input_group>
+                              <!-- Year -->
+                              <prime_input_group>
+                                <prime_date_picker
+                                  v-model="year"
+                                  view="year"
+                                  dateFormat="yy"
+                                />
+                              </prime_input_group>
+                            </div>
+                          </div>
+                          <!-- Gender -->
+                          <div class="col-span-full">Gender</div>
+                          <div class="flex flex-col md:flex-row gap-2">
+                            <prime_input_group>
+                              <prime_radio_button
+                                v-model="formSignup.gender"
+                                inputId="ingredient1"
+                                name="gender"
+                                value="Female"
+                              />
+                              <label for="ingredient1" class="ml-2">
+                                Female
+                              </label>
+                            </prime_input_group>
+                            <prime_input_group>
+                              <prime_radio_button
+                                v-model="formSignup.gender"
+                                inputId="ingredient2"
+                                name="gender"
+                                value="Male"
+                              />
+                              <label for="ingredient2" class="ml-2">
+                                Male
+                              </label>
+                            </prime_input_group>
+
+                            <prime_input_group>
+                              <prime_radio_button
+                                v-model="formSignup.gender"
+                                inputId="ingredient3"
+                                name="gender"
+                                value="Custom"
+                              />
+                              <label for="ingredient3" class="ml-2">
+                                Custom
+                              </label>
+                            </prime_input_group>
+                          </div>
+                        </div>
+                      </prime_fluid>
+                    </template>
+                    <template #footer>
+                      <div class="flex justify-center gap-2">
+                        <button
+                          type="submit"
+                          class="d_block_important mt-1 mx-auto w_50 bg-green-500 py-3 px-5 rounded text-white"
+                          @click.prevent="submitFormSignup"
+                        >
+                          Signup
+                        </button>
+                      </div>
+                    </template>
+                    <!-- Errors -->
+                    <template v-if="errorsSignup.length > 0">
+                      <prime_toast />
+                    </template>
+                  </prime_card>
+                </form>
+              </div>
+            </div>
+            <!-- Log in -->
+            <div class="mobile_body_dark">
+              <span class="voice_up"> </span>
+              <span class="voice_down"> </span>
+              <span class="power"> </span>
+              <span class="sonser"> </span>
+              <span class="voice"> </span>
+              <span class="carme"> </span>
+              <div class="mobile_content">
+                <form class="">
+                  <prime_card class="prime_card_form_login">
+                    <template #header>
+                      <div class="flex justify-between items-center w-full">
+                        <div class="text font-bold text-5xl">Log in</div>
+                        <div class="image_logo">
+                          <img
+                            src="../../assets/Images/Messenger_80x80.png"
+                            class=""
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </template>
+                    <template #content>
+                      <prime_fluid class="prime_card_form_signup_content">
+                        <div class="input_email">
+                          <!-- Mobile number or email address -->
+                          <div class="col-span-full">
+                            <prime_input_text
+                              placeholder="Mobile number or email address"
+                              v-model="formLogin.email"
+                            />
+                          </div>
+                        </div>
+                      </prime_fluid>
+                      <!-- password -->
+                      <div class="input_password">
+                        <prime_input_password
+                          placeholder="Your Password"
+                          v-model="formLogin.password"
+                        />
+                      </div>
+                      <div class="Forgotten_password">
+                        <a
+                          href="#"
+                          class="text-blue-600 mx-auto my-2 block text-center"
+                          >Forgotten password?</a
+                        >
+                        <hr />
+                      </div>
+                    </template>
+                    <template #footer>
+                      <div class="row">
+                        <!-- Errors -->
+                        <template v-if="errorsLogin.length > 0">
+                          <prime_toast></prime_toast>
+                        </template>
+                        <!-- Login -->
+                        <div class="mt-2">
+                          <button
+                            type="submit"
+                            class="d_block_important mt-1 mb-2 mx-auto w_100 bg-red-500 py-3 px-5 rounded text-white"
+                            @click.prevent="submitFormLogin"
+                          >
+                            Log In
+                          </button>
+
+                          <!-- Button Signup -->
+                        </div>
+                      </div>
+                    </template>
+                  </prime_card>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <prime_toast />
+  </div>
+</template>
+```
+
+```css
+<style lang="scss">
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .wrapper_page_login {
+    padding: 0;
+    margin: 0;
+    height: 99.99vh;
+    max-height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(to right, #5b66f6, #e54da4);
+    .inner_page_login {
+      height: 100%;
+      .container {
+        height: 100%;
+        .wrapper_content_page_login {
+          height: 100%;
+          .inner_content_page_login {
+            position: relative;
+            height: 85%;
+            width: 100%;
+            margin: auto;
+            display: grid;
+            grid-gap: 5%;
+            justify-content: space-between;
+            align-items: center;
+            // screen and (max-width: 568px)
+            // @include MediaQueries(Xxs) {}
+            @include MediaQueries(Mobile) {
+              // background-color: #ffa704;
+            }
+            // screen and (min-width: 569px) and (max-width: 767px)
+            // @include MediaQueries(Xs) {}
+            @include MediaQueries(Tablet) {
+              // background-color: #b3f5b3;
+            }
+            // screen and (min-width: 768px) and (max-width: 991px)
+            // @include MediaQueries(Md) {}
+            @include MediaQueries(laptop) {
+              // background-color: #b3d4f5;
+            }
+            // screen and (min-width: 992px) and (max-width: 1199px)
+            // @include MediaQueries(Lg) {  }
+            @include MediaQueries(laptopLg) {
+            }
+            // screen and (min-width: 1200px) and (max-width: 1399px)
+            // @include MediaQueries(Xlg) {}
+            @include MediaQueries(Desktop) {
+              grid-template-columns: repeat(auto-fill, minmax(35%, 1fr));
+            }
+            // screen and (min-width: 1400px)
+            // @include MediaQueries(Xxlg) {}
+            @include MediaQueries(DesktopLg) {
+              grid-template-columns: repeat(auto-fill, minmax(35%, 1fr));
+            }
+
+            .mobile_body {
+              border: 0.5rem solid #130e0e;
+              border-radius: 32px;
+              -webkit-border-radius: 32px;
+              -moz-border-radius: 32px;
+              -ms-border-radius: 32px;
+              -o-border-radius: 32px;
+              height: 100%;
+              margin: auto;
+              position: relative;
+              position: relative;
+              // screen and (max-width: 568px)
+              // @include MediaQueries(Xxs) {}
+              @include MediaQueries(Mobile) {
+                &::after {
+                  content: '📱 568';
+                  position: absolute;
+                  top: 0%;
+                  left: 0px;
+                  border-radius: 0.5rem;
+                  z-index: 7;
+                  font-size: 20px;
+                  font-weight: bold;
+                  background-color: #130e0e;
+                  color: #fff;
+                  padding: 10px 15px;
+                }
+              }
+              // screen and (min-width: 569px) and (max-width: 767px)
+              // @include MediaQueries(Xs) {}
+              @include MediaQueries(Tablet) {
+                &::after {
+                  content: '📱 567 767';
+                  position: absolute;
+                  top: 0%;
+                  left: 0px;
+                  border-radius: 0.5rem;
+                  z-index: 7;
+                  font-size: 20px;
+                  font-weight: bold;
+                  background-color: #130e0e;
+                  color: #fff;
+                  padding: 10px 15px;
+                }
+              }
+              // screen and (min-width: 768px) and (max-width: 991px)
+              // @include MediaQueries(Md) {}
+              @include MediaQueries(laptop) {
+                &::after {
+                  content: '💻 768 991';
+                  position: absolute;
+                  top: 0%;
+                  left: 0px;
+                  border-radius: 0.5rem;
+                  z-index: 7;
+                  font-size: 20px;
+                  font-weight: bold;
+                  background-color: #130e0e;
+                  color: #fff;
+                  padding: 10px 15px;
+                }
+              }
+              // screen and (min-width: 992px) and (max-width: 1199px)
+              // @include MediaQueries(Lg) {}
+              @include MediaQueries(laptopLg) {
+                &::after {
+                  content: '💻➕ 992 1199';
+                  position: absolute;
+                  top: 0%;
+                  left: 0px;
+                  border-radius: 0.5rem;
+                  z-index: 7;
+                  font-size: 20px;
+                  font-weight: bold;
+                  background-color: #130e0e;
+                  color: #fff;
+                  padding: 10px 15px;
+                }
+              }
+              // screen and (min-width: 1200px) and (max-width: 1399px)
+              // @include MediaQueries(Xlg) {}
+              @include MediaQueries(Desktop) {
+                &::after {
+                  content: '🖥️ 1200 1399';
+                  position: absolute;
+                  top: 0%;
+                  left: 0px;
+                  border-radius: 0.5rem;
+                  z-index: 7;
+                  font-size: 20px;
+                  font-weight: bold;
+                  background-color: #130e0e;
+                  color: #fff;
+                  padding: 10px 15px;
+                  display: none;
+                }
+                width: 50%;
+                overflow-x: hidden;
+              }
+              // screen and (min-width: 1400px)
+              // @include MediaQueries(Xxlg) {}
+              @include MediaQueries(DesktopLg) {
+                &::after {
+                  content: '🖥️➕ 1400';
+                  position: absolute;
+                  top: 0%;
+                  left: 0px;
+                  border-radius: 0.5rem;
+                  z-index: 7;
+                  font-size: 20px;
+                  font-weight: bold;
+                  background-color: #130e0e;
+                  color: #fff;
+                  padding: 10px 15px;
+                  display: none;
+                }
+                width: 50%;
+              }
+              .mobile_content {
+                position: relative;
+                border-radius: 24px;
+                -webkit-border-radius: 24px;
+                -moz-border-radius: 24px;
+                -ms-border-radius: 24px;
+                -o-border-radius: 24px;
+                border: 0.2rem solid #130e0e;
+                height: 100%;
+                background-color: #fff;
+                padding: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                form {
+                  height: 100%;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  width: 100%;
+                  .prime_card_form_signup {
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                    box-shadow: none;
+                    height: 100%;
+                    max-height: 100%;
+                    overflow: hidden;
+                    border-radius: 0px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    div.p-card-header {
+                      height: 20%;
+                      width: 100%;
+                      display: flex;
+                      align-items: center;
+                      width: 100%;
+                    }
+                    div.p-card-body {
+                      padding: 0;
+                      margin: 0;
+                      margin-bottom: 1rem;
+                      height: 80%;
+                      display: flex;
+                      flex-direction: column;
+                      div.p-card-content {
+                        height: 80%;
+                        .prime_card_form_signup_content {
+                          > div {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            > div {
+                              margin-top: 1rem;
+                            }
+                          }
+                        }
+                      }
+                      div.p-card-footer {
+                        height: 20%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                      }
+                    }
+                  }
+                  .prime_card_form_login {
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                    box-shadow: none;
+                    height: 100%;
+                    max-height: 100%;
+                    overflow: hidden;
+                    border-radius: 0px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    div.p-card-header {
+                      height: 20%;
+                      width: 100%;
+                      display: flex;
+                      align-items: center;
+                      width: 100%;
+                    }
+                    div.p-card-body {
+                      padding: 0;
+                      margin: 0;
+                      margin-bottom: 1rem;
+                      height: 80%;
+                      display: flex;
+                      flex-direction: column;
+                      width: 100%;
+                      div.p-card-content {
+                        // height: 80%;
+                        .input_email {
+                          margin-bottom: 1rem;
+                          input {
+                            width: 100%;
+                          }
+                        }
+                        .input_password {
+                          margin-bottom: 1rem;
+                          > div {
+                            width: 100%;
+                            input {
+                              width: 100%;
+                            }
+                          }
+                        }
+                        .Forgotten_password {
+                          margin-bottom: 1rem;
+                        }
+                      }
+                      div.p-card-footer {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                      }
+                    }
+                  }
+                }
+              }
+              .voice_up,
+              .voice_down,
+              .power {
+                content: '';
+                position: absolute;
+                height: 70px;
+                width: 13px;
+                background-color: #130e0e;
+                border-radius: 5px;
+                z-index: 7;
+                //rotate: 90deg;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                -o-border-radius: 5px;
+              }
+              .voice_up {
+                top: 10%;
+                left: -13px;
+              }
+              .voice_down {
+                top: 24%;
+                left: -13px;
+              }
+              .power {
+                top: 17%;
+                right: -13px;
+              }
+              .sonser,
+              .voice {
+                position: absolute;
+                z-index: 7;
+              }
+              .sonser {
+                height: 15px;
+                background-color: #130e0e;
+                width: 33.33%;
+                left: 33.33%;
+                border-radius: 0 0 15px 15px;
+              }
+              .voice {
+                height: 5px;
+                background-color: #b3b0b0;
+                width: 15%;
+                left: 42.5%;
+                border-radius: 15px;
+                -webkit-border-radius: 15px;
+                -moz-border-radius: 15px;
+                -ms-border-radius: 15px;
+                -o-border-radius: 15px;
+              }
+              .carme {
+                content: '';
+                position: absolute;
+                height: 7px;
+                width: 7px;
+                top: -1px;
+                left: calc(63% - 15px);
+                background-color: #b3b0b0;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                z-index: 10;
+                display: none;
+              }
+            }
+            .mobile_body_dark {
+              border: 0.5rem solid #130e0e;
+              border-radius: 32px;
+              -webkit-border-radius: 32px;
+              -moz-border-radius: 32px;
+              -ms-border-radius: 32px;
+              -o-border-radius: 32px;
+              height: 100%;
+              margin: auto;
+              position: relative;
+              position: relative;
+              // screen and (max-width: 568px)
+              // @include MediaQueries(Xxs) {}
+              @include MediaQueries(Mobile) {
+                &::after {
+                  content: '📱 568';
+                  position: absolute;
+                  top: 0%;
+                  left: 0px;
+                  border-radius: 0.5rem;
+                  z-index: 7;
+                  font-size: 20px;
+                  font-weight: bold;
+                  background-color: #130e0e;
+                  color: #fff;
+                  padding: 10px 15px;
+                }
+              }
+              // screen and (min-width: 569px) and (max-width: 767px)
+              // @include MediaQueries(Xs) {}
+              @include MediaQueries(Tablet) {
+                &::after {
+                  content: '📱 567 767';
+                  position: absolute;
+                  top: 0%;
+                  left: 0px;
+                  border-radius: 0.5rem;
+                  z-index: 7;
+                  font-size: 20px;
+                  font-weight: bold;
+                  background-color: #130e0e;
+                  color: #fff;
+                  padding: 10px 15px;
+                }
+              }
+              // screen and (min-width: 768px) and (max-width: 991px)
+              // @include MediaQueries(Md) {}
+              @include MediaQueries(laptop) {
+                &::after {
+                  content: '💻 768 991';
+                  position: absolute;
+                  top: 0%;
+                  left: 0px;
+                  border-radius: 0.5rem;
+                  z-index: 7;
+                  font-size: 20px;
+                  font-weight: bold;
+                  background-color: #130e0e;
+                  color: #fff;
+                  padding: 10px 15px;
+                }
+              }
+              // screen and (min-width: 992px) and (max-width: 1199px)
+              // @include MediaQueries(Lg) {}
+              @include MediaQueries(laptopLg) {
+                &::after {
+                  content: '💻➕ 992 1199';
+                  position: absolute;
+                  top: 0%;
+                  left: 0px;
+                  border-radius: 0.5rem;
+                  z-index: 7;
+                  font-size: 20px;
+                  font-weight: bold;
+                  background-color: #130e0e;
+                  color: #fff;
+                  padding: 10px 15px;
+                }
+              }
+              // screen and (min-width: 1200px) and (max-width: 1399px)
+              // @include MediaQueries(Xlg) {}
+              @include MediaQueries(Desktop) {
+                &::after {
+                  content: '🖥️ 1200 1399';
+                  position: absolute;
+                  top: 0%;
+                  left: 0px;
+                  border-radius: 0.5rem;
+                  z-index: 7;
+                  font-size: 20px;
+                  font-weight: bold;
+                  background-color: #130e0e;
+                  color: #fff;
+                  padding: 10px 15px;
+                  display: none;
+                }
+                width: 50%;
+                overflow-x: hidden;
+              }
+              // screen and (min-width: 1400px)
+              // @include MediaQueries(Xxlg) {}
+              @include MediaQueries(DesktopLg) {
+                &::after {
+                  content: '🖥️➕ 1400';
+                  position: absolute;
+                  top: 0%;
+                  left: 0px;
+                  border-radius: 0.5rem;
+                  z-index: 7;
+                  font-size: 20px;
+                  font-weight: bold;
+                  background-color: #130e0e;
+                  color: #fff;
+                  padding: 10px 15px;
+                  display: none;
+                }
+                width: 50%;
+              }
+              .mobile_content {
+                position: relative;
+                border-radius: 24px;
+                -webkit-border-radius: 24px;
+                -moz-border-radius: 24px;
+                -ms-border-radius: 24px;
+                -o-border-radius: 24px;
+                border: 0.2rem solid #130e0e;
+                height: 100%;
+                background-color: #fff;
+                padding: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                form {
+                  height: 100%;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  width: 100%;
+                  .prime_card_form_signup {
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                    box-shadow: none;
+                    height: 100%;
+                    max-height: 100%;
+                    overflow: hidden;
+                    border-radius: 0px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    div.p-card-header {
+                      height: 20%;
+                      width: 100%;
+                      display: flex;
+                      align-items: center;
+                      width: 100%;
+                    }
+                    div.p-card-body {
+                      padding: 0;
+                      margin: 0;
+                      margin-bottom: 1rem;
+                      height: 80%;
+                      display: flex;
+                      flex-direction: column;
+                      div.p-card-content {
+                        height: 80%;
+                        .prime_card_form_signup_content {
+                          > div {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            > div {
+                              margin-top: 1rem;
+                            }
+                          }
+                        }
+                      }
+                      div.p-card-footer {
+                        height: 20%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                      }
+                    }
+                  }
+                  .prime_card_form_login {
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                    box-shadow: none;
+                    height: 100%;
+                    max-height: 100%;
+                    overflow: hidden;
+                    border-radius: 0px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    div.p-card-header {
+                      height: 20%;
+                      width: 100%;
+                      display: flex;
+                      align-items: center;
+                      width: 100%;
+                    }
+                    div.p-card-body {
+                      padding: 0;
+                      margin: 0;
+                      margin-bottom: 1rem;
+                      height: 80%;
+                      display: flex;
+                      flex-direction: column;
+                      width: 100%;
+                      div.p-card-content {
+                        // height: 80%;
+                        .input_email {
+                          margin-bottom: 1rem;
+                          input {
+                            width: 100%;
+                          }
+                        }
+                        .input_password {
+                          margin-bottom: 1rem;
+                          > div {
+                            width: 100%;
+                            input {
+                              width: 100%;
+                            }
+                          }
+                        }
+                        .Forgotten_password {
+                          margin-bottom: 1rem;
+                        }
+                      }
+                      div.p-card-footer {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                      }
+                    }
+                  }
+                }
+              }
+              .voice_up,
+              .voice_down,
+              .power {
+                content: '';
+                position: absolute;
+                height: 70px;
+                width: 13px;
+                background-color: #130e0e;
+                border-radius: 5px;
+                z-index: 7;
+                //rotate: 90deg;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                -o-border-radius: 5px;
+              }
+              .voice_up {
+                top: 10%;
+                left: -13px;
+              }
+              .voice_down {
+                top: 24%;
+                left: -13px;
+              }
+              .power {
+                top: 17%;
+                right: -13px;
+              }
+              .sonser,
+              .voice {
+                position: absolute;
+                z-index: 7;
+              }
+              .sonser {
+                height: 15px;
+                background-color: #130e0e;
+                width: 33.33%;
+                left: 33.33%;
+                border-radius: 0 0 15px 15px;
+              }
+              .voice {
+                height: 5px;
+                background-color: #b3b0b0;
+                width: 15%;
+                left: 42.5%;
+                border-radius: 15px;
+                -webkit-border-radius: 15px;
+                -moz-border-radius: 15px;
+                -ms-border-radius: 15px;
+                -o-border-radius: 15px;
+              }
+              .carme {
+                content: '';
+                position: absolute;
+                height: 7px;
+                width: 7px;
+                top: -1px;
+                left: calc(63% - 15px);
+                background-color: #b3b0b0;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                z-index: 10;
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  </style>
 
 ```
 
@@ -2720,3 +4320,201 @@ Account/ProfileView.vue
 ---
 
 ---
+
+## 🎓 course
+
+### 🎓 Django course
+
+```cmd
+python manage.py startapp course
+```
+
+### ⚙️ Settings
+
+#### ⚙️ Page Settings [ settings.py ] 📝
+
+```python
+INSTALLED_APPS = [
+    # ...
+    # Apps
+    "course",
+    # Libraries
+    # ...
+]
+```
+
+### 🎓 Course Page [ models.py ]
+
+#### 🎓 App [ Course ] Page [ models.py ] 📝
+
+```python
+
+```
+
+### 🎓 Course Page [ admin.py ]
+
+#### 🎓 App [ Course ] Page [ admin.py ] 📝
+
+```python
+
+```
+
+### 🎓 Course Page [ serializers.py ]
+
+#### 🎓 App [ Course ] Page [ serializers.py ] 📝
+
+```python
+serializers.py
+```
+
+### 🎓 Course Page [ api.py ]
+
+#### 🎓 App [ Course ] Page [ api.py ] 📝
+
+```python
+api.py
+```
+
+### 🎓 Course Page [ urls.py ]
+
+#### 🎓 App [ Course ] Page [ urls.py ] 📝
+
+```python
+urls.py
+```
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+## 🎓 course
+
+### 🎓 Vue course
+
+### 🎓 Course Page [ Courses.vue ]
+
+#### 🎓 App [ Course ] Page [ Courses.vue ] 📝
+
+```
+CoursesView.vue
+```
+
+### 🎓 Course Page [ Course.vue ]
+
+#### 🎓 App [ Course ] Page [ Course.vue ] 📝
+
+```
+CourseView.vue
+```
